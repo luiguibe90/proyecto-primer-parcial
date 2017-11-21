@@ -30,8 +30,28 @@ using namespace std;
 
 //declaracion de estructura para listas dobles
 
+//estructuras anidadas
+struct datos_Fecha{
+    int dia;
+    int mes;
+    int anio;
+};
+typedef struct datos_Fecha *j;
+struct datos_Hora{
+    int hora;
+    int minu;
+    int seg;
+};
+typedef struct datos_Hora *L;
+//estructura principal
 struct Nodo{
+    char nombre[20];
+    char apellido[20];
+    long int cedula;
+    int nroAsiento;
     int datoEntero;
+    datos_Fecha fecha; //estructuras anidadas
+    datos_Hora hora;    //estructuras anidadas
     Nodo *siguiente;
     Nodo *anterior;
 };
@@ -40,18 +60,23 @@ typedef struct Nodo *ListaDoble;
 
 //declaracion de prototipos de funciones
 
+int ObtenerEnteroPositivo();
+void insDatosCliente(ListaDoble &);
+void cancelarBoleto(ListaDoble &,int);
+void buscarCliente(ListaDoble &);
+void insertarDatosClientePosicion(ListaDoble &);
+void mostrarDatos(ListaDoble );
+void ayuda();
+void about();
+void insElemInicio(ListaDoble &);
+void insElemFin(ListaDoble &);
+int insElemAntes(ListaDoble &, int ,int);
+int insElemDespues(ListaDoble &,int,int);
 void gotoxy(int,int);
 void color(int,int);
 int menu();
 int menuSN();
 void inicio ();
-int ObtenerEnteroPositivo();
-int insElemListaVacia(ListaDoble &);
-void insElemInicio(ListaDoble &);
-void insElemFin(ListaDoble &);
-int insElemAntes(ListaDoble &, int ,int);
-int insElemDespues(ListaDoble &,int,int);
-int calcularPrimo(int);
 
 
 //desarrollo de funciones
@@ -70,16 +95,7 @@ int ObtenerEnteroPositivo(){
     cadenaDelEntero[iterador]='\0';
     return entero=atoi(cadenaDelEntero);
 }
-
-void buscarCliente(ListaDoble &lista){
-
-}
-
-void insertarDatosClientePosicion(ListaDoble &lista){
-
-}
-void insDatosCliente(ListaDoble &lista)
-{
+void insDatosCliente(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
     nuevoElemento=new(Nodo);
     system("cls");
@@ -108,8 +124,85 @@ void insDatosCliente(ListaDoble &lista)
         printf("\n\nDato ingresado!\n\n");
     }
     }
-void insElemInicio(ListaDoble &lista)
-{
+void cancelarBoleto(ListaDoble &lista,int valor){
+    ListaDoble aux=new(Nodo);
+    ListaDoble anterior=new(Nodo);
+    aux=lista;
+    anterior=NULL;
+    int control=0;
+
+    if(lista!=NULL){
+       // printf("Ingrese Numero A Eliminar\n");
+           // valor=ObtenerEnteroPositivo();
+        while(aux!=NULL)
+        {
+            if(aux->datoEntero==valor)
+            {
+                if(anterior==NULL)
+                {
+                    lista=lista->siguiente;
+                    printf("\nDato eliminado: %d",aux->datoEntero);
+                    control=1;
+                    return;
+                }
+                if(aux->siguiente==NULL)
+                {
+                    aux->anterior->siguiente=NULL;
+                    printf("\nDato eliminado: %d",aux->datoEntero);
+                    control=1;
+                    return;
+                }
+                anterior->siguiente=aux->siguiente;
+                aux->siguiente->anterior=anterior;
+                printf("\nDato eliminado: %d",aux->datoEntero);
+                control=1;
+            }
+            anterior=aux;
+            aux=aux->siguiente;
+        }
+        if(control==0)
+        {
+             printf("\nNo se encontro el dato");
+        }
+    }
+    else
+    {
+        printf("\nDebe ingresar el primer elemento!\n\n");
+    }
+}
+void buscarCliente(ListaDoble &lista){
+
+}
+void insertarDatosClientePosicion(ListaDoble &lista){
+
+}
+void mostrarDatos(ListaDoble lista){
+     system("cls");
+    printf("\t----------------------\n");
+    printf("\t   LISTA DE NUMEROS INICIAL\n");
+    printf("\t----------------------\n\n");
+    if(lista==NULL)
+    {
+        printf("No hay elementos en la lista!\n\n");
+    }
+    else
+    {
+        int iterador=1;
+        while(lista!=NULL){
+            printf("Elemento # %d:\n",iterador);iterador++;
+            printf("* Numero: %d\n\n",lista->datoEntero);
+            lista=lista->siguiente;
+        }
+    }
+
+
+
+}
+void ayuda(){
+}
+void about(){
+}
+void insElemInicio(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
     nuevoElemento=new(Nodo);
 
@@ -132,9 +225,7 @@ void insElemInicio(ListaDoble &lista)
         printf("Debe ingresar el primer elemento!\n\n");
     }
 }
-
-void insElemFin(ListaDoble &lista)
-{
+void insElemFin(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
     nuevoElemento=new(Nodo);
     system("cls");
@@ -156,9 +247,7 @@ void insElemFin(ListaDoble &lista)
         printf("Debe ingresar el primer elemento!\n\n");
     }
 }
-
-void insElemAntes(ListaDoble &lista)
-{
+void insElemAntes(ListaDoble &lista){
     int i=1,posicion,dato,bandera=0;//i es 1 porque no se podria poner en la posicion -1
     if(lista!=NULL)
     {
@@ -218,8 +307,7 @@ void insElemAntes(ListaDoble &lista)
     }
 
 }
-void insElemDespues(ListaDoble &lista)
-{
+void insElemDespues(ListaDoble &lista){
     int i=1,posicion,dato,bandera=0;//i es 1 porque no se podria poner en la posicion -1
     if(lista!=NULL)
     {
@@ -281,76 +369,6 @@ void insElemDespues(ListaDoble &lista)
     }
 
 }
-void cancelarBoleto(ListaDoble &lista,int valor)
-{
-    ListaDoble aux=new(Nodo);
-    ListaDoble anterior=new(Nodo);
-    aux=lista;
-    anterior=NULL;
-    int control=0;
-
-    if(lista!=NULL){
-       // printf("Ingrese Numero A Eliminar\n");
-           // valor=ObtenerEnteroPositivo();
-        while(aux!=NULL)
-        {
-            if(aux->datoEntero==valor)
-            {
-                if(anterior==NULL)
-                {
-                    lista=lista->siguiente;
-                    printf("\nDato eliminado: %d",aux->datoEntero);
-                    control=1;
-                    return;
-                }
-                if(aux->siguiente==NULL)
-                {
-                    aux->anterior->siguiente=NULL;
-                    printf("\nDato eliminado: %d",aux->datoEntero);
-                    control=1;
-                    return;
-                }
-                anterior->siguiente=aux->siguiente;
-                aux->siguiente->anterior=anterior;
-                printf("\nDato eliminado: %d",aux->datoEntero);
-                control=1;
-            }
-            anterior=aux;
-            aux=aux->siguiente;
-        }
-        if(control==0)
-        {
-             printf("\nNo se encontro el dato");
-        }
-    }
-    else
-    {
-        printf("\nDebe ingresar el primer elemento!\n\n");
-    }
-}
-void mostrarDatos(ListaDoble lista)
-{
-     system("cls");
-    printf("\t----------------------\n");
-    printf("\t   LISTA DE NUMEROS INICIAL\n");
-    printf("\t----------------------\n\n");
-    if(lista==NULL)
-    {
-        printf("No hay elementos en la lista!\n\n");
-    }
-    else
-    {
-        int iterador=1;
-        while(lista!=NULL){
-            printf("Elemento # %d:\n",iterador);iterador++;
-            printf("* Numero: %d\n\n",lista->datoEntero);
-            lista=lista->siguiente;
-        }
-    }
-
-
-
-}
 void liberarMemoria(ListaDoble &lista){
     if(lista!=NULL){
         ListaDoble punteroAuxiliar;
@@ -362,8 +380,7 @@ void liberarMemoria(ListaDoble &lista){
         printf("Memoria liberada!\n\n");
     }
 }
-int main()
-{
+int main(){
     ListaDoble lista=NULL;
     inicio();
     color (fondo,texto);
