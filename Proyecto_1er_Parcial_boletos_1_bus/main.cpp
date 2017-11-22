@@ -26,6 +26,7 @@
 #define TECLA_ENTER 13
 #define fondo 3
 #define texto 10
+#define ced 10
 using namespace std;
 
 //declaracion de estructura para listas dobles
@@ -72,10 +73,12 @@ void insElemInicio(ListaDoble &);
 void insElemFin(ListaDoble &);
 int insElemAntes(ListaDoble &, int ,int);
 int insElemDespues(ListaDoble &,int,int);
+int validarCedula(int*,int *);
 void gotoxy(int,int);
 void color(int,int);
 int menu();
 int menuSN();
+int menuRV();
 void inicio ();
 
 
@@ -98,22 +101,52 @@ int ObtenerEnteroPositivo(){
 void insDatosCliente(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
     nuevoElemento=new(Nodo);
+      int C[10],B[ced];
+   // p=C;
+
+     int cedula,*cedu,*q,controlCedula=0;
+    q=B;
+    cedu=&cedula;
     system("cls");
     printf("\t----------------------------\n");
-    printf("\t   INGRESAR PRIMER NUMERO\n");
+    printf("\t   INGRESO DE DATOS CLIENTE \n");
     printf("\t----------------------------\n\n");
 
     if(lista==NULL)
     {
-        printf("Ingrese el primer numero:\n\n");
-        nuevoElemento->datoEntero=ObtenerEnteroPositivo();
+        fflush(stdin);
+        printf("\nNOMBRE: ");
+        scanf("%s",nuevoElemento->nombre);
+        fflush(stdin);
+        printf("\nAPELLIDO: ");
+        scanf("%s",nuevoElemento->apellido);
+        do{
+            fflush(stdin);
+            printf("\nCEDULA: ");
+            scanf("%ld",&nuevoElemento->cedula);
+            *cedu=nuevoElemento->cedula;
+            controlCedula=validarCedula(cedu,q);
+
+        }while(controlCedula==0);
         nuevoElemento->siguiente=nuevoElemento->anterior=NULL;
         lista=nuevoElemento;
-        printf("\n\nPrimer numero ingresado!\n\n");
+        printf("\n\nDATOS CLIENTES INGRESADOS CORRECTAMENTE!\n\n");
     }
     else{
-
-         nuevoElemento->datoEntero=ObtenerEnteroPositivo();
+        fflush(stdin);
+         printf("\nNOMBRE: ");
+        scanf("%s",nuevoElemento->nombre);
+        fflush(stdin);
+        printf("\nAPELLIDO: ");
+        scanf("%s",nuevoElemento->apellido);
+        do{
+            fflush(stdin);
+            printf("\nCEDULA: ");
+            scanf("%ld",&nuevoElemento->cedula);
+            *cedu=nuevoElemento->cedula;
+            controlCedula=validarCedula(cedu,q);
+            //fflush(stdin);
+        }while(controlCedula==0);
         nuevoAux=lista;
         while(nuevoAux->siguiente!=NULL){
             nuevoAux=nuevoAux->siguiente;
@@ -121,7 +154,7 @@ void insDatosCliente(ListaDoble &lista){
         nuevoElemento->siguiente=nuevoAux->siguiente;
         nuevoAux->siguiente=nuevoElemento;
         nuevoElemento->anterior=nuevoAux;
-        printf("\n\nDato ingresado!\n\n");
+        printf("\n\nDATOS CLIENTES INGRESADOS CORRECTAMENTE!\n\n");
     }
     }
 void cancelarBoleto(ListaDoble &lista,int valor){
@@ -179,7 +212,7 @@ void insertarDatosClientePosicion(ListaDoble &lista){
 void mostrarDatos(ListaDoble lista){
      system("cls");
     printf("\t----------------------\n");
-    printf("\t   LISTA DE NUMEROS INICIAL\n");
+    printf("\t   LISTA DE PASAJEROS \n");
     printf("\t----------------------\n\n");
     if(lista==NULL)
     {
@@ -189,8 +222,13 @@ void mostrarDatos(ListaDoble lista){
     {
         int iterador=1;
         while(lista!=NULL){
-            printf("Elemento # %d:\n",iterador);iterador++;
-            printf("* Numero: %d\n\n",lista->datoEntero);
+            printf("PASAJERO # %d:\n",iterador);iterador++;
+            printf("\tNOMBRE: %s\n",lista->nombre);
+            printf("\tAPELLIDO: %s\n",lista->apellido);
+            printf("\tCEDULA: %ld\n",lista->cedula);
+
+
+
             lista=lista->siguiente;
         }
     }
@@ -369,27 +407,62 @@ void insElemDespues(ListaDoble &lista){
     }
 
 }
-void liberarMemoria(ListaDoble &lista){
-    if(lista!=NULL){
-        ListaDoble punteroAuxiliar;
-        while(lista!=NULL){
-            punteroAuxiliar=lista->siguiente;
-            delete(lista);
-            lista=punteroAuxiliar;
+int validarCedula(int *p,int *q){//debes enviar a otro arreglo en el main
+
+     int total=0,pares=0,impares=0,m,resp=0,r=0,control=0;
+    int i=9,comp,mul=1,v,coc;//los acumuladores siempre se inicializa
+                            //si vas asumar es =0 si vas a multiplicar es =1
+
+    do{
+        coc=(*p)/10;
+     *(q+i)=((*p)%10);//aqui asignas al nuevo arreglo cada digito ingresado
+       i--;
+        *p=coc;
+    }while(coc!=0);
+    for(i=0;i<ced;i+=2)//aqui es mas dos para que coja las posiciones pares
+    {
+        mul=(*(q+i))*2;
+        if(mul>9)
+        {
+            mul=mul-9;
         }
-        printf("Memoria liberada!\n\n");
+        pares=pares+mul;
     }
+    for(i=1;i<9;i+=2)
+    {
+        impares=impares+(*(q+i));
+    }
+      total=pares+impares;
+
+      resp=total%10;
+      if(resp==0)
+        {
+            resp=10;
+        }
+      r=10-resp;
+      if(r==(*(q+9)))
+        {
+        //printf("\ncedula valida");
+            control=1;
+        }
+        else
+        {
+            printf("\ncedula no valida");
+            control=0;
+        }
+return control;
 }
 int main(){
     ListaDoble lista=NULL;
-    inicio();
+    //inicio();
     color (fondo,texto);
-	int opcion,numero=0,control=0;
+	int opcion,numero=0,control=0,controlRuta=0;
 	do{
 		opcion=menu();
 		system("cls");
 		switch (opcion){
             case 1:
+                controlRuta=menuRV();
                 insDatosCliente(lista);
                 control=1;
                 system("pause");
@@ -426,12 +499,12 @@ int main(){
                 break;
             case 6:
 
-               // ayuda();
+               ayuda();
                 system("AyudaHash.chm");
                 system("pause");
                 break;
             case 7:
-                //about();
+                about();
                 system("20161224_133008.jpg");
                 system("pause");
 
@@ -515,6 +588,59 @@ int menuSN(){
     const char *titulo="\tDesea Ingresar Otro Dato?\n";
 	const char *opciones[]={"SI","NO"};
     int opcionSeleccionada = 1,numerodeopciones=2;
+    int tecla;
+    bool repite=true;
+    int i=0;
+    do{
+        system ("cls");
+        gotoxy(7, 3 + opcionSeleccionada);
+        color(fondo,texto);
+        gotoxy(15,2);
+        printf ("%s",titulo);
+        gotoxy(5, 3 + opcionSeleccionada);
+        for (int i = 0; i < numerodeopciones; ++i) {
+            gotoxy(15,4+i);
+            color (fondo,texto);
+            printf("%s  ",opciones[i]);
+        }
+        gotoxy(15, 3 + opcionSeleccionada);
+        color(12,15);
+        printf("%s",opciones[i]);
+        color(fondo,texto);
+        do{
+            tecla=getch();
+        }while((tecla!=TECLA_ARRIBA)&&(tecla!=TECLA_ABAJO)&&(tecla!=TECLA_ENTER));
+
+        switch(tecla){
+            case TECLA_ARRIBA:
+                opcionSeleccionada--;
+                i--;
+                if (opcionSeleccionada<1){
+                    opcionSeleccionada= numerodeopciones;
+                    i=numerodeopciones-1;
+
+                }
+                break;
+            case TECLA_ABAJO:
+                opcionSeleccionada++;
+                i++;
+                if (opcionSeleccionada>numerodeopciones){
+                	opcionSeleccionada=1;
+                   i=0;
+                }
+                break;
+            case TECLA_ENTER:
+                repite=false;
+                break;
+        }
+    }while(repite);
+    return opcionSeleccionada;
+}
+int menuRV(){
+
+    const char *titulo="\tSU DESTINO!\n";
+	const char *opciones[]={"QUITO - GUAYAQUIL\t$20"};
+    int opcionSeleccionada = 1,numerodeopciones=1;
     int tecla;
     bool repite=true;
     int i=0;
@@ -757,3 +883,4 @@ void inicio (){
     system("cls");
     Beep(330,200);
 }
+
