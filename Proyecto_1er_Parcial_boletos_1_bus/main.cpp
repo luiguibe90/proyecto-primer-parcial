@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <ctime>
 #include <windows.h>
 #define TECLA_ARRIBA 72
 #define TECLA_ABAJO 80
@@ -27,32 +28,28 @@
 #define fondo 3
 #define texto 10
 #define ced 10
+
+#define numeroAsientos 10
+
+
 using namespace std;
 
 //declaracion de estructura para listas dobles
 
 //estructuras anidadas
 struct datos_Fecha{
-    int dia;
-    int mes;
-    int anio;
+   char *fecha;
 };
-typedef struct datos_Fecha *j;
-struct datos_Hora{
-    int hora;
-    int minu;
-    int seg;
-};
-typedef struct datos_Hora *L;
+
+
 //estructura principal
 struct Nodo{
-    char nombre[20];
-    char apellido[20];
-    long int cedula;
+    char nombre[25];
+    char apellido[25];
+    int cedula;
     int nroAsiento;
     int datoEntero;
-    datos_Fecha fecha; //estructuras anidadas
-    datos_Hora hora;    //estructuras anidadas
+    datos_Fecha ingresofecha; //estructuras anidadas
     Nodo *siguiente;
     Nodo *anterior;
 };
@@ -62,9 +59,9 @@ typedef struct Nodo *ListaDoble;
 //declaracion de prototipos de funciones
 
 int ObtenerEnteroPositivo();
-void insDatosCliente(ListaDoble &);
+void insDatosCliente(ListaDoble &,int);
 void cancelarBoleto(ListaDoble &,int);
-void buscarCliente(ListaDoble &);
+void buscarCliente(ListaDoble );
 void insertarDatosClientePosicion(ListaDoble &);
 void mostrarDatos(ListaDoble );
 void ayuda();
@@ -83,7 +80,60 @@ void inicio ();
 
 
 //desarrollo de funciones
+void incializarDatos(ListaDoble &lista){
+    ListaDoble nuevoElemento,nuevoAux;
+    nuevoElemento=new(Nodo);
+    int iterador=1;
 
+    if(lista==NULL)
+    {
+        while(iterador<=numeroAsientos){
+nuevoElemento=new(Nodo);
+                if(lista==NULL)
+                {
+                nuevoElemento->nroAsiento=iterador;iterador++;
+                fflush(stdin);
+                strcpy(nuevoElemento->nombre,"disponible");
+                fflush(stdin);
+                strcpy(nuevoElemento->apellido,"disponible");
+                fflush(stdin);
+                nuevoElemento->cedula=0;
+                fflush(stdin);
+                nuevoElemento->ingresofecha.fecha="No Asignada";
+                fflush(stdin);
+                nuevoElemento->siguiente=nuevoElemento->anterior=NULL;
+                lista=nuevoElemento;
+                //system("pause");
+                }
+                else
+                {
+                    nuevoElemento->nroAsiento=iterador;iterador++;
+                    fflush(stdin);
+                    strcpy(nuevoElemento->nombre,"disponible");
+                    fflush(stdin);
+                    strcpy(nuevoElemento->apellido,"disponible");
+                    fflush(stdin);
+                    nuevoElemento->cedula=0;
+                    fflush(stdin);
+                    nuevoElemento->ingresofecha.fecha="No Asignada";
+                    fflush(stdin);
+                    nuevoAux=lista;
+                    while(nuevoAux->siguiente!=NULL){
+                        nuevoAux=nuevoAux->siguiente;
+                    }
+                    nuevoElemento->siguiente=nuevoAux->siguiente;
+                    nuevoAux->siguiente=nuevoElemento;
+                    nuevoElemento->anterior=nuevoAux;
+              //  system("pause");
+
+                }
+        }
+
+    }
+
+
+
+}
 int ObtenerEnteroPositivo(){
     char digito,cadenaDelEntero[5];
     int entero,iterador=0;
@@ -98,10 +148,13 @@ int ObtenerEnteroPositivo(){
     cadenaDelEntero[iterador]='\0';
     return entero=atoi(cadenaDelEntero);
 }
-void insDatosCliente(ListaDoble &lista){
+void insDatosCliente(ListaDoble &lista,int asiento){
+    time_t tAct = time(NULL);//para capturar hora sistema
     ListaDoble nuevoElemento,nuevoAux;
     nuevoElemento=new(Nodo);
-      int C[10],B[ced];
+
+      int C[10],B[ced];//CEDULA
+
    // p=C;
 
      int cedula,*cedu,*q,controlCedula=0;
@@ -128,6 +181,13 @@ void insDatosCliente(ListaDoble &lista){
             controlCedula=validarCedula(cedu,q);
 
         }while(controlCedula==0);
+
+        nuevoElemento->nroAsiento=asiento;
+        nuevoElemento->ingresofecha.fecha=asctime(localtime(&tAct));
+
+
+        //recorridos de lista
+
         nuevoElemento->siguiente=nuevoElemento->anterior=NULL;
         lista=nuevoElemento;
         printf("\n\nDATOS CLIENTES INGRESADOS CORRECTAMENTE!\n\n");
@@ -147,6 +207,13 @@ void insDatosCliente(ListaDoble &lista){
             controlCedula=validarCedula(cedu,q);
             //fflush(stdin);
         }while(controlCedula==0);
+
+        nuevoElemento->nroAsiento=asiento;
+        nuevoElemento->ingresofecha.fecha=asctime(localtime(&tAct));
+
+
+        //recorridos lista
+
         nuevoAux=lista;
         while(nuevoAux->siguiente!=NULL){
             nuevoAux=nuevoAux->siguiente;
@@ -162,32 +229,54 @@ void cancelarBoleto(ListaDoble &lista,int valor){
     ListaDoble anterior=new(Nodo);
     aux=lista;
     anterior=NULL;
-    int control=0;
+    int control=0,asiento;
+    int C[10],B[ced];//CEDULA
+    int cedula,*cedu,*q,controlCedula=0,NroCed;
+    q=B;
+    cedu=&cedula;
+    system("cls");
+    printf("\t------------------------------------------------\n");
+    printf("\t   INGRESO DE DATOS CLIENTE PARA CANCELAR BOLETO \n");
+    printf("\t--------------------------------------------------\n\n");
+
+
 
     if(lista!=NULL){
-       // printf("Ingrese Numero A Eliminar\n");
-           // valor=ObtenerEnteroPositivo();
+
+            do
+            {
+                fflush(stdin);
+                printf("\nCEDULA: ");
+                scanf("%d",&NroCed);
+                *cedu=NroCed;
+                controlCedula=validarCedula(cedu,q);
+            }while(controlCedula==0);
+            printf("\nASIENTO Nro: ");
+            asiento=ObtenerEnteroPositivo();
         while(aux!=NULL)
         {
-            if(aux->datoEntero==valor)
+            if(aux->cedula==NroCed&&aux->nroAsiento==asiento)
             {
                 if(anterior==NULL)
                 {
                     lista=lista->siguiente;
-                    printf("\nDato eliminado: %d",aux->datoEntero);
+                    printf("\nBoleto Cancelado: %d",aux->cedula);
+                    printf("\nAsiento Nro: %d\n",aux->nroAsiento);
                     control=1;
                     return;
                 }
                 if(aux->siguiente==NULL)
                 {
                     aux->anterior->siguiente=NULL;
-                    printf("\nDato eliminado: %d",aux->datoEntero);
+                    printf("\nBoleto Cancelado: %d",aux->cedula);
+                    printf("\nAsiento Nro: %d\n",aux->nroAsiento);
                     control=1;
                     return;
                 }
                 anterior->siguiente=aux->siguiente;
                 aux->siguiente->anterior=anterior;
-                printf("\nDato eliminado: %d",aux->datoEntero);
+                printf("\nBoleto Cancelado: %d",aux->cedula);
+                printf("\nAsiento Nro: %d\n",aux->nroAsiento);
                 control=1;
             }
             anterior=aux;
@@ -203,7 +292,52 @@ void cancelarBoleto(ListaDoble &lista,int valor){
         printf("\nDebe ingresar el primer elemento!\n\n");
     }
 }
-void buscarCliente(ListaDoble &lista){
+void buscarCliente(ListaDoble lista){
+    int C[10],B[ced];//CEDULA
+    int cedula,*cedu,*q,controlCedula=0,NroCed;
+    q=B;
+    cedu=&cedula;
+    int iterador=1,control=0;
+    system("cls");
+    printf("\t----------------------\n");
+    printf("\t   DATOS DE CLIENTE \n");
+    printf("\t----------------------\n\n");
+
+     do
+    {
+        fflush(stdin);
+        printf("\nCEDULA: ");
+        scanf("%d",&NroCed);
+        *cedu=NroCed;
+        controlCedula=validarCedula(cedu,q);
+    }while(controlCedula==0);
+    if(lista==NULL)
+    {
+        printf("No hay elementos en la lista!\n\n");
+    }
+    else
+    {
+
+        while(lista!=NULL){
+                if(lista->cedula==NroCed)
+                {
+                    printf("CLIENTE # %d:\n",iterador);iterador++;
+                    printf("\tNOMBRE: %s\n",lista->nombre);
+                    printf("\tAPELLIDO: %s\n",lista->apellido);
+                    printf("\tCEDULA: %d\n",lista->cedula);
+                    printf("\tNro. Asiento: %d\n",lista->nroAsiento);
+                    printf("\tHora De Compra: %s\n",lista->ingresofecha.fecha);
+                    control=1;
+                }
+            //recorridos lista
+            lista=lista->siguiente;
+        }
+        if(control==0)
+        {
+            printf("\n\tNO HAY CLIENTES REGISTRADOS CON CI INGRESADA\n ");
+        }
+    }
+
 
 }
 void insertarDatosClientePosicion(ListaDoble &lista){
@@ -227,7 +361,10 @@ void mostrarDatos(ListaDoble lista){
             printf("\tAPELLIDO: %s\n",lista->apellido);
             printf("\tCEDULA: %ld\n",lista->cedula);
 
+            printf("\tNro. Asiento: %d\n",lista->nroAsiento);
+            printf("\tHora De Compra: %s\n",lista->ingresofecha.fecha);
 
+                //recorridos lista
 
             lista=lista->siguiente;
         }
@@ -409,6 +546,7 @@ void insElemDespues(ListaDoble &lista){
 }
 int validarCedula(int *p,int *q){//debes enviar a otro arreglo en el main
 
+
      int total=0,pares=0,impares=0,m,resp=0,r=0,control=0;
     int i=9,comp,mul=1,v,coc;//los acumuladores siempre se inicializa
                             //si vas asumar es =0 si vas a multiplicar es =1
@@ -454,33 +592,23 @@ return control;
 }
 int main(){
     ListaDoble lista=NULL;
-    //inicio();
+    inicio();
     color (fondo,texto);
-	int opcion,numero=0,control=0,controlRuta=0;
+	int opcion,numero=0,control=0,controlRuta=0,asiento=1;
+	incializarDatos(lista);
 	do{
 		opcion=menu();
 		system("cls");
 		switch (opcion){
             case 1:
                 controlRuta=menuRV();
-                insDatosCliente(lista);
+                insDatosCliente(lista,asiento);
                 control=1;
+                asiento++;
                 system("pause");
                 break;
             case 2:
-                if(control==0)
-                {
-                    printf("Primero Debe Ingresar Datos a la lista\n");
-                }
-                else
-                {
-                    do
-                    {
-                        printf("\nIngrese Dato a Buscar: \n");
-                        numero=ObtenerEnteroPositivo();
-                    }while(numero<0);
-                    cancelarBoleto(lista,numero);
-                }
+                cancelarBoleto(lista,numero);
                 system("pause");
                 break;
             case 3:

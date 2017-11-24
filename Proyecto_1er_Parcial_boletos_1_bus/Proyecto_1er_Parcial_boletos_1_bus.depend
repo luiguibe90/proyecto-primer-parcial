@@ -1,15 +1,9 @@
 # depslib dependency file v1.0
-1511275462 source:g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\main.cpp
+1511556225 source:g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\main.cpp
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
-	<windows.h>
-
-1511305061 source:c:\users\lenovo\desktop\xavier\universidad\tercer semestre\estructuras\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\main.cpp
-	<iostream>
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
+	<ctime>
 	<windows.h>
 
