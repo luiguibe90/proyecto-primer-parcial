@@ -74,7 +74,6 @@ int menuSN();
 int menuRV();
 void inicio ();
 
-
 //desarrollo de funciones
 void incializarDatos(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
@@ -313,12 +312,8 @@ void buscarCliente(ListaDoble lista){
             printf("\n\n\t\tNO HAY CLIENTES REGISTRADOS CON CI INGRESADA\n ");
         }
     }
-
-
 }
-
-void mostrarAsientos(ListaDoble lista)
-{
+void mostrarAsientos(ListaDoble lista){
         int iterador=1;
     int controlOcupado;
      system("cls");
@@ -350,8 +345,6 @@ void mostrarAsientos(ListaDoble lista)
 
 
 }
-
-
 void mostrarDatos(ListaDoble lista){
      system("cls");
     printf("\t\t----------------------------\n");
@@ -553,7 +546,7 @@ void insElemDespues(ListaDoble &lista){
     }
 
 }
-int validarCedula(int *p,int *q){//debes enviar a otro arreglo en el main
+int validarCedula(int *p,int *q){
 
 
      int total=0,pares=0,impares=0,m,resp=0,r=0,control=0;
