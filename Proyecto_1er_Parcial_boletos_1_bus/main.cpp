@@ -28,7 +28,7 @@
 #define fondo 3
 #define texto 10
 #define ced 10
-#define numeroAsientos 3
+#define numeroAsientos 5
 
 using namespace std;
 
@@ -91,11 +91,11 @@ void incializarDatos(ListaDoble &lista){
                 fflush(stdin);
                 strcpy(nuevoElemento->nombre,"Disponible");
                 fflush(stdin);
-                strcpy(nuevoElemento->apellido," ");
+                strcpy(nuevoElemento->apellido,"---");
                 fflush(stdin);
                 nuevoElemento->cedula=0;
                 fflush(stdin);
-                nuevoElemento->ingresofecha.fecha=" ";
+                nuevoElemento->ingresofecha.fecha="---";
                 fflush(stdin);
                 nuevoElemento->siguiente=nuevoElemento->anterior=NULL;
                 lista=nuevoElemento;
@@ -107,11 +107,11 @@ void incializarDatos(ListaDoble &lista){
                     fflush(stdin);
                     strcpy(nuevoElemento->nombre,"Disponible");
                     fflush(stdin);
-                    strcpy(nuevoElemento->apellido," ");
+                    strcpy(nuevoElemento->apellido,"---");
                     fflush(stdin);
                     nuevoElemento->cedula=0;
                     fflush(stdin);
-                    nuevoElemento->ingresofecha.fecha=" ";
+                    nuevoElemento->ingresofecha.fecha="---";
                     fflush(stdin);
                     nuevoAux=lista;
                     while(nuevoAux->siguiente!=NULL){
@@ -194,7 +194,7 @@ void insertarDatosClientePosicion(ListaDoble &lista){
             }
             actual=actual->siguiente;
         }
-        if(nodoBuscado>numeroAsientos)
+        if(nodoBuscado>numeroAsientos||nodoBuscado==0)
         {
             printf("\n\n\tNUMERO DE ASIENTO MAYOR A CAPACIDAD DE BUS\n\tPOR FAVOR INGRESE Nro DE ASIENTO CORRECTO\n");
         }
@@ -205,11 +205,16 @@ void insertarDatosClientePosicion(ListaDoble &lista){
     }
 }
 void cancelarBoleto(ListaDoble &lista,int valor){
+
+    ListaDoble actual=new (Nodo);
+    actual=lista;
+    bool encontrado=false;
+    int nodoBuscado=0,nuevo=0;
     ListaDoble aux=new(Nodo);
     ListaDoble anterior=new(Nodo);
     aux=lista;
     anterior=NULL;
-    int control=0,asiento;
+    int control=0,asiento,controlCancelado=0;
     int C[10],B[ced];//CEDULA
     int cedula,*cedu,*q,controlCedula=0,NroCed;
     q=B;
@@ -218,10 +223,6 @@ void cancelarBoleto(ListaDoble &lista,int valor){
     printf("\t\t\t------------------------------------------------\n");
     printf("\t\t\t   INGRESO DE DATOS CLIENTE PARA CANCELAR BOLETO \n");
     printf("\t\t\t--------------------------------------------------\n\n");
-
-
-
-    if(lista!=NULL){
 
             do
             {
@@ -233,43 +234,38 @@ void cancelarBoleto(ListaDoble &lista,int valor){
             }while(controlCedula==0);
             printf("\n\t\tASIENTO Nro: ");
             asiento=ObtenerEnteroPositivo();
-        while(aux!=NULL)
+
+    if(lista!=NULL)
+    {
+        while(actual!=NULL&&encontrado!=true)
         {
-            if(aux->cedula==NroCed&&aux->nroAsiento==asiento)
+            if(actual->nroAsiento==asiento&&actual->cedula==NroCed)
             {
-                if(anterior==NULL)
-                {
-                    lista=lista->siguiente;
-                    printf("\n\t\tBoleto Cancelado: %d",aux->cedula);
-                    printf("\n\t\tAsiento Nro: %d\n",aux->nroAsiento);
-                    control=1;
-                    return;
-                }
-                if(aux->siguiente==NULL)
-                {
-                    aux->anterior->siguiente=NULL;
-                    printf("\n\t\tBoleto Cancelado: %d",aux->cedula);
-                    printf("\n\t\tAsiento Nro: %d\n",aux->nroAsiento);
-                    control=1;
-                    return;
-                }
-                anterior->siguiente=aux->siguiente;
-                aux->siguiente->anterior=anterior;
-                printf("\n\t\tBoleto Cancelado: %d",aux->cedula);
-                printf("\n\t\tAsiento Nro: %d\n",aux->nroAsiento);
-                control=1;
+                    fflush(stdin);
+                    strcpy(actual->nombre,"Disponible");
+                    fflush(stdin);
+                    strcpy(actual->apellido,"---");
+                    fflush(stdin);
+                    actual->cedula=0;
+                    fflush(stdin);
+                    actual->ingresofecha.fecha="---";
+                    fflush(stdin);
+                    encontrado=true;
+
+                    printf("\n\tBOLETO CANCELADO - EL ASIENTO SE ENCUENTRA DISPONIBLE\n");
+                    controlCancelado=1;
+
             }
-            anterior=aux;
-            aux=aux->siguiente;
+            actual=actual->siguiente;
         }
-        if(control==0)
+        if(controlCancelado==0)
         {
-             printf("\n\t\tNO SE ENCUENTRA ALGUN CLIENTE REGISTRADO CON ESE NUMERO DE CEDULA EN EL ASIENTO %d\n",asiento);
+             printf("\n\tNO HAY CLIENTES REGISTRADOS CON ESOS DATOS\n");
         }
     }
     else
     {
-        printf("\n\t\tDebe ingresar el primer elemento!\n\n");
+        printf("\nLa Lista esta vacia\n");
     }
 }
 void buscarCliente(ListaDoble lista){
@@ -301,7 +297,7 @@ void buscarCliente(ListaDoble lista){
         while(lista!=NULL){
                 if(lista->cedula==NroCed)
                 {
-                    printf("\n\n\t\tCLIENTE # %d:\n",iterador);iterador++;
+                    printf("\n\n\t\tCLIENTE # %d:\n",lista->nroAsiento);
                     printf("\t\t\tNOMBRE: %s\n",lista->nombre);
                     printf("\t\t\tAPELLIDO: %s\n",lista->apellido);
                     printf("\t\t\tCEDULA: %d\n",lista->cedula);
@@ -320,6 +316,42 @@ void buscarCliente(ListaDoble lista){
 
 
 }
+
+void mostrarAsientos(ListaDoble lista)
+{
+        int iterador=1;
+    int controlOcupado;
+     system("cls");
+    printf("\t\t----------------------------\n");
+    printf("\t\t     LISTA DE ASIENTOS       \n");
+    printf("\t\t----------------------------\n\n");
+    if(lista==NULL)
+    {
+        printf("\t\tNo hay elementos en la lista!\n\n");
+    }
+    else
+    {
+        while(lista!=NULL)
+        {
+            controlOcupado=stricmp(lista->nombre,"Disponible");
+            if(controlOcupado==0)
+            {
+                printf("\t\t #%d: Disponible\n",iterador);iterador++;
+            }
+            else
+            {
+                printf("\t\t #%d: Ocupado\n",iterador);iterador++;
+            }
+            //recorridos lista
+
+            lista=lista->siguiente;
+        }
+    }
+
+
+}
+
+
 void mostrarDatos(ListaDoble lista){
      system("cls");
     printf("\t\t----------------------------\n");
@@ -594,7 +626,7 @@ int main(){
                 system("pause");
                 break;
             case 4:
-
+                mostrarAsientos(lista);
                 system("pause");
 
                 break;
@@ -637,7 +669,7 @@ void color(int a,int b){
 int menu(){
 
     const char *titulo="\t\t\tLISTAS DOBLES";
-	const char *opciones[]={/*1*/"INGRESAR DATOS DE CLIENTE(NUEVO BOLETO)",/*2*/"CANCELACION BOLETO(ELIMINAR)"
+	const char *opciones[]={/*1*/"INGRESAR DATOS DE CLIENTE (NUEVO BOLETO)",/*2*/"CANCELACION BOLETO (ELIMINAR)"
                             ,/*3*/"BUSCAR CLIENTE",/*4*/"MOSTRAR ASIENTOS DISPONIBLES",
                             /*5*/"IMPRIMIR DATOS",/*6*/"AYUDA", /*7*/"ABOUT",/*8*/"SALIR"};
     int opcionSeleccionada = 1,numerodeopciones=8;
@@ -744,8 +776,8 @@ int menuSN(){
 }
 int menuRV(){
 
-    const char *titulo="\tSU DESTINO!\n";
-	const char *opciones[]={"QUITO - GUAYAQUIL\t$20"};
+    const char *titulo="\tPOR FAVOR SELECCIONE EL DESTINO DEL VIAJE!\n\tPRESIONE ENTER PARA CONTINUAR\n\n";
+	const char *opciones[]={"\n\t\tQUITO - GUAYAQUIL\t$20"};
     int opcionSeleccionada = 1,numerodeopciones=1;
     int tecla;
     bool repite=true;
