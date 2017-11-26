@@ -37,6 +37,7 @@ using namespace std;
 //estructuras anidadas
 struct datos_Fecha{
    char *fecha;
+   char salida[25];
 };
 
 //estructura principal
@@ -55,10 +56,12 @@ typedef struct Nodo *ListaDoble;
 
 //declaracion de prototipos de funciones
 
+void incializarDatos(ListaDoble &);
 int ObtenerEnteroPositivo();
 void insertarDatosClientePosicion(ListaDoble &);
 void cancelarBoleto(ListaDoble &,int);
 void buscarCliente(ListaDoble );
+void mostrarAsientos(ListaDoble );
 void mostrarDatos(ListaDoble );
 void ayuda();
 void about();
@@ -146,6 +149,7 @@ int ObtenerEnteroPositivo(){
 void insertarDatosClientePosicion(ListaDoble &lista){
       int C[10],B[ced];//CEDULA
      int cedula,*cedu,*q,controlCedula=0,controlOcupado=0;
+     char salida[]={"29-11-2017 18H00"};
     q=B;
     cedu=&cedula;
      time_t tAct = time(NULL);//para capturar hora sistema
@@ -184,6 +188,7 @@ void insertarDatosClientePosicion(ListaDoble &lista){
                         //fflush(stdin);
                     }while(controlCedula==0);
                     actual->ingresofecha.fecha=asctime(localtime(&tAct));
+                    strcpy(actual->ingresofecha.salida,salida);
                     encontrado=true;
                 }
                 else
@@ -346,6 +351,7 @@ void mostrarAsientos(ListaDoble lista){
 
 }
 void mostrarDatos(ListaDoble lista){
+     int controlDisponible=0;
      system("cls");
     printf("\t\t----------------------------\n");
     printf("\t\t     LISTA DE PASAJEROS \n");
@@ -358,16 +364,22 @@ void mostrarDatos(ListaDoble lista){
     {
         int iterador=1;
         while(lista!=NULL){
-            printf("\t\tASIENTO # %d:\n",iterador);iterador++;
-            printf("\t\t\tNOMBRE: %s\n",lista->nombre);
-            printf("\t\t\tAPELLIDO: %s\n",lista->apellido);
-            printf("\t\t\tCEDULA: %ld\n",lista->cedula);
+                controlDisponible=stricmp(lista->nombre,"Disponible");
+            if(controlDisponible==0)
+            {
+                printf("\t\tASIENTO # %d:\n",iterador);iterador++;
+                printf("\t\t\tESTADO: %s\n",lista->nombre);
 
-            printf("\t\t\tNro. Asiento: %d\n",lista->nroAsiento);
-            printf("\t\t\tHora De Compra: %s\n\n",lista->ingresofecha.fecha);
-
+            }else{
+                printf("\t\tASIENTO # %d:\n",iterador);iterador++;
+                printf("\t\t\tNOMBRE: %s\n",lista->nombre);
+                printf("\t\t\tAPELLIDO: %s\n",lista->apellido);
+                printf("\t\t\tCEDULA: %ld\n",lista->cedula);
+                printf("\t\t\tHora De Compra: %s",lista->ingresofecha.fecha);
+                printf("\t\t\tNro. Asiento: %d\n",lista->nroAsiento);
+                printf("\t\t\tHora De Salida: %s\n\n",lista->ingresofecha.salida);
+            }
                 //recorridos lista
-
             lista=lista->siguiente;
         }
     }
@@ -594,6 +606,7 @@ return control;
 }
 int main(){
     ListaDoble lista=NULL;
+
     //inicio();
     color (fondo,texto);
 	int opcion,numero=0,control=0,controlRuta=0,asiento=1;
@@ -621,17 +634,14 @@ int main(){
             case 4:
                 mostrarAsientos(lista);
                 system("pause");
-
                 break;
             case 5:
                 mostrarDatos(lista);
                 system("pause");
-
                 break;
             case 6:
-
                ayuda();
-                system("AyudaHash.chm");
+                system("ayuda.chm");
                 system("pause");
                 break;
             case 7:
