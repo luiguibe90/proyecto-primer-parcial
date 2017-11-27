@@ -21,6 +21,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <ctime>
+#include <string.h>
 #include <windows.h>
 #define TECLA_ARRIBA 72
 #define TECLA_ABAJO 80
@@ -58,11 +59,13 @@ typedef struct Nodo *ListaDoble;
 
 void incializarDatos(ListaDoble &);
 int ObtenerEnteroPositivo();
+char *ingresarString(char *);
 void insertarDatosClientePosicion(ListaDoble &);
 void cancelarBoleto(ListaDoble &,int);
 void buscarCliente(ListaDoble );
 void mostrarAsientos(ListaDoble );
 void mostrarDatos(ListaDoble );
+void creaBackup(ListaDoble ,FILE *);
 void ayuda();
 void about();
 void insElemInicio(ListaDoble &);
@@ -146,18 +149,47 @@ int ObtenerEnteroPositivo(){
     cadenaDelEntero[iterador]='\0';
     return entero=atoi(cadenaDelEntero);
 }
+char *ingresarString(char *msg){
+	char dato[15];
+	char c;
+
+	int i = 0,iterador=0;
+
+	printf("%s",msg);
+
+	  while((c=getch())!=13||iterador==0){
+		/*if(c==8)
+       {
+           dato[ i ] = '\0';
+           i--;
+           printf("\b \b");
+       }
+		 else*/
+            //strupr(c);
+            if((c>='a'&&c<='z')){
+			printf("%c",c);
+			dato[i++]=c;
+			iterador=1;
+		}
+		dato[i]='\0';
+	}
+	return dato;
+}
 void insertarDatosClientePosicion(ListaDoble &lista){
-      int C[10],B[ced];//CEDULA
-     int cedula,*cedu,*q,controlCedula=0,controlOcupado=0;
-     char salida[]={"29-11-2017 18H00"};
+    char* nombre,*apellido;
+	//nombre=&nombret[0];
+
+    int C[10],B[ced];//CEDULA
+    int cedula,*cedu,*q,controlCedula=0,controlOcupado=0;
+    char salida[]={"29-11-2017 18H00"};
     q=B;
     cedu=&cedula;
-     time_t tAct = time(NULL);//para capturar hora sistema
+    time_t tAct = time(NULL);//para capturar hora sistema
     ListaDoble actual=new (Nodo);
     actual=lista;
     bool encontrado=false;
     int nodoBuscado=0,nuevo=0;
-     system("cls");
+    system("cls");
     printf("\t\t--------------------------------\n");
     printf("\t\t   INGRESO DE DATOS DEL CLIENTE \n");
     printf("\t\t---------------------------------\n\n");
@@ -174,11 +206,14 @@ void insertarDatosClientePosicion(ListaDoble &lista){
                 if(controlOcupado==0)
                 {
                     fflush(stdin);
-                    printf("\n\tNOMBRE: ");
-                    scanf("%s",actual->nombre);
+                    //printf("\n\tNOMBRE: ");
+                    nombre=ingresarString("\n\tNOMBRE: ");
+                    strcpy(actual->nombre,nombre);
+                    //scanf("%s",actual->nombre);
+
                     fflush(stdin);
-                    printf("\n\tAPELLIDO: ");
-                    scanf("%s",actual->apellido);
+                    apellido=ingresarString("\n\tAPELLIDO: ");
+                    strcpy(actual->apellido,apellido);
                     do{
                         fflush(stdin);
                         printf("\n\tCEDULA: ");
@@ -351,8 +386,8 @@ void mostrarAsientos(ListaDoble lista){
 
 }
 void mostrarDatos(ListaDoble lista){
-     int controlDisponible=0;
-     system("cls");
+    int controlDisponible=0;
+    system("cls");
     printf("\t\t----------------------------\n");
     printf("\t\t     LISTA DE PASAJEROS \n");
     printf("\t\t----------------------------\n\n");
@@ -372,8 +407,12 @@ void mostrarDatos(ListaDoble lista){
 
             }else{
                 printf("\t\tASIENTO # %d:\n",iterador);iterador++;
-                printf("\t\t\tNOMBRE: %s\n",lista->nombre);
-                printf("\t\t\tAPELLIDO: %s\n",lista->apellido);
+                printf("\t\t\tNOMBRE: ");
+                strupr(lista->nombre);
+                puts(lista->nombre);
+                printf("\t\t\tAPELLIDO: ");
+                strupr(lista->apellido);
+                puts(lista->apellido);
                 printf("\t\t\tCEDULA: %ld\n",lista->cedula);
                 printf("\t\t\tHora De Compra: %s",lista->ingresofecha.fecha);
                 printf("\t\t\tNro. Asiento: %d\n",lista->nroAsiento);
@@ -383,11 +422,37 @@ void mostrarDatos(ListaDoble lista){
             lista=lista->siguiente;
         }
     }
-
-
-
+}
+void creaBackup(ListaDoble lista,FILE *archivo){
+    system("cls");
+    printf("\t\t----------------------------\n");
+    printf("\t\t     LISTA DE PASAJEROS \n");
+    printf("\t\t----------------------------\n\n");
+    if(lista==NULL)
+    {
+        printf("\t\tNo hay elementos en la lista!\n\n");
+    }
+    else
+    {
+        int iterador=1;
+        while(lista!=NULL){
+            fprintf(archivo,"===============================\n");
+            fprintf(archivo,"ASIENTO # %d:\n",iterador);iterador++;
+            fprintf(archivo,"\tNOMBRE: %s\n",lista->nombre);
+            fprintf(archivo,"\tAPELLIDO: %s\n",lista->apellido);
+            fprintf(archivo,"\tCEDULA: %d\n",lista->cedula);
+            fprintf(archivo,"\tHora De Compra: %s\n",lista->ingresofecha.fecha);
+            fprintf(archivo,"\tNro. Asiento: %d\n",lista->nroAsiento);
+            fprintf(archivo,"\tHora De Salida: %s\n",lista->ingresofecha.salida);
+            fprintf(archivo,"===============================\n\n");
+        //recorridos lista
+            lista=lista->siguiente;
+        }
+    }
+    fclose(archivo);
 }
 void ayuda(){
+    system("ayuda.chm");
 }
 void about(){
 }
@@ -605,6 +670,8 @@ int validarCedula(int *p,int *q){
 return control;
 }
 int main(){
+    FILE *archivo=NULL;
+    archivo=fopen("ListaPasajeros.txt","a+");
     ListaDoble lista=NULL;
 
     //inicio();
@@ -640,21 +707,27 @@ int main(){
                 system("pause");
                 break;
             case 6:
-               ayuda();
-                system("ayuda.chm");
+                creaBackup(lista,archivo);
+                fclose(archivo);
                 system("pause");
+                system("ListaPasajeros.txt");
                 break;
             case 7:
+                ayuda();
+                system("pause");
+                break;
+            case 8:
                 about();
                 system("20161224_133008.jpg");
                 system("pause");
 
                 break;
-            case 8:
+            case 9:
 
                 break;
         }
-	}while(opcion!=8);
+	}while(opcion!=9);
+//fclose(archivo);
 return 0;
 }
 void gotoxy(int x,int y){
@@ -674,8 +747,8 @@ int menu(){
     const char *titulo="\t\t\tLISTAS DOBLES";
 	const char *opciones[]={/*1*/"INGRESAR DATOS DE CLIENTE (NUEVO BOLETO)",/*2*/"CANCELACION BOLETO (ELIMINAR)"
                             ,/*3*/"BUSCAR CLIENTE",/*4*/"MOSTRAR ASIENTOS DISPONIBLES",
-                            /*5*/"IMPRIMIR DATOS",/*6*/"AYUDA", /*7*/"ABOUT",/*8*/"SALIR"};
-    int opcionSeleccionada = 1,numerodeopciones=8;
+                            /*5*/"IMPRIMIR DATOS",/*6*/"CREAR BACKUP",/*7*/"AYUDA", /*8*/"ABOUT",/*9*/"SALIR"};
+    int opcionSeleccionada = 1,numerodeopciones=9;
     int tecla;
     bool repite=true;
     int i=0;
@@ -854,7 +927,7 @@ void inicio (){
     char caracter[130];
     system("color 0A");//color fondo-letra
     FILE *INICIO;
-    INICIO=fopen("INICIO.txt","r");
+    INICIO=fopen("ARCHIVOS/INICIO.txt","r");
     //barra superior y barra izquierda
          for (int i=1;i<117;i++) //horizontal
         {
