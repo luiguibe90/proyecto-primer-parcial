@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1511755904 source:g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\main.cpp
+1511924672 source:g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\main.cpp
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
@@ -7,4 +7,34 @@
 	<ctime>
 	<string.h>
 	<windows.h>
+	<time.h>
+	<string>
+	<fstream>
+	<locale.h>
+
+1511907645 source:e:\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<time.h>
+	<string>
+	<fstream>
+	<locale.h>
+
+1511928048 source:c:\users\luis\desktop\proyecto_1er_parcial_boletos_1_bus\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<time.h>
+	<string>
+	<fstream>
+	<locale.h>
 

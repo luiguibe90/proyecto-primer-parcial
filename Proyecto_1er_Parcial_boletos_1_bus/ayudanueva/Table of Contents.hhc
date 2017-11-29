@@ -14,13 +14,11 @@
 		<param name="ImageNumber" value="1">
 		</OBJECT>
 	<UL>
-		<UL>
-			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Mi Espe">
-				<param name="Local" value="https://miespe.espe.edu.ec/cp/home/displaylogin">
-				<param name="ImageNumber" value="11">
-				</OBJECT>
-		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Mi Espe">
+			<param name="Local" value="https://miespe.espe.edu.ec/cp/home/displaylogin">
+			<param name="ImageNumber" value="11">
+			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="Bienvenido">
 			<param name="Local" value="Bienvenido.html">
@@ -92,6 +90,10 @@
 				<LI> <OBJECT type="text/sitemap">
 					<param name="Name" value="Salir">
 					<param name="Local" value="SALIR.htm">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="nueva">
+					<param name="Local" value="nueva.htm">
 					</OBJECT>
 			</UL>
 		</UL>

@@ -23,14 +23,26 @@
 #include <ctime>
 #include <string.h>
 #include <windows.h>
+#include <time.h>
+#include <string>
+#include<fstream>
+#include <locale.h>
+#define ENTER 13//login
+#define BACKSPACE 8//login
+#define USER "espe"
+#define PASS "sistemas"
 #define TECLA_ARRIBA 72
 #define TECLA_ABAJO 80
 #define TECLA_ENTER 13
-#define fondo 3
-#define texto 10
+#define fondo 0
+#define texto 3
 #define ced 10
-#define numeroAsientos 5
-
+#define numeroAsientos 10
+#define F1 59
+#define letras 50//para imagen
+#define dimp 10//para imagen
+#define KEY_ESC 27
+#define _CRT_SECURE_NO_DEPRECATE
 using namespace std;
 
 //declaracion de estructura para listas dobles
@@ -56,7 +68,7 @@ typedef struct Nodo *ListaDoble;
 
 
 //declaracion de prototipos de funciones
-
+int ingreso_usuario();
 void incializarDatos(ListaDoble &);
 int ObtenerEnteroPositivo();
 char *ingresarString(char *);
@@ -68,6 +80,7 @@ void mostrarDatos(ListaDoble );
 void creaBackup(ListaDoble ,FILE *);
 void ayuda();
 void about();
+void qr();
 void insElemInicio(ListaDoble &);
 void insElemFin(ListaDoble &);
 int insElemAntes(ListaDoble &, int ,int);
@@ -81,6 +94,143 @@ int menuRV();
 void inicio ();
 
 //desarrollo de funciones
+
+
+static HWND  hConWnd;
+
+HWND BCX_Bitmap(char*, HWND = 0, int = 0, int = 0, int = 0, int = 0, int = 0, int = 0, int = 0, int = 0);
+HWND GetConsoleWndHandle(void);
+// draw the bitmap
+HWND BCX_Bitmap(char* Text, HWND hWnd, int id, int X, int Y, int W, int H, int Res, int Style, int Exstyle){
+    fflush(stdin);
+	HWND A;
+	HBITMAP hBitmap;
+
+	// set default style
+	if (!Style) Style = WS_CLIPSIBLINGS | WS_CHILD | WS_VISIBLE | SS_BITMAP | WS_TABSTOP;
+
+	// form for the image
+	A = CreateWindowEx(Exstyle, "static", NULL, Style, X, Y, 0, 0, hWnd, (HMENU)id, GetModuleHandle(0), NULL);
+
+	// Text contains filename
+	hBitmap = (HBITMAP)LoadImage(0, Text, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
+
+	// auto-adjust width and height
+	if (W || H) hBitmap = (HBITMAP)CopyImage(hBitmap, IMAGE_BITMAP, W, H, LR_COPYRETURNORG);
+	SendMessage(A, (UINT)STM_SETIMAGE, (WPARAM)IMAGE_BITMAP, (LPARAM)hBitmap);
+	if (W || H) SetWindowPos(A, HWND_TOP, X, Y, W, H, SWP_DRAWFRAME);
+
+	return A;
+}
+HWND GetConsoleWndHandle(void){// tricking Windows just a little ...
+    fflush(stdin);
+	HWND hConWnd;
+	OSVERSIONINFO os;
+	char szTempTitle[800], szClassName[800], szOriginalTitle[1024];
+
+	os.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+	GetVersionEx(&os);
+	// may not work on WIN9x
+	if (os.dwPlatformId == VER_PLATFORM_WIN32s) return 0;
+
+	GetConsoleTitle(szOriginalTitle, sizeof(szOriginalTitle));
+	sprintf(szTempTitle, "%u - %u", GetTickCount(), GetCurrentProcessId());
+	SetConsoleTitle(szTempTitle);
+	//Sleep(100);
+	// handle for NT and XP
+	hConWnd = FindWindow(NULL, szTempTitle);
+	SetConsoleTitle(szOriginalTitle);
+
+	// may not work on WIN9x
+	if (os.dwPlatformId == VER_PLATFORM_WIN32_WINDOWS)
+	{
+	    fflush(stdin);
+		hConWnd = GetWindow(hConWnd, GW_CHILD);
+		if (hConWnd == NULL) return 0;
+		GetClassName(hConWnd, szClassName, sizeof(szClassName));
+		// while ( _stricmp( szClassName, "ttyGrab" ) != 0 )
+		while (strcmp(szClassName, "ttyGrab") != 0)
+		{
+			hConWnd = GetNextWindow(hConWnd, GW_HWNDNEXT);
+			if (hConWnd == NULL) return 0;
+			GetClassName(hConWnd, szClassName, sizeof(szClassName));
+		}
+
+	}
+
+	return hConWnd;
+}
+
+int ingreso_usuario(){
+    string usuario, password;
+    int contador = 0;
+    bool ingresa = false;
+    char caracter;
+    int contrasena_correcta=0;
+    do {
+        system("cls");
+        system("color 03");//color fondo-letra
+        for (int i=5;i<51;i++)//inicio barras de menu
+        {
+            gotoxy(i,3);printf("%c",223);
+        }
+        for (int i=1;i<9;i++)
+        {
+            gotoxy(5,i);printf("%c",219);
+        }
+        for (int i=1;i<9;i++)
+        {
+            gotoxy(50,i);printf("%c",219);
+        }
+        for (int i=5;i<51;i++)
+        {
+            gotoxy(i,9);printf("%c",223);
+        }//fin barras de menu
+
+        gotoxy(20,1);cout<<"LOGIN DE USUARIO";
+        gotoxy(8,4);cout<<"USUARIO: ";
+                    fflush(stdin);
+                    getline(cin, usuario);
+        gotoxy(8,5);cout<<"PASSWORD: ";
+        fflush(stdin);
+        caracter = getch();
+        password = "";
+        while((caracter)!=13)
+     // while (caracter != ENTER)
+        {
+         if (caracter != BACKSPACE) {
+             password.push_back(caracter);
+             cout << "*";
+            } else {
+                if (password.length() > 0) {
+                    cout << "\b \b";
+                    password = password.substr(0, password.length() - 1);
+                }
+            }
+            caracter = getch();
+      }
+      if (usuario == USER && password == PASS) {
+         ingresa = true;
+         contrasena_correcta=1;
+      } else {
+         gotoxy(8,8);cout << "El usuario y/o password son incorrectos";
+         cin.get();
+         contador++;
+         contrasena_correcta=0;
+      }
+    } while (ingresa == false && contador < 3);
+
+    if (ingresa == false)
+    {
+      gotoxy(8,8);cout << "Usted no pudo ingresar al sistema. ADIOS";
+      contrasena_correcta=0;
+    }
+    else {
+      contrasena_correcta=1;
+    }
+    //cin.get();
+return contrasena_correcta;
+}
 void incializarDatos(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
     nuevoElemento=new(Nodo);
@@ -139,6 +289,10 @@ int ObtenerEnteroPositivo(){
     char digito,cadenaDelEntero[5];
     int entero,iterador=0;
     while((digito=getch())!=13||iterador==0){
+        if(digito==F1)
+        {
+            system("ayuda.chm");
+        }
         if(digito>='0'&&digito<='9'&&iterador<5){
             printf("%c",digito);
             cadenaDelEntero[iterador++]=digito;
@@ -160,12 +314,17 @@ char *ingresarString(char *msg){
 	  while((c=getch())!=13||iterador==0){
 		/*if(c==8)
        {
+
            dato[ i ] = '\0';
            i--;
            printf("\b \b");
        }
 		 else*/
             //strupr(c);
+            if(c==F1)
+            {
+                system("ayuda.chm");
+            }
             if((c>='a'&&c<='z')){
 			printf("%c",c);
 			dato[i++]=c;
@@ -423,7 +582,9 @@ void mostrarDatos(ListaDoble lista){
         }
     }
 }
-void creaBackup(ListaDoble lista,FILE *archivo){
+void creaBackup(ListaDoble lista){
+    FILE *archivo=NULL;
+    archivo=fopen("ListaPasajeros.txt","w+");
     system("cls");
     printf("\t\t----------------------------\n");
     printf("\t\t     LISTA DE PASAJEROS \n");
@@ -450,11 +611,60 @@ void creaBackup(ListaDoble lista,FILE *archivo){
         }
     }
     fclose(archivo);
+
 }
 void ayuda(){
     system("ayuda.chm");
 }
 void about(){
+    char c;
+	hConWnd = GetConsoleWndHandle();
+	if (hConWnd)// qr github
+	{
+		// select a bitmap file you have or use one of the files in the Windows folder
+		// nombre del archivo, handle, ID, coord X, coord Y, ancho, altura   si 0,0=ajustes automaticos
+		//BCX_Bitmap("taday.bmp", hConWnd, 0, 20, 20, 200, 100);
+		do{
+			BCX_Bitmap("aboutl.bmp", hConWnd, 0, 0,0, 400, 400);
+			c=getch();
+		}while(c!=13);
+	}
+    system("pause");
+	system("cls");
+	hConWnd = GetConsoleWndHandle();
+    // imagen qr github codigo del proyecto
+    if (hConWnd)
+	{
+
+		BCX_Bitmap("  ", hConWnd, 0,0, 0, 400, 400);
+		//Sleep(200);
+		getchar();  // wait
+	}
+fflush(stdin);
+}
+void qr(){
+     char c;
+	hConWnd = GetConsoleWndHandle();
+    // imagen qr github codigo del proyecto
+    if (hConWnd)
+	{
+
+		BCX_Bitmap("qrgithub.bmp", hConWnd, 0, 500, 50, 100, 100);
+		//Sleep(200);
+		getchar();  // wait
+	}
+	system("pause");
+	system("cls");
+	hConWnd = GetConsoleWndHandle();
+    // imagen qr github codigo del proyecto
+    if (hConWnd)
+	{
+
+		BCX_Bitmap("  ", hConWnd, 0, 500, 50, 100, 100);
+		//Sleep(200);
+		getchar();  // wait
+	}
+	fflush(stdin);
 }
 void insElemInicio(ListaDoble &lista){
     ListaDoble nuevoElemento,nuevoAux;
@@ -670,14 +880,14 @@ int validarCedula(int *p,int *q){
 return control;
 }
 int main(){
-    FILE *archivo=NULL;
-    archivo=fopen("ListaPasajeros.txt","a+");
+    int opcion,numero=0,control=0,controlRuta=0,asiento=1,usuario=0;
     ListaDoble lista=NULL;
+    inicio();
+    usuario=ingreso_usuario();
+    if(usuario==1)
+    {
 
-    //inicio();
-    color (fondo,texto);
-	int opcion,numero=0,control=0,controlRuta=0,asiento=1;
-	incializarDatos(lista);
+        incializarDatos(lista);
 	do{
 		opcion=menu();
 		system("cls");
@@ -707,27 +917,29 @@ int main(){
                 system("pause");
                 break;
             case 6:
-                creaBackup(lista,archivo);
-                fclose(archivo);
+                creaBackup(lista);
+                printf("\nDatos Guardados Exitosamente\n\tPuede Visulizar los Datos al Salir\n");
                 system("pause");
-                system("ListaPasajeros.txt");
                 break;
             case 7:
                 ayuda();
                 system("pause");
                 break;
             case 8:
-                about();
-                system("20161224_133008.jpg");
-                system("pause");
-
+                qr();
                 break;
             case 9:
-
+                about();
+                system("ListaPasajeros.txt");
                 break;
-        }
+            }
 	}while(opcion!=9);
-//fclose(archivo);
+    }else{
+        //printf("\nVERIFIQUE SUS DATOS\n");
+        printf("\n\n\n\n");
+        system("pause");
+    }
+
 return 0;
 }
 void gotoxy(int x,int y){
@@ -747,7 +959,7 @@ int menu(){
     const char *titulo="\t\t\tLISTAS DOBLES";
 	const char *opciones[]={/*1*/"INGRESAR DATOS DE CLIENTE (NUEVO BOLETO)",/*2*/"CANCELACION BOLETO (ELIMINAR)"
                             ,/*3*/"BUSCAR CLIENTE",/*4*/"MOSTRAR ASIENTOS DISPONIBLES",
-                            /*5*/"IMPRIMIR DATOS",/*6*/"CREAR BACKUP",/*7*/"AYUDA", /*8*/"ABOUT",/*9*/"SALIR"};
+                            /*5*/"IMPRIMIR DATOS",/*6*/"GUARDAR DATOS",/*7*/"AYUDA",/*8*/"GENERAR QR",/*9*/"SALIR"};
     int opcionSeleccionada = 1,numerodeopciones=9;
     int tecla;
     bool repite=true;
@@ -925,26 +1137,26 @@ void inicio (){
         */
     int tesp=15,x=3,y=4;
     char caracter[130];
-    system("color 0A");//color fondo-letra
+    color (fondo,texto);
     FILE *INICIO;
     INICIO=fopen("ARCHIVOS/INICIO.txt","r");
     //barra superior y barra izquierda
-         for (int i=1;i<117;i++) //horizontal
+         for (int i=1;i<78;i++) //horizontal
         {
             gotoxy(i,1);printf("%c",223);
         }
-        for (int i=1;i<17;i++) //vertical
+        for (int i=1;i<16;i++) //vertical
         {
             gotoxy(1,i);printf("%c",219);
         }
     //barra inferior y barra derecha
-          for (int i=1;i<17;i++) //horizontal
+          for (int i=1;i<15;i++) //horizontal
         {
             gotoxy(117,i);printf("%c",219);
         }
-        for (int i=1;i<=117;i++) //barra inferior horizonatal
+        for (int i=1;i<=78;i++) //barra inferior horizonatal
         {
-            gotoxy(i,17);printf("%c",223);
+            gotoxy(i,15);printf("%c",223);
         }
      // printf ("\n");
         while (!feof(INICIO))
@@ -1073,14 +1285,14 @@ void inicio (){
     gotoxy(41,25);printf("VENTA DE BOLETOS DE UN BUS\n");
     //barra cargando
 
-    gotoxy(40,29);//1er numero mueve hacia izq o der 2do arriba abajo
+    gotoxy(30,29);//1er numero mueve hacia izq o der 2do arriba abajo
 
     printf("\tCARGANDO...\n");
-    for(int i=20;i<90;i++)//80 marca el tamanio
+    for(int i=20;i<70;i++)//80 marca el tamanio
     {
         gotoxy(i,30);//1er numero mueve hacia izq o der 2do arriba abajo
         printf("%c",219);//valor de caracter a imprimir para la barra mediante asccii
-        for(int x=50;x<90;x++)
+        for(int x=50;x<70;x++)
         {//los espacios que va a recorre la barra en la pantalla
             for(int y=1;y<20;y++)
             {//determina el tiempo de movimiento de la barra

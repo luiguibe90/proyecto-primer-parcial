@@ -1,10 +1,9 @@
-
 ===============================
 ASIENTO # 1:
-	NOMBRE: LUIS
-	APELLIDO: BENITEZ
-	CEDULA: 1102245352
-	Hora De Compra: Mon Nov 27 00:21:14 2017
+	NOMBRE: UNO
+	APELLIDO: UNA
+	CEDULA: 1722172770
+	Hora De Compra: Tue Nov 28 22:12:17 2017
 
 	Nro. Asiento: 1
 	Hora De Salida: 29-11-2017 18H00
@@ -47,6 +46,56 @@ ASIENTO # 5:
 	CEDULA: 0
 	Hora De Compra: ---
 	Nro. Asiento: 5
+	Hora De Salida: 
+===============================
+
+===============================
+ASIENTO # 6:
+	NOMBRE: Disponible
+	APELLIDO: ---
+	CEDULA: 0
+	Hora De Compra: ---
+	Nro. Asiento: 6
+	Hora De Salida: 
+===============================
+
+===============================
+ASIENTO # 7:
+	NOMBRE: Disponible
+	APELLIDO: ---
+	CEDULA: 0
+	Hora De Compra: ---
+	Nro. Asiento: 7
+	Hora De Salida: 
+===============================
+
+===============================
+ASIENTO # 8:
+	NOMBRE: Disponible
+	APELLIDO: ---
+	CEDULA: 0
+	Hora De Compra: ---
+	Nro. Asiento: 8
+	Hora De Salida: 
+===============================
+
+===============================
+ASIENTO # 9:
+	NOMBRE: Disponible
+	APELLIDO: ---
+	CEDULA: 0
+	Hora De Compra: ---
+	Nro. Asiento: 9
+	Hora De Salida: 
+===============================
+
+===============================
+ASIENTO # 10:
+	NOMBRE: Disponible
+	APELLIDO: ---
+	CEDULA: 0
+	Hora De Compra: ---
+	Nro. Asiento: 10
 	Hora De Salida: 
 ===============================
 
