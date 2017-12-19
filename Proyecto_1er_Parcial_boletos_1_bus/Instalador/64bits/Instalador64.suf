@@ -963,45 +963,35 @@
 <TemplateName>Welcome to Setup</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -1010,7 +1000,7 @@
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1020,7 +1010,17 @@
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -1040,27 +1040,27 @@
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -1227,320 +1227,6 @@ De no ser así, haga clic en Siguiente.
 </Languages>
 </Screen>
 <Screen>
-<Type>125</Type>
-<Name>License Agreement</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>License Agreement</TemplateName>
-<OverrideProjTheme>1</OverrideProjTheme>
-<StyleData>
-<CstClrs>1</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
-<CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Woodwork\14_top.jpg</TBIMG>
-<SBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Woodwork\14_side.jpg</SBIMG>
-<BDIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Woodwork\14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-27</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-12</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>22</L>
-<T>26</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>22</L>
-<T>50</T>
-<R>15</R>
-<B>0</B>
-</CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
-<ScreenW>300</ScreenW>
-<ScreenH>300</ScreenH>
-</StyleData>
-<Checked>1</Checked>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-
--- from _SUF70_Global_Functions.lua:
--- disable the Next button unless 'I agree' is selected
-g_LicenseAgreementScreen_UpdateNextButton();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
-
--- advance to the next screen
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
-	-- the control message is from one of the radio buttons
-	-- if it's a click message, update the Next button
-	if (e_MsgID == MSGID_CLICKED) then
-		-- from _SUF70_Global_Functions.lua:
-		-- disable the Next button unless 'I agree' is selected
-		g_LicenseAgreementScreen_UpdateNextButton();
-	end
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>3</Type>
-<ID>400</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>0</TabOrder>
-<IsHTML>0</IsHTML>
-<TextAlign>0</TextAlign>
-<VertScroll>1</VertScroll>
-<HorizScroll>0</HorizScroll>
-<RTLReadingOrder>0</RTLReadingOrder>
-<Style>1</Style>
-<ReadOnly>1</ReadOnly>
-<SpecifyType>1</SpecifyType>
-<Variable/>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>602</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>35</TabOrder>
-<Group>1</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>603</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>40</TabOrder>
-<Group>0</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>Spanish</Name>
-<Default>1</Default>
-<Primary>10</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-<ID>14</ID>
-<ID>15</ID>
-<ID>16</ID>
-<ID>17</ID>
-<ID>18</ID>
-<ID>19</ID>
-<ID>20</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>Programa de instalación de %ProductName%</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Acuerdo de Licencia</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Por favor, lea cuidadosamente el siguiente acuerdo de licencia.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Siguiente &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Atrás</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancelar</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>A&amp;yuda</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_SCROLLTEXT_BODY>Autores: 
--Luis Benitez
--Xavier Vaca
-
-Copyleft: Se permite que el siguiente proyecto esté a disposición de usuarios posteriores y se utilice, copie, modifique o redistribuya libremente e indefinidamente.
-
-Lo que se quiere lograr con el presente proyecto es que otros construyan sobre la base del proyecto o contribuir al bien común para cambiar, modificar, depurar y mejorar el proyecto.
-
-Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
--No se permite el uso comercial de dichos trabajos.
--No se permite el cobro por este proyecto.
--Se permite que el usuario modifique el presente proyecto.
--Se permite que el usuario depure el programa de código abierto. </IDS_CTRL_SCROLLTEXT_BODY>
-<IDS_CTRL_RADIOBTN_AGREE>Acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_AGREE>
-<IDS_CTRL_RADIOBTN_DISAGREE>No acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_DISAGREE>
-<IDS_CTRL_SCROLLTEXT_FILE/>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
 <Type>120</Type>
 <Name>Verify Serial Number</Name>
 <BannerStyle>2</BannerStyle>
@@ -1563,8 +1249,8 @@ Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
 <CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
 <C3DSHDK format="hex">716f64</C3DSHDK>
-<TBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Default\Default_Top_Banner.jpg</TBIMG>
-<SBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Default\Default_Side_Banner.jpg</SBIMG>
+<TBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Skyline\111_X_63_skyline.jpg</TBIMG>
+<SBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Skyline\166_X_312_skyline.jpg</SBIMG>
 <BDIMG/>
 <BDFILL>0</BDFILL>
 <HDSEP>1</HDSEP>
@@ -1624,32 +1310,36 @@ Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>10</L>
-<T>10</T>
-<R>10</R>
-<B>10</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>10</L>
-<T>10</T>
-<R>10</R>
-<B>10</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>10</L>
-<T>10</T>
-<R>10</R>
-<B>10</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
-<TBTXTX>15</TBTXTX>
-<TBTXTY>14</TBTXTY>
-<ScreenW>400</ScreenW>
-<ScreenH>600</ScreenH>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
+<ScreenW>497</ScreenW>
+<ScreenH>300</ScreenH>
 </StyleData>
-<NumEditFields>1</NumEditFields>
-<Edit0>1</Edit0>
+<NumEditFields>5</NumEditFields>
+<Edit0>0</Edit0>
+<Edit1>1</Edit1>
+<Edit2>2</Edit2>
+<Edit3>3</Edit3>
+<Edit4>4</Edit4>
 <Events>
 <Event>
 <Name>On Preload</Name>
@@ -1825,7 +1515,7 @@ end
 <Visible>1</Visible>
 <Enabled>1</Enabled>
 <TabOrder>2</TabOrder>
-<TextAlign>1</TextAlign>
+<TextAlign>0</TextAlign>
 <VertScroll>0</VertScroll>
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
@@ -1864,7 +1554,7 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
 <StartNewRow>0</StartNewRow>
@@ -1898,12 +1588,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar03%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -1932,12 +1622,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar04%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -1966,12 +1656,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar05%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -2939,21 +2629,41 @@ end
 <IDS_CTRL_BUTTON_HELP>A&amp;yuda</IDS_CTRL_BUTTON_HELP>
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
-<IDS_CTRL_STATICTEXT_LABEL_02>Numero De Serie</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_STATICTEXT_LABEL_02/>
 <IDS_CTRL_EDIT_02/>
 <IDS_CTRL_BUTTON_02>...</IDS_CTRL_BUTTON_02>
 <IDS_CTRL_EDIT_MASK_02>#####</IDS_CTRL_EDIT_MASK_02>
 <IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02/>
+<IDS_CTRL_STATICTEXT_LABEL_01>Numero De Serie</IDS_CTRL_STATICTEXT_LABEL_01>
+<IDS_CTRL_EDIT_01/>
+<IDS_CTRL_BUTTON_01>...</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_EDIT_MASK_01>#####</IDS_CTRL_EDIT_MASK_01>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01/>
+<IDS_CTRL_STATICTEXT_LABEL_03/>
+<IDS_CTRL_EDIT_03/>
+<IDS_CTRL_BUTTON_03>...</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_EDIT_MASK_03>#####</IDS_CTRL_EDIT_MASK_03>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_03/>
+<IDS_CTRL_STATICTEXT_LABEL_04/>
+<IDS_CTRL_EDIT_04/>
+<IDS_CTRL_BUTTON_04>...</IDS_CTRL_BUTTON_04>
+<IDS_CTRL_EDIT_MASK_04>#####</IDS_CTRL_EDIT_MASK_04>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_04/>
+<IDS_CTRL_STATICTEXT_LABEL_05/>
+<IDS_CTRL_EDIT_05/>
+<IDS_CTRL_BUTTON_05>...</IDS_CTRL_BUTTON_05>
+<IDS_CTRL_EDIT_MASK_05>#####</IDS_CTRL_EDIT_MASK_05>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_05/>
 </Messages>
 </SUF70Messages>
 </Languages>
 </Screen>
 <Screen>
-<Type>120</Type>
-<Name>User Information</Name>
+<Type>125</Type>
+<Name>License Agreement</Name>
 <BannerStyle>2</BannerStyle>
-<TemplateName>User Information</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
+<TemplateName>License Agreement</TemplateName>
+<OverrideProjTheme>1</OverrideProjTheme>
 <StyleData>
 <CstClrs>1</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
@@ -2971,9 +2681,9 @@ end
 <CDISTXT format="hex">c0c0c0</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
 <C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
+<TBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Woodwork\14_top.jpg</TBIMG>
+<SBIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Woodwork\14_side.jpg</SBIMG>
+<BDIMG>C:\Program Files (x86)\Setup Factory 9\Themes\Woodwork\14_body.jpg</BDIMG>
 <BDFILL>1</BDFILL>
 <HDSEP>0</HDSEP>
 <FTSEP>0</FTSEP>
@@ -3047,12 +2757,326 @@ end
 <CAOff>
 <TP>2</TP>
 <L>22</L>
-<T>115</T>
+<T>50</T>
 <R>15</R>
 <B>0</B>
 </CAOff>
 <TBTXTX>13</TBTXTX>
 <TBTXTY>13</TBTXTY>
+<ScreenW>300</ScreenW>
+<ScreenH>300</ScreenH>
+</StyleData>
+<Checked>1</Checked>
+<Events>
+<Event>
+<Name>On Preload</Name>
+<Args/>
+<Script>-- These actions are performed before the screen is shown.
+
+-- from _SUF70_Global_Functions.lua:
+-- disable the Next button unless 'I agree' is selected
+g_LicenseAgreementScreen_UpdateNextButton();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Back</Name>
+<Args/>
+<Script>-- These actions are performed when the Back button is clicked.
+
+-- go back to the previous screen
+Screen.Back();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Next</Name>
+<Args/>
+<Script>-- These actions are performed when the Next button is clicked.
+-- Tip: this is where you could add actions to validate the
+--      user's input before proceeding
+
+-- advance to the next screen
+Screen.Next();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Cancel</Name>
+<Args/>
+<Script>-- These actions are performed when the Cancel button is clicked.
+
+-- from _SUF70_Global_Functions.lua:
+-- ask user if they're sure they want to exit
+if g_ConfirmSetupAbort() then
+	Application.Exit(EXIT_REASON_USER_ABORTED);
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Help</Name>
+<Args/>
+<Script>-- These actions are performed when the Help button is clicked.
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Ctrl Message</Name>
+<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
+<Script>-- These actions are triggered by the controls on the screen.
+
+if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
+	-- the control message is from one of the radio buttons
+	-- if it's a click message, update the Next button
+	if (e_MsgID == MSGID_CLICKED) then
+		-- from _SUF70_Global_Functions.lua:
+		-- disable the Next button unless 'I agree' is selected
+		g_LicenseAgreementScreen_UpdateNextButton();
+	end
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+</Events>
+<Controls>
+<Control>
+<Type>1</Type>
+<ID>103</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>75</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>101</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>76</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>100</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-10</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>102</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-9</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>3</Type>
+<ID>400</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>0</TabOrder>
+<IsHTML>0</IsHTML>
+<TextAlign>0</TextAlign>
+<VertScroll>1</VertScroll>
+<HorizScroll>0</HorizScroll>
+<RTLReadingOrder>0</RTLReadingOrder>
+<Style>1</Style>
+<ReadOnly>1</ReadOnly>
+<SpecifyType>1</SpecifyType>
+<Variable/>
+</Control>
+<Control>
+<Type>5</Type>
+<ID>602</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>35</TabOrder>
+<Group>1</Group>
+<StartID>602</StartID>
+<EndID>603</EndID>
+</Control>
+<Control>
+<Type>5</Type>
+<ID>603</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>40</TabOrder>
+<Group>0</Group>
+<StartID>602</StartID>
+<EndID>603</EndID>
+</Control>
+</Controls>
+<Languages>
+<SUF70Messages>
+<Language>
+<Name>Spanish</Name>
+<Default>1</Default>
+<Primary>10</Primary>
+<Secondary>
+<ID>1</ID>
+<ID>2</ID>
+<ID>3</ID>
+<ID>4</ID>
+<ID>5</ID>
+<ID>6</ID>
+<ID>7</ID>
+<ID>8</ID>
+<ID>9</ID>
+<ID>10</ID>
+<ID>11</ID>
+<ID>12</ID>
+<ID>13</ID>
+<ID>14</ID>
+<ID>15</ID>
+<ID>16</ID>
+<ID>17</ID>
+<ID>18</ID>
+<ID>19</ID>
+<ID>20</ID>
+</Secondary>
+</Language>
+<Messages>
+<IDS_WINDOW_TITLE>Programa de instalación de %ProductName%</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Acuerdo de Licencia</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Por favor, lea cuidadosamente el siguiente acuerdo de licencia.</IDS_SUBHEADER_TEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Siguiente &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK>&lt; &amp;Atrás</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Cancelar</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>A&amp;yuda</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_SCROLLTEXT_BODY>Autores: 
+-Luis Benitez
+-Xavier Vaca
+
+Copyleft: Se permite que el siguiente proyecto esté a disposición de usuarios posteriores y se utilice, copie, modifique o redistribuya libremente e indefinidamente.
+
+Lo que se quiere lograr con el presente proyecto es que otros construyan sobre la base del proyecto o contribuir al bien común para cambiar, modificar, depurar y mejorar el proyecto.
+
+Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
+-No se permite el uso comercial de dichos trabajos.
+-No se permite el cobro por este proyecto.
+-Se permite que el usuario modifique el presente proyecto.
+-Se permite que el usuario depure el programa de código abierto. </IDS_CTRL_SCROLLTEXT_BODY>
+<IDS_CTRL_RADIOBTN_AGREE>Acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_AGREE>
+<IDS_CTRL_RADIOBTN_DISAGREE>No acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_DISAGREE>
+<IDS_CTRL_SCROLLTEXT_FILE/>
+</Messages>
+</SUF70Messages>
+</Languages>
+</Screen>
+<Screen>
+<Type>120</Type>
+<Name>User Information</Name>
+<BannerStyle>2</BannerStyle>
+<TemplateName>User Information</TemplateName>
+<OverrideProjTheme>0</OverrideProjTheme>
+<StyleData>
+<CstClrs>0</CstClrs>
+<TBBG format="hex">ffffff</TBBG>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
+<BDYTXT format="hex">000000</BDYTXT>
+<CBG format="hex">ffffff</CBG>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
+<CTEXT format="hex">000000</CTEXT>
+<CDISTXT format="hex">aca899</CDISTXT>
+<CPRGRS format="hex">316ac5</CPRGRS>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
+<Fonts>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+</Fonts>
+<CAOff>
+<TP>0</TP>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<CAOff>
+<TP>1</TP>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<CAOff>
+<TP>2</TP>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -4344,45 +4368,35 @@ end
 <TemplateName>Select Install Folder</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -4391,7 +4405,7 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4401,7 +4415,17 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4421,27 +4445,27 @@ end
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -4745,45 +4769,35 @@ end
 <TemplateName>Select Shortcut Folder</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -4792,7 +4806,7 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4802,7 +4816,17 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -4822,27 +4846,27 @@ end
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -5123,45 +5147,35 @@ end
 <TemplateName>Ready to Install</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -5170,7 +5184,7 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5180,7 +5194,17 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5200,27 +5224,27 @@ end
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -5400,45 +5424,35 @@ Por favor, haga clic en Siguiente para llevar a cabo la instalación.</IDS_CTRL_S
 <TemplateName>One Progress Bar (While Installing)</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -5447,7 +5461,7 @@ Por favor, haga clic en Siguiente para llevar a cabo la instalación.</IDS_CTRL_S
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5457,7 +5471,17 @@ Por favor, haga clic en Siguiente para llevar a cabo la instalación.</IDS_CTRL_S
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5477,27 +5501,27 @@ Por favor, haga clic en Siguiente para llevar a cabo la instalación.</IDS_CTRL_S
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -5704,45 +5728,35 @@ end
 <TemplateName>Finished Install</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -5751,7 +5765,7 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5761,7 +5775,17 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -5781,27 +5805,27 @@ end
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -5969,111 +5993,111 @@ Por favor, haga clic en “Finalizar” para salir del programa de instalación.
 <Packages/>
 <SerialLists>
 <SerialListData>
-<Name>serial64bits</Name>
+<Name>New List</Name>
 <BuildConfigs>
 <Cfg>All</Cfg>
 </BuildConfigs>
 <Serials>
-<PW>12560-98571-64863-91866-27148</PW>
-<PW>74898-57691-59971-54967-97671</PW>
-<PW>14592-08953-17414-23100-18101</PW>
-<PW>53934-94708-32537-59319-99559</PW>
-<PW>13271-35567-87097-96856-03339</PW>
-<PW>77373-61045-24786-71680-40600</PW>
-<PW>78792-54290-13241-34940-01750</PW>
-<PW>26527-58401-79525-98789-60428</PW>
-<PW>38967-32421-72047-94331-65142</PW>
-<PW>01357-70762-71279-15708-77596</PW>
-<PW>60985-17516-68542-69336-51893</PW>
-<PW>04793-98776-83518-04894-98930</PW>
-<PW>48813-47149-99423-80271-67382</PW>
-<PW>09848-50979-58763-59424-41282</PW>
-<PW>35567-84188-00595-86256-50080</PW>
-<PW>07134-68125-90825-71150-62674</PW>
-<PW>28377-55460-38851-58732-43788</PW>
-<PW>28649-92579-03189-02030-68671</PW>
-<PW>21062-00094-17952-18714-83790</PW>
-<PW>98343-46334-46577-96811-06077</PW>
-<PW>97968-55112-93071-83119-70677</PW>
-<PW>12956-88958-33017-74629-81686</PW>
-<PW>62852-79761-26579-83313-45875</PW>
-<PW>51778-04181-82679-24129-65296</PW>
-<PW>95182-16487-70635-58806-09887</PW>
-<PW>89542-23154-95252-17491-29103</PW>
-<PW>04117-75247-10677-06880-22612</PW>
-<PW>01588-47616-87027-93330-09335</PW>
-<PW>01686-49956-97399-14214-35499</PW>
-<PW>12339-58426-10786-61452-72142</PW>
-<PW>28937-67310-26261-50806-50253</PW>
-<PW>76682-48278-35463-09291-42717</PW>
-<PW>01351-41503-46821-22979-41774</PW>
-<PW>64616-59814-17747-20336-80827</PW>
-<PW>53928-81205-54587-96571-21358</PW>
-<PW>41414-90225-04305-45349-33449</PW>
-<PW>31385-64040-45450-76347-83410</PW>
-<PW>49760-83215-49920-58552-25818</PW>
-<PW>07021-26353-96785-21175-48141</PW>
-<PW>75432-28203-14308-19048-08154</PW>
-<PW>97333-82107-60228-73057-23216</PW>
-<PW>00908-65430-81228-84502-51191</PW>
-<PW>55026-08390-27102-30532-83554</PW>
-<PW>30957-43416-41852-71075-18955</PW>
-<PW>69865-62457-62708-77993-79508</PW>
-<PW>39921-84258-86915-29659-30773</PW>
-<PW>56123-90558-04274-29674-71945</PW>
-<PW>81041-23463-54479-03626-45286</PW>
-<PW>54611-50596-82720-07110-59348</PW>
-<PW>19341-56437-06404-73404-76180</PW>
-<PW>76880-51714-32668-30476-84877</PW>
-<PW>17620-08610-02696-18224-83404</PW>
-<PW>90720-31727-99460-19297-34723</PW>
-<PW>91936-12825-83119-62619-31521</PW>
-<PW>69254-68389-30751-97602-38904</PW>
-<PW>34473-14051-90302-10095-24578</PW>
-<PW>40647-22846-99559-98632-23971</PW>
-<PW>56433-06218-52128-48386-34732</PW>
-<PW>95393-87450-05600-57671-16346</PW>
-<PW>26175-55495-80303-73925-86347</PW>
-<PW>34071-80863-19659-78230-53834</PW>
-<PW>50969-27318-54298-47193-42794</PW>
-<PW>53052-16998-04438-48361-54897</PW>
-<PW>51916-19005-85535-88978-30821</PW>
-<PW>22657-18485-30342-66677-62679</PW>
-<PW>74172-53958-33190-36603-94353</PW>
-<PW>71154-25590-57965-37874-22586</PW>
-<PW>22590-14619-96714-15863-59111</PW>
-<PW>35505-95782-10035-74387-22922</PW>
-<PW>72227-75458-08947-92780-13228</PW>
-<PW>77470-69427-74955-57928-68377</PW>
-<PW>70965-67688-12385-10704-50404</PW>
-<PW>94150-19912-52940-56708-90419</PW>
-<PW>41005-95934-85494-28891-61520</PW>
-<PW>04701-88237-69979-25999-29198</PW>
-<PW>53858-20813-66207-72522-69153</PW>
-<PW>68832-77965-89577-19760-85027</PW>
-<PW>35263-53896-15297-86907-17364</PW>
-<PW>25743-80289-72386-07784-55255</PW>
-<PW>52504-15855-01492-58139-49005</PW>
-<PW>05514-76589-10360-34671-46094</PW>
-<PW>05388-07507-49188-35880-16565</PW>
-<PW>06687-10605-24359-28092-44460</PW>
-<PW>59197-46832-42111-51903-14648</PW>
-<PW>85291-16111-61065-99806-14990</PW>
-<PW>63213-75678-43441-33569-32486</PW>
-<PW>50464-09374-80939-01733-29875</PW>
-<PW>72252-99381-38074-26992-38011</PW>
-<PW>73088-91284-79208-16230-59155</PW>
-<PW>83088-88203-56557-24468-25690</PW>
-<PW>46652-67825-63396-50674-03356</PW>
-<PW>13991-79568-62461-07307-04810</PW>
-<PW>36142-12897-39051-55285-09219</PW>
-<PW>33478-25373-38420-40539-40904</PW>
-<PW>28474-76580-52344-07767-39684</PW>
-<PW>33702-11425-51391-99601-94551</PW>
-<PW>84586-00036-93959-07060-03223</PW>
-<PW>19242-23166-29645-86401-09033</PW>
-<PW>38421-61442-35082-88241-11648</PW>
-<PW>36876-35698-39250-40565-43918</PW>
+<PW>87951</PW>
+<PW>76741</PW>
+<PW>82453</PW>
+<PW>55931</PW>
+<PW>01889</PW>
+<PW>03487</PW>
+<PW>56956</PW>
+<PW>28239</PW>
+<PW>26929</PW>
+<PW>33466</PW>
+<PW>76584</PW>
+<PW>54587</PW>
+<PW>04063</PW>
+<PW>59008</PW>
+<PW>66230</PW>
+<PW>91872</PW>
+<PW>77011</PW>
+<PW>68299</PW>
+<PW>43540</PW>
+<PW>49167</PW>
+<PW>87652</PW>
+<PW>19916</PW>
+<PW>82962</PW>
+<PW>47442</PW>
+<PW>81385</PW>
+<PW>43532</PW>
+<PW>87012</PW>
+<PW>11358</PW>
+<PW>51065</PW>
+<PW>16725</PW>
+<PW>72922</PW>
+<PW>40368</PW>
+<PW>41135</PW>
+<PW>15562</PW>
+<PW>17303</PW>
+<PW>85592</PW>
+<PW>81291</PW>
+<PW>99307</PW>
+<PW>50876</PW>
+<PW>74552</PW>
+<PW>56139</PW>
+<PW>68751</PW>
+<PW>38954</PW>
+<PW>81379</PW>
+<PW>85537</PW>
+<PW>89076</PW>
+<PW>10161</PW>
+<PW>49689</PW>
+<PW>90939</PW>
+<PW>18108</PW>
+<PW>75539</PW>
+<PW>84078</PW>
+<PW>11826</PW>
+<PW>14185</PW>
+<PW>30892</PW>
+<PW>74618</PW>
+<PW>47010</PW>
+<PW>64335</PW>
+<PW>83822</PW>
+<PW>37716</PW>
+<PW>78562</PW>
+<PW>75719</PW>
+<PW>20116</PW>
+<PW>62460</PW>
+<PW>67786</PW>
+<PW>94552</PW>
+<PW>00456</PW>
+<PW>61172</PW>
+<PW>71311</PW>
+<PW>67538</PW>
+<PW>17750</PW>
+<PW>09978</PW>
+<PW>60043</PW>
+<PW>94396</PW>
+<PW>98312</PW>
+<PW>47053</PW>
+<PW>59829</PW>
+<PW>94907</PW>
+<PW>05255</PW>
+<PW>08355</PW>
+<PW>87074</PW>
+<PW>99185</PW>
+<PW>15561</PW>
+<PW>48598</PW>
+<PW>33478</PW>
+<PW>69056</PW>
+<PW>29421</PW>
+<PW>61416</PW>
+<PW>86241</PW>
+<PW>45833</PW>
+<PW>40697</PW>
+<PW>11428</PW>
+<PW>49491</PW>
+<PW>01372</PW>
+<PW>28629</PW>
+<PW>77060</PW>
+<PW>36939</PW>
+<PW>30769</PW>
+<PW>79116</PW>
+<PW>25875</PW>
 </Serials>
 </SerialListData>
 </SerialLists>
@@ -6190,45 +6214,35 @@ Por favor, haga clic en “Finalizar” para salir del programa de instalación.
 <TemplateName>Welcome to Uninstall</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -6237,7 +6251,7 @@ Por favor, haga clic en “Finalizar” para salir del programa de instalación.
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6247,7 +6261,17 @@ Por favor, haga clic en “Finalizar” para salir del programa de instalación.
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6267,27 +6291,27 @@ Por favor, haga clic en “Finalizar” para salir del programa de instalación.
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -6462,45 +6486,35 @@ De no ser así, haga clic en Siguiente para continuar.
 <TemplateName>One Progress Bar (While Uninstalling)</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -6509,7 +6523,7 @@ De no ser así, haga clic en Siguiente para continuar.
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6519,7 +6533,17 @@ De no ser así, haga clic en Siguiente para continuar.
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6539,27 +6563,27 @@ De no ser así, haga clic en Siguiente para continuar.
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -6760,45 +6784,35 @@ end
 <TemplateName>Finished Uninstall</TemplateName>
 <OverrideProjTheme>0</OverrideProjTheme>
 <StyleData>
-<CstClrs>1</CstClrs>
+<CstClrs>0</CstClrs>
 <TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ffffff</BDYBG>
-<FTBG format="hex">ffffff</FTBG>
-<TBTXT format="hex">ffffff</TBTXT>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
 <BDYTXT format="hex">000000</BDYTXT>
 <CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">996633</C3DFACE>
-<C3DHLT format="hex">993300</C3DHLT>
-<C3DLIT format="hex">993300</C3DLIT>
-<C3DSH format="hex">993300</C3DSH>
-<CBTNTXT format="hex">ffffff</CBTNTXT>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
 <CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">c0c0c0</CDISTXT>
+<CDISTXT format="hex">aca899</CDISTXT>
 <CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">993300</C3DSHDK>
-<TBIMG>14_top.jpg</TBIMG>
-<SBIMG>14_side.jpg</SBIMG>
-<BDIMG>14_body.jpg</BDIMG>
-<BDFILL>1</BDFILL>
-<HDSEP>0</HDSEP>
-<FTSEP>0</FTSEP>
-<CstFnts>1</CstFnts>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>111_X_63_skyline.jpg</TBIMG>
+<SBIMG>166_X_312_skyline.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
 <Fonts>
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
 <Height>-13</Height>
 <Weight>700</Weight>
-<Italic>1</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-11</Height>
-<Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
 <StrikeOut>0</StrikeOut>
@@ -6807,7 +6821,7 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-27</Height>
+<Height>-13</Height>
 <Weight>700</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6817,7 +6831,17 @@ end
 <FontData>
 <FontName>Arial</FontName>
 <CharacterSet>0</CharacterSet>
-<Height>-12</Height>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
 <Weight>400</Weight>
 <Italic>0</Italic>
 <Underline>0</Underline>
@@ -6837,27 +6861,27 @@ end
 </Fonts>
 <CAOff>
 <TP>0</TP>
-<L>22</L>
-<T>26</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
 <B>15</B>
 </CAOff>
 <CAOff>
 <TP>1</TP>
-<L>8</L>
-<T>80</T>
-<R>10</R>
-<B>6</B>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
 </CAOff>
 <CAOff>
 <TP>2</TP>
-<L>22</L>
-<T>115</T>
+<L>15</L>
+<T>15</T>
 <R>15</R>
-<B>0</B>
+<B>15</B>
 </CAOff>
-<TBTXTX>13</TBTXTX>
-<TBTXTY>13</TBTXTY>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
 <ScreenW>497</ScreenW>
 <ScreenH>362</ScreenH>
 </StyleData>
@@ -7189,7 +7213,7 @@ g_HandleSystemReboot();
 <Action>0</Action>
 </SetupRequirements>
 <Launcher/>
-<ProjectTheme>Woodwork</ProjectTheme>
+<ProjectTheme>Skyline</ProjectTheme>
 <ProjFileDesc>New Project</ProjFileDesc>
 <ProjFileAuthor/>
 <ProjFileCompany/>

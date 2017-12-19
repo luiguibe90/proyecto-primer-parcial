@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1513554710 source:g:\espe\3\estructuras\deberes\colas automatizacion excel\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	<stdlib.h>
+	<time.h>
+
+1513556554 source:c:\users\luigu\desktop\colas automatizacion excel\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<Nodo.h>
+
+1513556172 c:\users\luigu\desktop\colas automatizacion excel\include\nodo.h
+
+1513555554 source:c:\users\luigu\desktop\colas automatizacion excel\src\nodo.cpp
+	"Nodo.h"
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	<stdlib.h>
+	<time.h>
+

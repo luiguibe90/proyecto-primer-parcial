@@ -92,12 +92,12 @@
 <Backup>0</Backup>
 <Protect>0</Protect>
 <InstallOrder>1000</InstallOrder>
-<SCStartRoot>0</SCStartRoot>
-<SCStartProgs>0</SCStartProgs>
+<SCStartRoot>1</SCStartRoot>
+<SCStartProgs>1</SCStartProgs>
 <SCAppFld>1</SCAppFld>
-<SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
-<SCQLaunch>0</SCQLaunch>
+<SCStartup>1</SCStartup>
+<SCDesk>1</SCDesk>
+<SCQLaunch>1</SCQLaunch>
 <SCStartPinOption>0</SCStartPinOption>
 <SCCust>0</SCCust>
 <CustSCPath/>
@@ -1180,341 +1180,6 @@ Otherwise, click Next to continue.
 </Languages>
 </Screen>
 <Screen>
-<Type>125</Type>
-<Name>License Agreement</Name>
-<BannerStyle>2</BannerStyle>
-<TemplateName>License Agreement</TemplateName>
-<OverrideProjTheme>0</OverrideProjTheme>
-<StyleData>
-<CstClrs>0</CstClrs>
-<TBBG format="hex">ffffff</TBBG>
-<BDYBG format="hex">ece9d8</BDYBG>
-<FTBG format="hex">ece9d8</FTBG>
-<TBTXT format="hex">000000</TBTXT>
-<BDYTXT format="hex">000000</BDYTXT>
-<CBG format="hex">ffffff</CBG>
-<C3DFACE format="hex">ece9d8</C3DFACE>
-<C3DHLT format="hex">ece9d8</C3DHLT>
-<C3DLIT format="hex">ffffff</C3DLIT>
-<C3DSH format="hex">aca899</C3DSH>
-<CBTNTXT format="hex">000000</CBTNTXT>
-<CTEXT format="hex">000000</CTEXT>
-<CDISTXT format="hex">aca899</CDISTXT>
-<CPRGRS format="hex">316ac5</CPRGRS>
-<C3DSHDK format="hex">716f64</C3DSHDK>
-<TBIMG>Default_Top_Banner.jpg</TBIMG>
-<SBIMG>Default_Side_Banner.jpg</SBIMG>
-<BDIMG/>
-<BDFILL>0</BDFILL>
-<HDSEP>1</HDSEP>
-<FTSEP>1</FTSEP>
-<CstFnts>0</CstFnts>
-<Fonts>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-24</Height>
-<Weight>700</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-<FontData>
-<FontName>Arial</FontName>
-<CharacterSet>0</CharacterSet>
-<Height>-13</Height>
-<Weight>400</Weight>
-<Italic>0</Italic>
-<Underline>0</Underline>
-<StrikeOut>0</StrikeOut>
-<AntiAlias>1</AntiAlias>
-</FontData>
-</Fonts>
-<CAOff>
-<TP>0</TP>
-<L>15</L>
-<T>15</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>1</TP>
-<L>15</L>
-<T>15</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<CAOff>
-<TP>2</TP>
-<L>15</L>
-<T>15</T>
-<R>15</R>
-<B>15</B>
-</CAOff>
-<TBTXTX>10</TBTXTX>
-<TBTXTY>10</TBTXTY>
-<ScreenW>497</ScreenW>
-<ScreenH>362</ScreenH>
-</StyleData>
-<Checked>1</Checked>
-<Events>
-<Event>
-<Name>On Preload</Name>
-<Args/>
-<Script>-- These actions are performed before the screen is shown.
-
--- from _SUF70_Global_Functions.lua:
--- disable the Next button unless 'I agree' is selected
-g_LicenseAgreementScreen_UpdateNextButton();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Back</Name>
-<Args/>
-<Script>-- These actions are performed when the Back button is clicked.
-
--- go back to the previous screen
-Screen.Back();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Next</Name>
-<Args/>
-<Script>-- These actions are performed when the Next button is clicked.
--- Tip: this is where you could add actions to validate the
---      user's input before proceeding
-
--- advance to the next screen
-Screen.Next();
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Cancel</Name>
-<Args/>
-<Script>-- These actions are performed when the Cancel button is clicked.
-
--- from _SUF70_Global_Functions.lua:
--- ask user if they're sure they want to exit
-if g_ConfirmSetupAbort() then
-	Application.Exit(EXIT_REASON_USER_ABORTED);
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Help</Name>
-<Args/>
-<Script>-- These actions are performed when the Help button is clicked.
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-<Event>
-<Name>On Ctrl Message</Name>
-<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
-<Script>-- These actions are triggered by the controls on the screen.
-
-if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
-	-- the control message is from one of the radio buttons
-	-- if it's a click message, update the Next button
-	if (e_MsgID == MSGID_CLICKED) then
-		-- from _SUF70_Global_Functions.lua:
-		-- disable the Next button unless 'I agree' is selected
-		g_LicenseAgreementScreen_UpdateNextButton();
-	end
-end
-</Script>
-<BookMarks count="0">
-</BookMarks>
-</Event>
-</Events>
-<Controls>
-<Control>
-<Type>1</Type>
-<ID>103</ID>
-<Visible>0</Visible>
-<Enabled>0</Enabled>
-<TabOrder>75</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>101</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>76</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>100</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-10</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>1</Type>
-<ID>102</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>-9</TabOrder>
-<FTButton>1</FTButton>
-</Control>
-<Control>
-<Type>3</Type>
-<ID>400</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>0</TabOrder>
-<IsHTML>0</IsHTML>
-<TextAlign>0</TextAlign>
-<VertScroll>1</VertScroll>
-<HorizScroll>0</HorizScroll>
-<RTLReadingOrder>0</RTLReadingOrder>
-<Style>1</Style>
-<ReadOnly>1</ReadOnly>
-<SpecifyType>1</SpecifyType>
-<Variable/>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>602</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>35</TabOrder>
-<Group>1</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-<Control>
-<Type>5</Type>
-<ID>603</ID>
-<Visible>1</Visible>
-<Enabled>1</Enabled>
-<TabOrder>40</TabOrder>
-<Group>0</Group>
-<StartID>602</StartID>
-<EndID>603</EndID>
-</Control>
-</Controls>
-<Languages>
-<SUF70Messages>
-<Language>
-<Name>Spanish</Name>
-<Default>1</Default>
-<Primary>10</Primary>
-<Secondary>
-<ID>1</ID>
-<ID>2</ID>
-<ID>3</ID>
-<ID>4</ID>
-<ID>5</ID>
-<ID>6</ID>
-<ID>7</ID>
-<ID>8</ID>
-<ID>9</ID>
-<ID>10</ID>
-<ID>11</ID>
-<ID>12</ID>
-<ID>13</ID>
-<ID>14</ID>
-<ID>15</ID>
-<ID>16</ID>
-<ID>17</ID>
-<ID>18</ID>
-<ID>19</ID>
-<ID>20</ID>
-</Secondary>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>Programa de instalación de %ProductName%</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>Acuerdo de Licencia</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Por favor, lea cuidadosamente el siguiente acuerdo de licencia.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Siguiente &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Atrás</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancelar</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>A&amp;yuda</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_SCROLLTEXT_BODY>Autores: 
--Benitez Luis
--Vaca Xavier
-
-Copyleft: Se permite que el siguiente proyecto esté a disposición de usuarios posteriores y se utilice, copie, modifique o redistribuya libremente e indefinidamente.
-
-Lo que se quiere lograr con el presente proyecto es que otros construyan sobre la base del proyecto o contribuir al bien común para cambiar, modificar, depurar y mejorar el proyecto.
-
-Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
--No se permite el uso comercial de dichos trabajos.
--No se permite el cobro por este proyecto.
--Se permite que el usuario modifique el presente proyecto.
--Se permite que el usuario depure el programa de código abierto. </IDS_CTRL_SCROLLTEXT_BODY>
-<IDS_CTRL_RADIOBTN_AGREE>Acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_AGREE>
-<IDS_CTRL_RADIOBTN_DISAGREE>No acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_DISAGREE>
-<IDS_CTRL_SCROLLTEXT_FILE/>
-</Messages>
-</SUF70Messages>
-<SUF70Messages>
-<Language>
-<Name>Catalan</Name>
-<Default>0</Default>
-<Primary>3</Primary>
-<Secondary/>
-</Language>
-<Messages>
-<IDS_WINDOW_TITLE>%ProductName% Setup</IDS_WINDOW_TITLE>
-<IDS_HEADER_TEXT>License Agreement</IDS_HEADER_TEXT>
-<IDS_SUBHEADER_TEXT>Please read the following license agreement carefully.</IDS_SUBHEADER_TEXT>
-<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
-<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
-<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
-<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
-<IDS_CTRL_SCROLLTEXT_BODY>Insert your license agreement text here...</IDS_CTRL_SCROLLTEXT_BODY>
-<IDS_CTRL_RADIOBTN_AGREE>I agree to the terms of this license agreement</IDS_CTRL_RADIOBTN_AGREE>
-<IDS_CTRL_RADIOBTN_DISAGREE>I do not agree to the terms of this license agreement</IDS_CTRL_RADIOBTN_DISAGREE>
-<IDS_CTRL_SCROLLTEXT_FILE/>
-</Messages>
-</SUF70Messages>
-</Languages>
-</Screen>
-<Screen>
 <Type>120</Type>
 <Name>Verify Serial Number</Name>
 <BannerStyle>2</BannerStyle>
@@ -1622,8 +1287,12 @@ Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
 <ScreenW>497</ScreenW>
 <ScreenH>400</ScreenH>
 </StyleData>
-<NumEditFields>1</NumEditFields>
+<NumEditFields>5</NumEditFields>
 <Edit0>0</Edit0>
+<Edit1>1</Edit1>
+<Edit2>2</Edit2>
+<Edit3>3</Edit3>
+<Edit4>4</Edit4>
 <Events>
 <Event>
 <Name>On Preload</Name>
@@ -1804,7 +1473,7 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
 <StartNewRow>1</StartNewRow>
@@ -1838,12 +1507,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar02%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -1872,12 +1541,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar03%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -1906,12 +1575,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar04%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -1940,12 +1609,12 @@ end
 <HorizScroll>0</HorizScroll>
 <RTLReadingOrder>0</RTLReadingOrder>
 <Style>0</Style>
-<Mode>0</Mode>
+<Mode>2</Mode>
 <MaskReturnMode>1</MaskReturnMode>
 <ReadOnly>0</ReadOnly>
-<StartNewRow>1</StartNewRow>
-<SizeColumns>4</SizeColumns>
-<Variable>%EditVar05%</Variable>
+<StartNewRow>0</StartNewRow>
+<SizeColumns>1</SizeColumns>
+<Variable>%SerialNumber%</Variable>
 </Control>
 <Control>
 <Type>1</Type>
@@ -2914,10 +2583,30 @@ end
 <IDS_CTRL_STATICTEXT_TOPINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_BOTTOMINSTRUCTIONS/>
 <IDS_CTRL_STATICTEXT_LABEL_01>Número de serie:</IDS_CTRL_STATICTEXT_LABEL_01>
-<IDS_CTRL_EDIT_MASK_01>####</IDS_CTRL_EDIT_MASK_01>
+<IDS_CTRL_EDIT_MASK_01>#####</IDS_CTRL_EDIT_MASK_01>
 <IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01> </IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01>
 <IDS_CTRL_EDIT_01/>
 <IDS_CTRL_BUTTON_01>...</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_STATICTEXT_LABEL_02/>
+<IDS_CTRL_EDIT_02/>
+<IDS_CTRL_BUTTON_02>...</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_EDIT_MASK_02>#####</IDS_CTRL_EDIT_MASK_02>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02/>
+<IDS_CTRL_STATICTEXT_LABEL_03/>
+<IDS_CTRL_EDIT_03/>
+<IDS_CTRL_BUTTON_03>...</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_EDIT_MASK_03>#####</IDS_CTRL_EDIT_MASK_03>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_03/>
+<IDS_CTRL_STATICTEXT_LABEL_04/>
+<IDS_CTRL_EDIT_04/>
+<IDS_CTRL_BUTTON_04>...</IDS_CTRL_BUTTON_04>
+<IDS_CTRL_EDIT_MASK_04>#####</IDS_CTRL_EDIT_MASK_04>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_04/>
+<IDS_CTRL_STATICTEXT_LABEL_05/>
+<IDS_CTRL_EDIT_05/>
+<IDS_CTRL_BUTTON_05>...</IDS_CTRL_BUTTON_05>
+<IDS_CTRL_EDIT_MASK_05>#####</IDS_CTRL_EDIT_MASK_05>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_05/>
 </Messages>
 </SUF70Messages>
 <SUF70Messages>
@@ -2942,6 +2631,361 @@ end
 <IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01> </IDS_CTRL_EDIT_MASK_PLACE_HOLDER_01>
 <IDS_CTRL_EDIT_01/>
 <IDS_CTRL_BUTTON_01>...</IDS_CTRL_BUTTON_01>
+<IDS_CTRL_STATICTEXT_LABEL_02>Número de serie:</IDS_CTRL_STATICTEXT_LABEL_02>
+<IDS_CTRL_EDIT_02/>
+<IDS_CTRL_BUTTON_02>...</IDS_CTRL_BUTTON_02>
+<IDS_CTRL_EDIT_MASK_02/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_02/>
+<IDS_CTRL_STATICTEXT_LABEL_03>Número de serie:</IDS_CTRL_STATICTEXT_LABEL_03>
+<IDS_CTRL_EDIT_03/>
+<IDS_CTRL_BUTTON_03>...</IDS_CTRL_BUTTON_03>
+<IDS_CTRL_EDIT_MASK_03/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_03/>
+<IDS_CTRL_STATICTEXT_LABEL_04>Número de serie:</IDS_CTRL_STATICTEXT_LABEL_04>
+<IDS_CTRL_EDIT_04/>
+<IDS_CTRL_BUTTON_04>...</IDS_CTRL_BUTTON_04>
+<IDS_CTRL_EDIT_MASK_04/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_04/>
+<IDS_CTRL_STATICTEXT_LABEL_05>Número de serie:</IDS_CTRL_STATICTEXT_LABEL_05>
+<IDS_CTRL_EDIT_05/>
+<IDS_CTRL_BUTTON_05>...</IDS_CTRL_BUTTON_05>
+<IDS_CTRL_EDIT_MASK_05/>
+<IDS_CTRL_EDIT_MASK_PLACE_HOLDER_05/>
+</Messages>
+</SUF70Messages>
+</Languages>
+</Screen>
+<Screen>
+<Type>125</Type>
+<Name>License Agreement</Name>
+<BannerStyle>2</BannerStyle>
+<TemplateName>License Agreement</TemplateName>
+<OverrideProjTheme>0</OverrideProjTheme>
+<StyleData>
+<CstClrs>0</CstClrs>
+<TBBG format="hex">ffffff</TBBG>
+<BDYBG format="hex">ece9d8</BDYBG>
+<FTBG format="hex">ece9d8</FTBG>
+<TBTXT format="hex">000000</TBTXT>
+<BDYTXT format="hex">000000</BDYTXT>
+<CBG format="hex">ffffff</CBG>
+<C3DFACE format="hex">ece9d8</C3DFACE>
+<C3DHLT format="hex">ece9d8</C3DHLT>
+<C3DLIT format="hex">ffffff</C3DLIT>
+<C3DSH format="hex">aca899</C3DSH>
+<CBTNTXT format="hex">000000</CBTNTXT>
+<CTEXT format="hex">000000</CTEXT>
+<CDISTXT format="hex">aca899</CDISTXT>
+<CPRGRS format="hex">316ac5</CPRGRS>
+<C3DSHDK format="hex">716f64</C3DSHDK>
+<TBIMG>Default_Top_Banner.jpg</TBIMG>
+<SBIMG>Default_Side_Banner.jpg</SBIMG>
+<BDIMG/>
+<BDFILL>0</BDFILL>
+<HDSEP>1</HDSEP>
+<FTSEP>1</FTSEP>
+<CstFnts>0</CstFnts>
+<Fonts>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-24</Height>
+<Weight>700</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+<FontData>
+<FontName>Arial</FontName>
+<CharacterSet>0</CharacterSet>
+<Height>-13</Height>
+<Weight>400</Weight>
+<Italic>0</Italic>
+<Underline>0</Underline>
+<StrikeOut>0</StrikeOut>
+<AntiAlias>1</AntiAlias>
+</FontData>
+</Fonts>
+<CAOff>
+<TP>0</TP>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<CAOff>
+<TP>1</TP>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<CAOff>
+<TP>2</TP>
+<L>15</L>
+<T>15</T>
+<R>15</R>
+<B>15</B>
+</CAOff>
+<TBTXTX>10</TBTXTX>
+<TBTXTY>10</TBTXTY>
+<ScreenW>497</ScreenW>
+<ScreenH>362</ScreenH>
+</StyleData>
+<Checked>1</Checked>
+<Events>
+<Event>
+<Name>On Preload</Name>
+<Args/>
+<Script>-- These actions are performed before the screen is shown.
+
+-- from _SUF70_Global_Functions.lua:
+-- disable the Next button unless 'I agree' is selected
+g_LicenseAgreementScreen_UpdateNextButton();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Back</Name>
+<Args/>
+<Script>-- These actions are performed when the Back button is clicked.
+
+-- go back to the previous screen
+Screen.Back();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Next</Name>
+<Args/>
+<Script>-- These actions are performed when the Next button is clicked.
+-- Tip: this is where you could add actions to validate the
+--      user's input before proceeding
+
+-- advance to the next screen
+Screen.Next();
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Cancel</Name>
+<Args/>
+<Script>-- These actions are performed when the Cancel button is clicked.
+
+-- from _SUF70_Global_Functions.lua:
+-- ask user if they're sure they want to exit
+if g_ConfirmSetupAbort() then
+	Application.Exit(EXIT_REASON_USER_ABORTED);
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Help</Name>
+<Args/>
+<Script>-- These actions are performed when the Help button is clicked.
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+<Event>
+<Name>On Ctrl Message</Name>
+<Args>number e_CtrlID, number e_MsgID, table e_Details</Args>
+<Script>-- These actions are triggered by the controls on the screen.
+
+if (e_CtrlID == CTRL_RADIOBTN_AGREE or e_CtrlID == CTRL_RADIOBTN_DISAGREE) then
+	-- the control message is from one of the radio buttons
+	-- if it's a click message, update the Next button
+	if (e_MsgID == MSGID_CLICKED) then
+		-- from _SUF70_Global_Functions.lua:
+		-- disable the Next button unless 'I agree' is selected
+		g_LicenseAgreementScreen_UpdateNextButton();
+	end
+end
+</Script>
+<BookMarks count="0">
+</BookMarks>
+</Event>
+</Events>
+<Controls>
+<Control>
+<Type>1</Type>
+<ID>103</ID>
+<Visible>0</Visible>
+<Enabled>0</Enabled>
+<TabOrder>75</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>101</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>76</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>100</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-10</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>1</Type>
+<ID>102</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>-9</TabOrder>
+<FTButton>1</FTButton>
+</Control>
+<Control>
+<Type>3</Type>
+<ID>400</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>0</TabOrder>
+<IsHTML>0</IsHTML>
+<TextAlign>0</TextAlign>
+<VertScroll>1</VertScroll>
+<HorizScroll>0</HorizScroll>
+<RTLReadingOrder>0</RTLReadingOrder>
+<Style>1</Style>
+<ReadOnly>1</ReadOnly>
+<SpecifyType>1</SpecifyType>
+<Variable/>
+</Control>
+<Control>
+<Type>5</Type>
+<ID>602</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>35</TabOrder>
+<Group>1</Group>
+<StartID>602</StartID>
+<EndID>603</EndID>
+</Control>
+<Control>
+<Type>5</Type>
+<ID>603</ID>
+<Visible>1</Visible>
+<Enabled>1</Enabled>
+<TabOrder>40</TabOrder>
+<Group>0</Group>
+<StartID>602</StartID>
+<EndID>603</EndID>
+</Control>
+</Controls>
+<Languages>
+<SUF70Messages>
+<Language>
+<Name>Spanish</Name>
+<Default>1</Default>
+<Primary>10</Primary>
+<Secondary>
+<ID>1</ID>
+<ID>2</ID>
+<ID>3</ID>
+<ID>4</ID>
+<ID>5</ID>
+<ID>6</ID>
+<ID>7</ID>
+<ID>8</ID>
+<ID>9</ID>
+<ID>10</ID>
+<ID>11</ID>
+<ID>12</ID>
+<ID>13</ID>
+<ID>14</ID>
+<ID>15</ID>
+<ID>16</ID>
+<ID>17</ID>
+<ID>18</ID>
+<ID>19</ID>
+<ID>20</ID>
+</Secondary>
+</Language>
+<Messages>
+<IDS_WINDOW_TITLE>Programa de instalación de %ProductName%</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>Acuerdo de Licencia</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Por favor, lea cuidadosamente el siguiente acuerdo de licencia.</IDS_SUBHEADER_TEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Siguiente &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK>&lt; &amp;Atrás</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Cancelar</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>A&amp;yuda</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_SCROLLTEXT_BODY>Autores: 
+-Benitez Luis
+-Vaca Xavier
+
+Copyleft: Se permite que el siguiente proyecto esté a disposición de usuarios posteriores y se utilice, copie, modifique o redistribuya libremente e indefinidamente.
+
+Lo que se quiere lograr con el presente proyecto es que otros construyan sobre la base del proyecto o contribuir al bien común para cambiar, modificar, depurar y mejorar el proyecto.
+
+Los derechos y restricciones que se quiere ceder en el siguiente proyecto son:
+-No se permite el uso comercial de dichos trabajos.
+-No se permite el cobro por este proyecto.
+-Se permite que el usuario modifique el presente proyecto.
+-Se permite que el usuario depure el programa de código abierto. </IDS_CTRL_SCROLLTEXT_BODY>
+<IDS_CTRL_RADIOBTN_AGREE>Acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_AGREE>
+<IDS_CTRL_RADIOBTN_DISAGREE>No acepto los términos del acuerdo de licencia</IDS_CTRL_RADIOBTN_DISAGREE>
+<IDS_CTRL_SCROLLTEXT_FILE/>
+</Messages>
+</SUF70Messages>
+<SUF70Messages>
+<Language>
+<Name>Catalan</Name>
+<Default>0</Default>
+<Primary>3</Primary>
+<Secondary/>
+</Language>
+<Messages>
+<IDS_WINDOW_TITLE>%ProductName% Setup</IDS_WINDOW_TITLE>
+<IDS_HEADER_TEXT>License Agreement</IDS_HEADER_TEXT>
+<IDS_SUBHEADER_TEXT>Please read the following license agreement carefully.</IDS_SUBHEADER_TEXT>
+<IDS_CTRL_BUTTON_NEXT>&amp;Next &gt;</IDS_CTRL_BUTTON_NEXT>
+<IDS_CTRL_BUTTON_BACK>&lt; &amp;Back</IDS_CTRL_BUTTON_BACK>
+<IDS_CTRL_BUTTON_CANCEL>&amp;Cancel</IDS_CTRL_BUTTON_CANCEL>
+<IDS_CTRL_BUTTON_HELP>&amp;Help</IDS_CTRL_BUTTON_HELP>
+<IDS_CTRL_SCROLLTEXT_BODY>Insert your license agreement text here...</IDS_CTRL_SCROLLTEXT_BODY>
+<IDS_CTRL_RADIOBTN_AGREE>I agree to the terms of this license agreement</IDS_CTRL_RADIOBTN_AGREE>
+<IDS_CTRL_RADIOBTN_DISAGREE>I do not agree to the terms of this license agreement</IDS_CTRL_RADIOBTN_DISAGREE>
+<IDS_CTRL_SCROLLTEXT_FILE/>
 </Messages>
 </SUF70Messages>
 </Languages>
@@ -6120,106 +6164,106 @@ Please click Finish to exit this installer.
 <Cfg>All</Cfg>
 </BuildConfigs>
 <Serials>
-<PW>78935-58178-38415-36070-14107</PW>
-<PW>48517-31482-29471-75840-66277</PW>
-<PW>49738-20656-78559-58927-77315</PW>
-<PW>20325-07559-74716-29392-14260</PW>
-<PW>54955-97886-84739-50945-17523</PW>
-<PW>02535-40019-88473-34224-69036</PW>
-<PW>04359-46711-64518-71178-14004</PW>
-<PW>91070-83429-98709-69046-90776</PW>
-<PW>37889-76479-56662-91803-85104</PW>
-<PW>12083-06882-53861-66072-73529</PW>
-<PW>90677-75464-06008-21134-54044</PW>
-<PW>51942-22640-98523-78245-22662</PW>
-<PW>32190-60293-26567-54943-31675</PW>
-<PW>95514-65706-82730-24662-51185</PW>
-<PW>10978-89872-05565-09180-84096</PW>
-<PW>64483-99602-39806-56523-08013</PW>
-<PW>21855-32950-06003-23375-13972</PW>
-<PW>73242-80643-00723-94232-06110</PW>
-<PW>83441-80555-21521-53052-29121</PW>
-<PW>17249-41047-90628-99665-10897</PW>
-<PW>49918-93075-33775-67813-88755</PW>
-<PW>47129-76406-78264-95709-24356</PW>
-<PW>12201-54306-07406-90122-73110</PW>
-<PW>49245-94217-08025-01403-98979</PW>
-<PW>72935-63898-28025-35770-84408</PW>
-<PW>64335-24878-37082-44218-51866</PW>
-<PW>22400-47246-09484-03878-24064</PW>
-<PW>70507-46757-91953-90813-38734</PW>
-<PW>22638-48835-96848-27542-64708</PW>
-<PW>10035-46010-59797-76542-56770</PW>
-<PW>67879-03072-63560-88595-52864</PW>
-<PW>06233-78890-48697-35862-05076</PW>
-<PW>96245-13298-75620-06791-56956</PW>
-<PW>00829-22433-26376-94232-92992</PW>
-<PW>07152-98960-53422-90370-48696</PW>
-<PW>10643-46329-46779-24565-98596</PW>
-<PW>01956-65772-93924-57507-80494</PW>
-<PW>69183-83295-08949-37232-09103</PW>
-<PW>18199-42406-45103-59916-33187</PW>
-<PW>79227-68478-11704-39306-09291</PW>
-<PW>74538-90624-06625-48796-35041</PW>
-<PW>25173-33177-56117-49359-74649</PW>
-<PW>23647-53944-77356-47923-19418</PW>
-<PW>82756-41982-68400-04720-92770</PW>
-<PW>63215-49708-08178-42450-19938</PW>
-<PW>87224-69926-95138-64356-13250</PW>
-<PW>28665-52124-06305-57779-44666</PW>
-<PW>42505-54161-91396-72470-10110</PW>
-<PW>76092-62351-24797-24993-07881</PW>
-<PW>34107-59319-89301-66706-99350</PW>
-<PW>32649-84768-27519-56872-98810</PW>
-<PW>95049-06029-49187-74896-77979</PW>
-<PW>03710-52555-15347-36077-82080</PW>
-<PW>08914-30115-37310-11244-05328</PW>
-<PW>13246-14546-69873-98902-63400</PW>
-<PW>18414-99343-98554-99505-71826</PW>
-<PW>45871-50197-48286-18744-41990</PW>
-<PW>00060-24184-71697-71798-77564</PW>
-<PW>93285-17313-16134-93344-75235</PW>
-<PW>83838-95683-42435-75728-98667</PW>
-<PW>70262-20448-57970-18370-03160</PW>
-<PW>03321-80916-26487-43419-62325</PW>
-<PW>97340-94796-36314-24353-13874</PW>
-<PW>64833-60251-04411-09288-41718</PW>
-<PW>40408-73184-96506-71287-89638</PW>
-<PW>72132-48346-79137-81244-72719</PW>
-<PW>78987-89428-89862-35943-17436</PW>
-<PW>99292-33681-44510-69067-92388</PW>
-<PW>28722-34475-24739-77165-88048</PW>
-<PW>56661-55435-95425-82634-75620</PW>
-<PW>81695-51122-91559-10681-14416</PW>
-<PW>98835-20602-58186-09033-31827</PW>
-<PW>10882-26791-54463-98367-28148</PW>
-<PW>95033-66389-11436-00543-50788</PW>
-<PW>47036-89045-18650-09197-97100</PW>
-<PW>46780-82314-62474-08188-68486</PW>
-<PW>00709-42251-67673-18009-88435</PW>
-<PW>33044-50639-30711-84732-58764</PW>
-<PW>02726-72388-82019-33898-62351</PW>
-<PW>61075-34338-71054-86334-78818</PW>
-<PW>38155-98379-41847-38565-03531</PW>
-<PW>18187-34195-79886-99010-56128</PW>
-<PW>95356-11810-70843-90142-32976</PW>
-<PW>40164-60372-60880-72481-72996</PW>
-<PW>18252-53423-11210-60187-81853</PW>
-<PW>70376-64506-03579-84811-07092</PW>
-<PW>50491-18329-35918-00595-47850</PW>
-<PW>61242-62234-96450-80194-91134</PW>
-<PW>93626-61247-40652-88286-08769</PW>
-<PW>82124-36789-77846-45092-18478</PW>
-<PW>14569-12242-34230-73563-42151</PW>
-<PW>80933-68831-30658-96246-53694</PW>
-<PW>84773-22028-10596-26628-85418</PW>
-<PW>44119-33426-11488-66472-26816</PW>
-<PW>79812-40261-40127-60236-56162</PW>
-<PW>24333-54597-42970-13833-00975</PW>
-<PW>25121-57345-96919-42894-81013</PW>
-<PW>86525-97278-46559-59991-20646</PW>
-<PW>76318-61682-79463-80081-85342</PW>
-<PW>58535-03356-27079-86632-83637</PW>
+<PW>38016</PW>
+<PW>55761</PW>
+<PW>90184</PW>
+<PW>13362</PW>
+<PW>91145</PW>
+<PW>11801</PW>
+<PW>69440</PW>
+<PW>77131</PW>
+<PW>17873</PW>
+<PW>66921</PW>
+<PW>27234</PW>
+<PW>88705</PW>
+<PW>52676</PW>
+<PW>32727</PW>
+<PW>37606</PW>
+<PW>01303</PW>
+<PW>42524</PW>
+<PW>18436</PW>
+<PW>07828</PW>
+<PW>50070</PW>
+<PW>10069</PW>
+<PW>10932</PW>
+<PW>44678</PW>
+<PW>93568</PW>
+<PW>73545</PW>
+<PW>39573</PW>
+<PW>50806</PW>
+<PW>59948</PW>
+<PW>75727</PW>
+<PW>64152</PW>
+<PW>33365</PW>
+<PW>17381</PW>
+<PW>36068</PW>
+<PW>69808</PW>
+<PW>32207</PW>
+<PW>72738</PW>
+<PW>48372</PW>
+<PW>07159</PW>
+<PW>66396</PW>
+<PW>84703</PW>
+<PW>18621</PW>
+<PW>87894</PW>
+<PW>11781</PW>
+<PW>71365</PW>
+<PW>41216</PW>
+<PW>26441</PW>
+<PW>77847</PW>
+<PW>16372</PW>
+<PW>44621</PW>
+<PW>68306</PW>
+<PW>94290</PW>
+<PW>36257</PW>
+<PW>60366</PW>
+<PW>80649</PW>
+<PW>92711</PW>
+<PW>45318</PW>
+<PW>99519</PW>
+<PW>92835</PW>
+<PW>34852</PW>
+<PW>64332</PW>
+<PW>46840</PW>
+<PW>64417</PW>
+<PW>22997</PW>
+<PW>76133</PW>
+<PW>80439</PW>
+<PW>84645</PW>
+<PW>38636</PW>
+<PW>09808</PW>
+<PW>62759</PW>
+<PW>69900</PW>
+<PW>57026</PW>
+<PW>36327</PW>
+<PW>03660</PW>
+<PW>70473</PW>
+<PW>50400</PW>
+<PW>21024</PW>
+<PW>16573</PW>
+<PW>79422</PW>
+<PW>43333</PW>
+<PW>07641</PW>
+<PW>66614</PW>
+<PW>16933</PW>
+<PW>43448</PW>
+<PW>97191</PW>
+<PW>97537</PW>
+<PW>49540</PW>
+<PW>99853</PW>
+<PW>00148</PW>
+<PW>62841</PW>
+<PW>27129</PW>
+<PW>44203</PW>
+<PW>60181</PW>
+<PW>30056</PW>
+<PW>16806</PW>
+<PW>28575</PW>
+<PW>24675</PW>
+<PW>58343</PW>
+<PW>55016</PW>
+<PW>94924</PW>
+<PW>84199</PW>
 </Serials>
 </SerialListData>
 </SerialLists>
