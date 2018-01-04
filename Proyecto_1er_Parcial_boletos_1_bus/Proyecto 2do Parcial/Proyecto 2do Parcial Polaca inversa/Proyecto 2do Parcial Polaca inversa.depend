@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1515035745 source:g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\proyecto 2do parcial polaca inversa\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<ctime>
+	<string.h>
+	<windows.h>
+	<time.h>
+	<string>
+	<fstream>
+	<locale.h>
+
