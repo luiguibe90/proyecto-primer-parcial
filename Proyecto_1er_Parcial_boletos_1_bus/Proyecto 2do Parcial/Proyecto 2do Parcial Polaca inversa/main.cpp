@@ -2,14 +2,14 @@
 *       UNIVERSIDAD DE LAS FUERZAS ARMADAS           **
 *                    ESPE                            **
 *                                                    **
-*   Proyecto Primer Parcial Estructura de Datos      **
+*   Proyecto Segundo Parcial Estructura de Datos     **
 *                    Pilas                           **
 *Tema:                                               **
 *                  Polaca Inversa                    **
 *Autores:                                            **
 *       Benitez Rodriguez Luis Guillermo             **
 *       Vaca Perez Vicente Xavier                    **
-*Fecha de Entrega: 2018-01-15                        **
+*Fecha de Entrega: 2018-01-19                        **
 *Carrera: Ingenieria en Sistemas e Informatica       **
 *Profesor: Ing Fernando Solis                        **
 *******************************************************/
@@ -67,72 +67,10 @@ void about();
 void qr();
 void guardardatos(Pila lista);
 int ObtenerEnteroPositivo();
-
+int calculadora();
+int sonidos();
+int backup();
 //desarrollo de funciones
-static HWND  hConWnd;
-
-HWND BCX_Bitmap(char*, HWND = 0, int = 0, int = 0, int = 0, int = 0, int = 0, int = 0, int = 0, int = 0);
-HWND GetConsoleWndHandle(void);
-// draw the bitmap
-HWND BCX_Bitmap(char* Text, HWND hWnd, int id, int X, int Y, int W, int H, int Res, int Style, int Exstyle){
-    fflush(stdin);
-	HWND A;
-	HBITMAP hBitmap;
-
-	// set default style
-	if (!Style) Style = WS_CLIPSIBLINGS | WS_CHILD | WS_VISIBLE | SS_BITMAP | WS_TABSTOP;
-
-	// form for the image
-	A = CreateWindowEx(Exstyle, "static", NULL, Style, X, Y, 0, 0, hWnd, (HMENU)id, GetModuleHandle(0), NULL);
-
-	// Text contains filename
-	hBitmap = (HBITMAP)LoadImage(0, Text, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE | LR_CREATEDIBSECTION);
-
-	// auto-adjust width and height
-	if (W || H) hBitmap = (HBITMAP)CopyImage(hBitmap, IMAGE_BITMAP, W, H, LR_COPYRETURNORG);
-	SendMessage(A, (UINT)STM_SETIMAGE, (WPARAM)IMAGE_BITMAP, (LPARAM)hBitmap);
-	if (W || H) SetWindowPos(A, HWND_TOP, X, Y, W, H, SWP_DRAWFRAME);
-
-	return A;
-}
-HWND GetConsoleWndHandle(void){// tricking Windows just a little ...
-    fflush(stdin);
-	HWND hConWnd;
-	OSVERSIONINFO os;
-	char szTempTitle[800], szClassName[800], szOriginalTitle[1024];
-
-	os.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-	GetVersionEx(&os);
-	// may not work on WIN9x
-	if (os.dwPlatformId == VER_PLATFORM_WIN32s) return 0;
-
-	GetConsoleTitle(szOriginalTitle, sizeof(szOriginalTitle));
-	sprintf(szTempTitle, "%u - %u", GetTickCount(), GetCurrentProcessId());
-	SetConsoleTitle(szTempTitle);
-	//Sleep(100);
-	// handle for NT and XP
-	hConWnd = FindWindow(NULL, szTempTitle);
-	SetConsoleTitle(szOriginalTitle);
-
-	// may not work on WIN9x
-	if (os.dwPlatformId == VER_PLATFORM_WIN32_WINDOWS)
-	{
-	    fflush(stdin);
-		hConWnd = GetWindow(hConWnd, GW_CHILD);
-		if (hConWnd == NULL) return 0;
-		GetClassName(hConWnd, szClassName, sizeof(szClassName));
-		// while ( _stricmp( szClassName, "ttyGrab" ) != 0 )
-		while (strcmp(szClassName, "ttyGrab") != 0)
-		{
-			hConWnd = GetNextWindow(hConWnd, GW_HWNDNEXT);
-			if (hConWnd == NULL) return 0;
-			GetClassName(hConWnd, szClassName, sizeof(szClassName));
-		}
-
-	}
-
-	return hConWnd;
-}
 
 
 int ObtenerEnteroPositivo(){
@@ -153,77 +91,91 @@ int ObtenerEnteroPositivo(){
     cadenaDelEntero[iterador]='\0';
     return entero=atoi(cadenaDelEntero);
 }
-
+int calculadora(){
+return 0;
+}
+int sonidos(){
+return 0;
+}
+int backup(){
+return 0;
+}
+void agentes(){
+    system("WinAppManejoMSAgente.exe");
+}
 
 int main()
 {
     int opcion;
      inicio();
 
-     opcion=menu();
-		system("cls");
-    cout << "Hello world!" << endl;
+
+
+		do{ opcion=menu();
+            system("cls");
+            switch (opcion)
+            {
+                case 1:
+                    calculadora();
+                    system("pause");
+
+                break;
+                case 2:
+                    ayuda();
+                    system("pause");
+                break;
+                case 3:
+                    qr();
+                    system("pause");
+
+                break;
+                case 4:
+                    about();
+                    system("pause");
+
+                break;
+                case 5:
+                    system("WinAppManejoMSAgente.exe");
+                   // agentes();
+                    system("pause");
+                break;
+                case 6:
+                    sonidos();
+                    system("pause");
+
+                break;
+                case 7:
+                    backup();
+                    system("pause");
+
+                break;
+                case 8:
+
+                break;
+
+            }
+
+		}
+		while(opcion!=8);
     return 0;
 }
 void ayuda(){
     system("ayuda.chm");
 }
 void about(){
-    char c;
-	hConWnd = GetConsoleWndHandle();
-	if (hConWnd)// qr github
-	{
-		// select a bitmap file you have or use one of the files in the Windows folder
-		// nombre del archivo, handle, ID, coord X, coord Y, ancho, altura   si 0,0=ajustes automaticos
-		//BCX_Bitmap("taday.bmp", hConWnd, 0, 20, 20, 200, 100);
-		do{
-			BCX_Bitmap("aboutl.bmp", hConWnd, 0, 0,0, 400, 400);
-			c=getch();
-		}while(c!=13);
-	}
-    system("pause");
-	system("cls");
-	hConWnd = GetConsoleWndHandle();
-    // imagen qr github codigo del proyecto
-    if (hConWnd)
-	{
 
-		BCX_Bitmap("  ", hConWnd, 0,0, 0, 400, 400);
-		//Sleep(200);
-		getchar();  // wait
-	}
-fflush(stdin);
+  system("aboutl.bmp");
+    fflush(stdin);
 }
 void qr(){
-     char c;
-	hConWnd = GetConsoleWndHandle();
-    // imagen qr github codigo del proyecto
-    if (hConWnd)
-	{
 
-		BCX_Bitmap("qrgithub.bmp", hConWnd, 0, 500, 50, 100, 100);
-		//Sleep(200);
-		getchar();  // wait
-	}
-	system("pause");
-	system("cls");
-	hConWnd = GetConsoleWndHandle();
-    // imagen qr github codigo del proyecto
-    if (hConWnd)
-	{
-
-		BCX_Bitmap("  ", hConWnd, 0, 500, 50, 100, 100);
-		//Sleep(200);
-		getchar();  // wait
-	}
-	fflush(stdin);
 }
 void guardardatos(Pila lista){
     FILE *archivo=NULL;
     archivo=fopen("Datos Pila.txt","w+");
     system("cls");
     printf("\t\t----------------------------\n");
-    printf("\t\t     LISTA DE PASAJEROS \n");
+    printf("\t\t                             \n");
     printf("\t\t----------------------------\n\n");
 
     fclose(archivo);
@@ -243,11 +195,11 @@ void color(int a,int b){
 }
 int menu(){
 
-    const char *titulo="\t\t\tLISTAS DOBLES";
-	const char *opciones[]={/*1*/"INGRESAR DATOS DE CLIENTE (NUEVO BOLETO)",/*2*/"CANCELACION BOLETO (ELIMINAR)"
-                            ,/*3*/"BUSCAR CLIENTE",/*4*/"MOSTRAR ASIENTOS DISPONIBLES",
-                            /*5*/"IMPRIMIR DATOS",/*6*/"GUARDAR DATOS",/*7*/"AYUDA",/*8*/"GENERAR QR",/*9*/"SALIR"};
-    int opcionSeleccionada = 1,numerodeopciones=9;
+    const char *titulo="\t\t\tCALCULADORA POLACA";
+	const char *opciones[]={/*1*/"CALCULADORA",/*2*/"AYUDA"
+                            ,/*3*/"QR",/*4*/"ABOUT",
+                            /*5*/"AGENTES",/*6*/"SONIDOS",/*7*/"BACKUP",/*8*/"SALIR"};
+    int opcionSeleccionada = 1,numerodeopciones=8;
     int tecla;
     bool repite=true;
     int i=0;
@@ -516,7 +468,7 @@ void inicio (){
         gotoxy(67,16);printf("%c",223);Sleep(tesp);
         gotoxy(68,16);printf("%c",223);Sleep(tesp);
     Beep(800,300);
-    gotoxy(41,25);printf("VENTA DE BOLETOS DE UN BUS\n");
+    gotoxy(41,25);printf("CALCULADORA POLACA\n");
     //barra cargando
 
     gotoxy(30,29);//1er numero mueve hacia izq o der 2do arriba abajo
