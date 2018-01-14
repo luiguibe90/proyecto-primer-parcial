@@ -47,14 +47,12 @@
 
 using namespace std;
 
-struct Nodo{
-
-    int datoEntero;
-
-    Nodo *siguiente;
-    Nodo *anterior;
+struct nodo{
+    int nro;
+    struct nodo *sgte;
 };
-typedef struct Nodo *Pila;
+
+typedef nodo *ptrPila;   // creando nodo tipo puntero( tipo de dato )
 
 
 //prototipo de funciones
@@ -66,7 +64,7 @@ int menuSN();
 void ayuda();
 void about();
 void qr();
-void guardardatos(Pila lista);
+void guardardatos(ptrPila lista);
 int ObtenerEnteroPositivo();
 int calculadora();
 int sonidos();
@@ -104,67 +102,104 @@ return 0;
 void agentes(){
     system("WinAppManejoMSAgente.exe");
 }
-
-
-
-//inicio funciones trigonometricas
-
-float factorial(int n)
-        {
-                int i,fact=1;
-
-                    for(i = 1; i <= n; i++)
-                        fact = fact * i;
-                return (fact);
-        }
-
-
-float ConversionGradesToRadians(float mX)
-        {
-             mX = ((mX * 3.141592 )/ 180);
-            return mX;
-        }
-
-
-float SerieSin(float mNum)
-        {
-        int i;float mX=0, sum = 0;
-
-        mX = ConversionGradesToRadians(mNum);
-
-            for (i = 1; i <= 8; i++)
-            {
-                sum = sum + (( (pow(-1, i + 1) * pow(mX, (2 * i - 1)))) /
-                      factorial(2 * i - 1));
-
-            }
-        return sum;
-        }
-float SerieCos(float mNum)
+//funciones para el manejo de la pila
+void push( ptrPila &p, int valor )
 {
-    int i; float mX,sum;
+     ptrPila aux;
+     aux = new(struct nodo);  // apuntamos al nuevo nodo creado
+     aux->nro = valor;
 
+     aux->sgte = p ;
+     p = aux ;
+}
+
+/*                Desapilar elemento(devuelve elemento)
+---------------------------------------------------------------------*/
+int pop( ptrPila &p )
+{
+     int num ;
+     ptrPila aux;
+
+     aux = p ;
+     num = aux->nro;   // asignamos el primer vamor de la pila
+
+     p = aux->sgte ;
+     delete(aux);
+
+     return num;
+}
+
+/*                     Muestra elementos de la pila
+---------------------------------------------------------------------*/
+void mostrar_pila( ptrPila p )
+{
+     ptrPila aux;
+     aux = p;     // apunta al inicio de la lista
+
+     while( aux !=NULL )
+     {
+            cout<<"\t"<< aux->nro <<endl;
+            aux = aux->sgte;
+     }
+}
+
+/*                Eliminar todos los elementos de la pila
+---------------------------------------------------------------------*/
+void destruir_pila( ptrPila &p)
+{
+     ptrPila aux;
+
+     while( p != NULL)
+     {
+           aux = p;
+           p = aux->sgte;
+           delete(aux);
+     }
+}
+
+//fin manejo pila
+//inicio funciones trigonometricas
+float factorial(int n){
+    int i,fact=1;
+
+        for(i = 1; i <= n; i++)
+            fact = fact * i;
+    return (fact);
+}
+float ConversionGradesToRadians(float mX){
+     mX = ((mX * 3.141592 )/ 180);
+    return mX;
+}
+float SerieSin(float mNum){
+    int i;float mX=0, sum = 0;
     mX = ConversionGradesToRadians(mNum);
 
+        for (i = 1; i <= 8; i++)
+        {
+            sum = sum + (( (pow(-1, i + 1) * pow(mX, (2 * i - 1)))) /
+            factorial(2 * i - 1));
+        }
+return sum;
+}
+float SerieCos(float mNum){
+    int i; float mX,sum;
+    mX = ConversionGradesToRadians(mNum);
     for(i = 0; i <= 7; i++)
     {
         sum = sum + ((pow(-1,i)* pow(mX, 2 * i )) /factorial(2 * i ));
     }
-
-    return sum;
-
+return sum;
 }
-double SerieTan(double mNum)
-    {
-        int i; float mX,sum,sum1;
+double SerieTan(double mNum){
+    int i; float mX,sum,sum1;
     for (i = 1; i <= 8; i++)
-            {
-                sum = sum + (( (pow(-1, i + 1) * pow(mX, (2 * i - 1)))) /
-                      factorial(2 * i - 1));
+    {
+        sum = sum + (( (pow(-1, i + 1) * pow(mX, (2 * i - 1)))) /
+        factorial(2 * i - 1));
 
-            }
-        return sum/SerieCos(mNum);
     }
+return sum/SerieCos(mNum);
+}
 
 //fin funciones trigonometricas
 int main()
@@ -172,56 +207,54 @@ int main()
     int opcion;
      inicio();
 
+    do{
+        opcion=menu();
+        system("cls");
+        switch (opcion)
+        {
+            case 1:
+                calculadora();
+                system("pause");
 
+            break;
+            case 2:
+                ayuda();
+                system("pause");
+            break;
+            case 3:
+                qr();
+                system("pause");
 
-		do{
-            opcion=menu();
-            system("cls");
-            switch (opcion)
-            {
-                case 1:
-                    calculadora();
-                    system("pause");
+            break;
+            case 4:
+                about();
+                system("pause");
 
-                break;
-                case 2:
-                    ayuda();
-                    system("pause");
-                break;
-                case 3:
-                    qr();
-                    system("pause");
+            break;
+            case 5:
+                //system("WinAppManejoMSAgente.exe");
+                agentes();
+                system("pause");
+            break;
+            case 6:
+                sonidos();
+                system("pause");
 
-                break;
-                case 4:
-                    about();
-                    system("pause");
+            break;
+            case 7:
+                backup();
+                system("pause");
 
-                break;
-                case 5:
-                    //system("WinAppManejoMSAgente.exe");
-                    agentes();
-                    system("pause");
-                break;
-                case 6:
-                    sonidos();
-                    system("pause");
+            break;
+            case 8:
 
-                break;
-                case 7:
-                    backup();
-                    system("pause");
+            break;
 
-                break;
-                case 8:
+        }
 
-                break;
-
-            }
-
-		}
-		while(opcion!=8);
-    return 0;
+    }
+    while(opcion!=8);
+return 0;
 }
 void ayuda(){
     system("ayuda.chm");
@@ -234,7 +267,7 @@ void about(){
 void qr(){
 
 }
-void guardardatos(Pila lista){
+void guardardatos(ptrPila lista){
     FILE *archivo=NULL;
     archivo=fopen("Datos Pila.txt","w+");
     system("cls");
@@ -385,7 +418,7 @@ void inicio (){
         YELLOW			E Amarillo
         WHITE			F Blanco
         */
-    int tesp=15,x=3,y=4;
+    int tesp=15,x=6,y=1;
     char caracter[130];
     color (fondo,texto);
     FILE *INICIO;
@@ -400,9 +433,9 @@ void inicio (){
             gotoxy(1,i);printf("%c",219);
         }
     //barra inferior y barra derecha
-          for (int i=1;i<15;i++) //horizontal
+          for (int i=1;i<15;i++) //vertical
         {
-            gotoxy(117,i);printf("%c",219);
+            gotoxy(78,i);printf("%c",219);
         }
         for (int i=1;i<=78;i++) //barra inferior horizonatal
         {
@@ -532,19 +565,19 @@ void inicio (){
         gotoxy(67,16);printf("%c",223);Sleep(tesp);
         gotoxy(68,16);printf("%c",223);Sleep(tesp);
     Beep(800,300);
-    gotoxy(41,25);printf("CALCULADORA POLACA\n");
+    gotoxy(46,25);printf("CALCULADORA POLACA\n");
     //barra cargando
 
-    gotoxy(30,29);//1er numero mueve hacia izq o der 2do arriba abajo
+    gotoxy(40,29);//1er numero mueve hacia izq o der 2do arriba abajo
 
     printf("\tCARGANDO...\n");
-    for(int i=20;i<70;i++)//80 marca el tamanio
+    for(int i=30;i<80;i++)//80 marca el tamanio
     {
         gotoxy(i,30);//1er numero mueve hacia izq o der 2do arriba abajo
         printf("%c",219);//valor de caracter a imprimir para la barra mediante asccii
-        for(int x=50;x<70;x++)
+        for(int x=50;x<90;x++)
         {//los espacios que va a recorre la barra en la pantalla
-            for(int y=1;y<20;y++)
+            for(int y=1;y<30;y++)
             {//determina el tiempo de movimiento de la barra
                 gotoxy(y+180,34);
             }
