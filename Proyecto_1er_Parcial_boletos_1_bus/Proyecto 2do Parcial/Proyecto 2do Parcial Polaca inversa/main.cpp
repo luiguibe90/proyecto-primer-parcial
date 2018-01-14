@@ -24,6 +24,7 @@
 #include <string.h>
 #include <windows.h>
 #include <time.h>
+#include <math.h>
 #include <string>
 #include<fstream>
 #include <locale.h>
@@ -104,6 +105,68 @@ void agentes(){
     system("WinAppManejoMSAgente.exe");
 }
 
+
+
+//inicio funciones trigonometricas
+
+float factorial(int n)
+        {
+                int i,fact=1;
+
+                    for(i = 1; i <= n; i++)
+                        fact = fact * i;
+                return (fact);
+        }
+
+
+float ConversionGradesToRadians(float mX)
+        {
+             mX = ((mX * 3.141592 )/ 180);
+            return mX;
+        }
+
+
+float SerieSin(float mNum)
+        {
+        int i;float mX=0, sum = 0;
+
+        mX = ConversionGradesToRadians(mNum);
+
+            for (i = 1; i <= 8; i++)
+            {
+                sum = sum + (( (pow(-1, i + 1) * pow(mX, (2 * i - 1)))) /
+                      factorial(2 * i - 1));
+
+            }
+        return sum;
+        }
+float SerieCos(float mNum)
+{
+    int i; float mX,sum;
+
+    mX = ConversionGradesToRadians(mNum);
+
+    for(i = 0; i <= 7; i++)
+    {
+        sum = sum + ((pow(-1,i)* pow(mX, 2 * i )) /factorial(2 * i ));
+    }
+
+    return sum;
+
+}
+double SerieTan(double mNum)
+    {
+        int i; float mX,sum,sum1;
+    for (i = 1; i <= 8; i++)
+            {
+                sum = sum + (( (pow(-1, i + 1) * pow(mX, (2 * i - 1)))) /
+                      factorial(2 * i - 1));
+
+            }
+        return sum/SerieCos(mNum);
+    }
+
+//fin funciones trigonometricas
 int main()
 {
     int opcion;
@@ -111,7 +174,8 @@ int main()
 
 
 
-		do{ opcion=menu();
+		do{
+            opcion=menu();
             system("cls");
             switch (opcion)
             {
@@ -135,8 +199,8 @@ int main()
 
                 break;
                 case 5:
-                    system("WinAppManejoMSAgente.exe");
-                   // agentes();
+                    //system("WinAppManejoMSAgente.exe");
+                    agentes();
                     system("pause");
                 break;
                 case 6:
