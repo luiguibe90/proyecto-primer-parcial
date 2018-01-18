@@ -69,6 +69,7 @@ int ObtenerEnteroPositivo();
 int calculadora();
 int sonidos();
 int backup();
+void menuMouse();
 //desarrollo de funciones
 
 
@@ -205,8 +206,9 @@ return sum/SerieCos(mNum);
 int main()
 {
     int opcion;
-     inicio();
-
+   //  inicio();
+   menuMouse();
+/*
     do{
         opcion=menu();
         system("cls");
@@ -253,14 +255,110 @@ int main()
         }
 
     }
-    while(opcion!=8);
+    while(opcion!=8);*/
 return 0;
+}
+
+
+void menuMouse(){
+
+    system("cls");
+	system("color 0A");
+	cout << "\t\t\t Calculadora Polaca\n";
+	printf("/*1*/ => CALCULADORA\n");
+	printf("/*2*/ => AYUDA\n");
+	printf("/*3*/ => QR\n");
+	printf("/*4*/ => ABOUT\n");
+	printf("/*5*/ => AGENTES\n");
+	printf("/*6*/ => BACKUP\n");
+	printf("/*7*/ => Salir\n");
+
+	HANDLE paraEntrada = GetStdHandle(STD_INPUT_HANDLE);
+	INPUT_RECORD regEntrada;
+	DWORD evento;
+	COORD coordenadas;
+	SetConsoleMode(paraEntrada, ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
+	while (1) {
+		ReadConsoleInput(paraEntrada, &regEntrada, 1, &evento);
+		if (regEntrada.EventType == MOUSE_EVENT)
+		{
+			if (regEntrada.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+			{
+				coordenadas.X = regEntrada.Event.MouseEvent.dwMousePosition.X;
+				coordenadas.Y = regEntrada.Event.MouseEvent.dwMousePosition.Y;
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 1)
+				{
+					system("cls");
+					calculadora();
+					//printf("1");
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 2)
+				{
+				    system("cls");
+				    ayuda();
+					//printf("2");
+					system("pause");
+					system("cls");
+					menuMouse();
+
+				}
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 3)//(coordenadas.X >0 && coordenadas.X <= 9 && coordenadas.Y == 3)
+				{
+					system("cls");
+					qr();
+					//printf("3");
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 4)
+				{
+					system("cls");
+					about();
+					//printf("4");
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 5)
+				{
+					system("cls");
+					agentes();
+					//printf("5");
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 6)
+				{
+				    system("cls");
+				    backup();
+					//printf("6");
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 7)
+				{
+				    system("cls");
+					printf("gracias por usar el programa");
+					system("pause");
+					exit(0);
+				}
+			}
+		}
+	}
 }
 void ayuda(){
     system("ayuda.chm");
 }
 void about(){
-
   system("aboutl.bmp");
     fflush(stdin);
 }
