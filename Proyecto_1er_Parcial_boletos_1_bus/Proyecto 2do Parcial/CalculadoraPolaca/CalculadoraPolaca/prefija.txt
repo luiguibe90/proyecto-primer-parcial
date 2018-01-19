@@ -1,0 +1,28 @@
+ Expresion :
+ 45
+ Expresion :
+ 
+ Pila :
+ sen
+ Expresion :
+ 7
+ Pila :
+ *
+ Expresion :
+ 1
+ Expresion :
+ +
+ Expresion :
+ 
+ Expresion :
+ 
+ Expresion :
+ 8
+ Expresion :
+ 5
+ Pila :
+ *
+ Expresion :
+ 4
+ Expresion :
+ +

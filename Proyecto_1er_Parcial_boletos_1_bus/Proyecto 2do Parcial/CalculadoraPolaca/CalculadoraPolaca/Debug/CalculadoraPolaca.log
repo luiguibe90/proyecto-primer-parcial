@@ -1,0 +1,23 @@
+﻿  stdafx.cpp
+  CalculadoraPolaca.cpp
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(150): warning C4244: 'return': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(153): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(163): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(172): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(181): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(184): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(189): warning C4101: 'opcion': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(930): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(879): warning C4101: 'desapila': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(876): warning C4101: 'post': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(983): warning C4101: 'cadena1': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(984): warning C4101: 'desapila': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(981): warning C4101: 'post': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1065): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1189): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1421): warning C4101: 'v': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1421): warning C4101: 'valor': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1348): warning C4101: 'h': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1514): warning C4101: 'indice': variable local sin referencia
+c:\users\luigu\desktop\calculadorapolaca\calculadorapolaca\calculadorapolaca.cpp(1569): warning C4018: '<': no coinciden signed/unsigned
+  CalculadoraPolaca.vcxproj -> C:\Users\luigu\Desktop\CalculadoraPolaca\Debug\CalculadoraPolaca.exe

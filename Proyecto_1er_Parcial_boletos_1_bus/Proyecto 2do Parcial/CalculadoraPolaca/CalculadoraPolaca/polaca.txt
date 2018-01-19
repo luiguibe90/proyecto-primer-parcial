@@ -1,0 +1,30 @@
+ Expresion :
+ 1
+ Expresion :
+ 7
+ Expresion :
+ 45
+ Expresion :
+ sen
+ Expresion :
+ *
+ Expresion :
+ +
+ Expresion :
+ 4
+ Expresion :
+ 5
+ Expresion :
+ 8
+ Expresion :
+ *
+ Expresion :
+ +
+ Expresion :
+ 8
+ Expresion :
+ 9
+ Expresion :
+ +
+ Expresion :
+ 4
