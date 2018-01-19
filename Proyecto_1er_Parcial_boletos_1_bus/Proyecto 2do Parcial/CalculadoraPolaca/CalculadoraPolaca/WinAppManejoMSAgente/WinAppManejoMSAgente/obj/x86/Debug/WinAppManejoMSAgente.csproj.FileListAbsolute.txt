@@ -47,15 +47,3 @@ C:\Users\usuario\Desktop\Enero 2016\Agentes\WinAppManejoMSAgente\WinAppManejoMSA
 C:\Users\usuario\Desktop\Enero 2016\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.csproj.ResolveComReference.cache
 C:\Users\usuario\Desktop\Enero 2016\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.exe
 C:\Users\usuario\Desktop\Enero 2016\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.pdb
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\bin\Debug\WinAppManejoMSAgente.exe
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\bin\Debug\WinAppManejoMSAgente.pdb
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\bin\Debug\Interop.AgentObjects.dll
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.csprojResolveAssemblyReference.cache
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\Interop.AgentObjects.dll
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.csproj.ResolveComReference.cache
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.frmManejoAgente.resources
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.Properties.Resources.resources
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.csproj.GenerateResource.Cache
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.csproj.CoreCompileInputs.cache
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.exe
-G:\ESPE\3\COMPUTACION GRAFICA\Agentes\WinAppManejoMSAgente\WinAppManejoMSAgente\obj\x86\Debug\WinAppManejoMSAgente.pdb

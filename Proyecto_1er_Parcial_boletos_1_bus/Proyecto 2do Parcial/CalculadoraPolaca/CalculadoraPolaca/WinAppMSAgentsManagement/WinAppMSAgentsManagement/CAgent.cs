@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AgentObjects;
 using AxAgentObjects;
+using System.IO;
+using System.Threading;
 
 namespace WinAppMSAgentsManagement
 {
@@ -22,7 +24,7 @@ namespace WinAppMSAgentsManagement
         private int mX, mY;
         private int mVoice;
         private int mCadence;
-
+        private string texto;
         #endregion
 
         #region Propiedades
@@ -81,7 +83,7 @@ namespace WinAppMSAgentsManagement
 
         public CAgent(string Name, Form ObjForm, int xBegin, int yEnd)
         {
-            mCadence = 100;
+            mCadence = 75;//100;
             mVoice = 200;
             mX = xBegin;
             mY = yEnd;
@@ -100,6 +102,19 @@ namespace WinAppMSAgentsManagement
         ///<summary>
         ///Funciones miembro
         ///</summary>  
+        ///
+
+        public void LeerTexto() {
+            using (StreamReader read = new StreamReader(@"G:\Documentos\GitHub\proyecto-primer-parcial\Proyecto_1er_Parcial_boletos_1_bus\Proyecto 2do Parcial\CalculadoraPolaca\CalculadoraPolaca\respaldo.txt")) 
+            {
+                while (!read.EndOfStream)
+                {
+                    texto = read.ReadLine();
+                }
+                Console.WriteLine(texto);
+            }
+         
+        }
 
         public void ChooseLanguage(Boolean op)
         {
@@ -161,18 +176,23 @@ namespace WinAppMSAgentsManagement
 
         public void IniciarBienvenida(Form ObjForm)
         {
+            LeerTexto();
             mMSAgent.Characters[mName].Balloon.Style = 3;
             mMSAgent.Characters[mName].Play("Greet");
             mMSAgent.Characters[mName].Play("Announce");
-            //mMSAgent.Characters[mName].Speak("\\pit=" + Voice + "\\ Bievenido al Akinator", null);
-            mMSAgent.Characters[mName].Speak("Bievenido al Akinator.", null);
+           mMSAgent.Characters[mName].Speak("\\pit=" + Voice + "\\ Bievenido al Akinator", null);
+            mMSAgent.Characters[mName].Speak(texto, null);
             mMSAgent.Characters[mName].Play("Blink");
-            mMSAgent.Characters[mName].MoveTo(100, 300, mCadence);
-            mMSAgent.Characters[mName].Play("GestureLeft");
-            mMSAgent.Characters[mName].Speak("Para jugar, debes pensar en uno de estos animales, " +
-                                                "y yo intentaré adivinarlo.", null);
-            mMSAgent.Characters[mName].Play("DoMagic1");
-            mMSAgent.Characters[mName].Play("DoMagic2");
+
+            //mMSAgent.Characters[mName].MoveTo(100, 300, mCadence);
+            //mMSAgent.Characters[mName].Play("GestureLeft");
+            //mMSAgent.Characters[mName].Speak("Para jugar, debes pensar en uno de estos animales, " +
+            //                                    "y yo intentaré adivinarlo.", null);
+            //mMSAgent.Characters[mName].Play("DoMagic1");
+            //mMSAgent.Characters[mName].Play("DoMagic2");
+            Thread.Sleep(12000);
+            ObjForm.Close();
+            
         }
 
         public void LeerPregunta(Form ObjForm, Label lblPregunta, short x, short y)

@@ -25,8 +25,8 @@ namespace WinAppManejoMSAgente
 
         public void CargarAgente()
         {
-            //mObjAgente = new Agente("merlin", this, 400, 200);
-            mObjAgente = new Agente("Genie", this, 400, 200);
+            mObjAgente = new Agente("merlin", this, 400, 200);
+            //mObjAgente = new Agente("Genie", this, 400, 200);
             //mObjAgente = new Agente("Peedy", this, 400, 200);
             //mObjAgente = new Agente("Robby", this, 400, 200);
             //mObjAgente = new Agente("Santa", this, 400, 200);
