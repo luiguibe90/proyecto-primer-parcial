@@ -1,0 +1,42 @@
+﻿  stdafx.cpp
+  qrcodegen.cpp
+  ProyectoPolaca.cpp
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(65): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(163): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(237): warning C4018: '<': no coinciden signed/unsigned
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(235): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: vea la declaración de 'getch'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(187): warning C4101: 'desapila': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(184): warning C4101: 'post': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(274): warning C4101: 'cadena1': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(275): warning C4101: 'desapila': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(272): warning C4101: 'post': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(354): warning C4018: '<': no coinciden signed/unsigned
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(478): warning C4018: '<': no coinciden signed/unsigned
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(711): warning C4101: 'v': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(711): warning C4101: 'valor': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(638): warning C4101: 'h': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(791): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: vea la declaración de 'getch'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(808): warning C4101: 'indice': variable local sin referencia
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(830): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: vea la declaración de 'strcpy'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(839): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: vea la declaración de 'strcpy'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(846): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(93): note: vea la declaración de 'strcat'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(863): warning C4018: '<': no coinciden signed/unsigned
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(914): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(997): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1006): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1024): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\direct.h(110): note: vea la declaración de 'mkdir'
+g:\documentos\github\proyecto-primer-parcial\proyecto_1er_parcial_boletos_1_bus\proyecto 2do parcial\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1038): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+  Generando código...
+  ProyectoPolaca.vcxproj -> G:\Documentos\GitHub\proyecto-primer-parcial\Proyecto_1er_Parcial_boletos_1_bus\Proyecto 2do Parcial\CalculadoraPolaca\Debug\ProyectoPolaca.exe
