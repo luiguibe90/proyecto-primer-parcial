@@ -1,1 +1,48 @@
-﻿  ProyectoPolaca.vcxproj -> G:\Documentos\GitHub\proyecto-primer-parcial\Proyecto_1er_Parcial_boletos_1_bus\Proyecto2doParcial\CalculadoraPolaca\Debug\ProyectoPolaca.exe
+﻿  stdafx.cpp
+  qrcodegen.cpp
+  ProyectoPolaca.cpp
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(94): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(205): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(217): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(294): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(299): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: vea la declaración de 'getch'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(240): warning C4101: 'desapila': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(237): warning C4101: 'post': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(393): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: vea la declaración de 'getch'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(335): warning C4101: 'cadena1': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(336): warning C4101: 'desapila': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(333): warning C4101: 'post': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(438): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(562): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(810): warning C4101: 'v': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(810): warning C4101: 'valor': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(730): warning C4101: 'h': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(891): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: vea la declaración de 'getch'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(908): warning C4101: 'indice': variable local sin referencia
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(930): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: vea la declaración de 'strcpy'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(939): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(136): note: vea la declaración de 'strcpy'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(946): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\string.h(93): note: vea la declaración de 'strcat'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(963): warning C4018: '<': no coinciden signed/unsigned
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1012): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1095): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1104): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1122): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\direct.h(110): note: vea la declaración de 'mkdir'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1136): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+c:\users\luigu\desktop\final\nueva carpeta\calculadorapolaca\proyectopolaca\proyectopolaca.cpp(1171): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+  Generando código...
+  ProyectoPolaca.vcxproj -> C:\Users\luigu\Desktop\final\Nueva carpeta\CalculadoraPolaca\Debug\ProyectoPolaca.exe

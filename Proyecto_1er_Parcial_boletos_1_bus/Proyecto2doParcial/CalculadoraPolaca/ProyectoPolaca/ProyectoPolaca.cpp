@@ -16,6 +16,8 @@
 #include "PilaGenerica.h"
 #include "PilaGenericaD.h"
 #include "qrcodegen.h"
+#define fondo 0
+#define texto 3
 
 struct Elemento {
 	string ope;
@@ -28,10 +30,9 @@ struct Expresion {
 };
 
 using namespace std;
-
+void inicio();
 void menuTeclas();
 void menuTeclasPre();
-void menu();
 void asignar(string);
 bool valido(string);
 bool operando(string c);
@@ -52,6 +53,19 @@ void menuMouse();
 void leertxt();
 void guardarAg(string expresion, char *archivo);
 
+void gotoxy(int x, int y) {
+	HANDLE hcon;
+	hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD dwPos;
+	dwPos.X = x;
+	dwPos.Y = y;
+	SetConsoleCursorPosition(hcon, dwPos);
+}
+void color(int a, int b) {
+	int color = (a * 16) + b;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
+
 void ayuda()
 {
 	system("ayuda.chm");
@@ -65,11 +79,15 @@ void agente()
 	system("WinAppManejoMSAgente.exe");
 }
 int main() {
+	system("color 0A");
+	//inicio();
 	menuMouse();
+	system("color 0A");
 	return 0;
 }
 
 void guardarAg(string expresion, char *archivo) {
+	system("color 0A");
 	FILE *ptr;
 	string nombre;
 
@@ -132,7 +150,7 @@ void menuMouse() {
 				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 3)
 				{
 					system("cls");
-					printf("3");
+				
 					leertxt();
 					system("cls");
 					menuMouse();
@@ -149,6 +167,7 @@ void menuMouse() {
 
 				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 5)
 				{
+					system("color 0A");
 					system("cls");
 					about();
 					system("pause");
@@ -157,6 +176,7 @@ void menuMouse() {
 				}
 				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 6)
 				{
+					system("color 0A");
 					system("cls");
 					agente();
 					system("cls");
@@ -167,9 +187,10 @@ void menuMouse() {
 				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 7)
 				{
 					
-				
+					system("color 0A");
 					system("cls");
-					system("pause");
+					//system("pause");
+					system("respaldo.txt");
 					exit(0);
 				}
 			}
@@ -189,13 +210,24 @@ void leertxt()
 	cout << "Expresion =" << cadena;
 	system("pause");
 }
-
+string leertxt1()
+{
+	char cadena[20];
+	FILE *fichero;
+	fichero = fopen("respaldo.txt", "r");
+	while (!feof(fichero)) {
+		fgets(cadena, 20, fichero);
+	}
+	fclose(fichero);
+	cout << "Expresion =" << cadena;
+	return cadena;
+}
 void menuTeclas() {
 	system("color 0A");
 	string menu1[] = {
-		"1.- Insertar Expresion",
-		"2.- Generar Backup    ",
-		"3.- Regresar          " };
+		"1.- Ingresar Expresion",
+		"2.- Generar Backup",
+		"3.- Regresar" };
 	Pila *pila1 = NULL;
 	int cursor = 0;
 	string cad;
@@ -209,17 +241,19 @@ void menuTeclas() {
 	int n = -1, i = 0,num;
 	char dato[25] = "";
 	for (;;) {
+		system("color 0A");
 		system("cls");
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+		//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+		system("color 0A");
 		cout << "===================CALCULADORA POLACA===================" << endl;
 		for (int i = 0; i < 3; i++) {
 			if (cursor == i) {
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 160);
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 250);
 				cout << menu1[i] << endl;
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 160);
 			}
 			else {
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 160);
 				cout << menu1[i] << endl;
 			}
 		}
@@ -244,6 +278,7 @@ void menuTeclas() {
 			if (tecla == 13) {
 				switch (cursor) {
 				case 0:
+					system("color 0A");
 					system("cls");
 					printf("\n\n===================INFIJA A POSTFIJA===================\n\n");
 					cout << "Ingrese funcion: " << endl;
@@ -252,17 +287,20 @@ void menuTeclas() {
 					cverdad=postfija(cadena,num);
 					guardar("EXPRESION POSTFIJA =", nombreArchivo);
 					guardar(cadena, nombreArchivo);
-					printf("\nPulse cualquier tecla para generar codigo QR...");
-					getch();
-					
+					printf("\nPulse Enter para generar codigo QR...");
+					system("pause");
+					//getch();
+					system("color F0");
 					for (i = 0; i < cverdad.size(); i++)
 						cadena1[i] = cverdad[i];
 					cadena1[i] = '\0';
 					generarQr(cadena1);
 					pila.limpiarPila();
+					getch();
 					menuTeclas();
 					break;
 				case 1:
+					system("color 0A");
 					system("cls");
 					crear_carpeta();
 					printf("Respaldo guardado con exito\n");
@@ -281,14 +319,16 @@ void menuTeclas() {
 void menuTeclasPre() {
 	system("color 0A");
 	string menu1[] = {
-		"1.- Insertar Expresion",
-		"2.- Generar Backup         ",
-		"3.- Regresar          " };
+		"1.- Ingrese Expresion",
+		"2.- Generar Backup",
+		"3.- Regresar" };
 	Pila *pila1 = NULL;
 	int cursor = 0;
 	string cad;
 	char tecla;
-	char nombreArchivo[14] = "prefija.txt";
+	system("color 0A");
+	char nombreArchivo[14] ="prefija.txt";
+	system("color 0A");
 	PilaGenerica pila;
 	Expresion post;
 	string cadena, cverdad;
@@ -297,20 +337,23 @@ void menuTeclasPre() {
 	int n = -1, i = 0, num;
 
 	for (;;) {
+		system("color 0A");
 		system("cls");
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+		system("color 0A");
+		//FOREGROUND_GREEN
+		//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),250);
 		system("color 0A");
 		cout << "===================CALCULADORA POLACA===================" << endl;
-		
+		//system("color 0A");
 		for (int i = 0; i < 3; i++) {
 			//
 			if (cursor == i) {
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 160);
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 250);
 				cout << menu1[i] << endl;
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 160);
 			}
 			else {
-				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 160);
 				cout << menu1[i] << endl;
 			}
 		}
@@ -335,32 +378,52 @@ void menuTeclasPre() {
 			if (tecla == 13) {
 				switch (cursor) {
 				case 0:
+					system("color 0A");
 					system("cls");
+					system("color 0A");
 					printf("\n\n===================INFIJA A PREFIJA===================\n\n");
+					system("color 0A");
 					cout << "Ingrese funcion: " << endl;
+					system("color 0A");
+					//
+					cin >> cadena;
+					num = cadena.size();
+					cverdad = Prefija(cadena, num);
+					guardar(cadena, nombreArchivo);
+					getch();
+					menuTeclas();
+					//
+					/*
 					cin >> cadena;
 					num = cadena.size();
 					cverdad = Prefija(cadena, num);
 					guardar(cadena, nombreArchivo);
 					system("pause");
-					menuTeclas();
+					menuTeclas();*/
 					break;
 				case 1:
+					system("color 0A");
 					system("cls");
+					crear_carpeta();
+					printf("Respaldo guardado con exito\n");
+					system("pause");
 					
 					break;
 				case 2:
+					system("color 0A");
 					system("cls");
 
-					menuTeclasPre();
+					menuMouse();
 					break;
-				case 3:
+				/*case 3:
+					system("color 0A");
 					system("cls");
 					menuTeclasPre();
 					break;				
 				case 4:
+					system("color 0A");
 					menuMouse();//exit(1);
-					break;
+					break;*/
 				}
 				break;
 			}
@@ -554,6 +617,7 @@ int prdadFuera(char operando) { //prioridad del operador en la expresion infija
 }
 
 string postfija(string expresion, int num) {
+	system("color 0A");
 	PilaGenerica pila;
 	Expresion post;
 	Elemento elemento[25];
@@ -564,8 +628,14 @@ string postfija(string expresion, int num) {
 	int cont = 0, n = -1, i = 0;
 	bool desapila;
 	//Valido que la expresion sea valida
-	if (!valido(expresion))
-		printf("Caracter no valido en la expresion");
+	/*if (!valido(expresion)) {
+		system("color 0A");
+		system("cls");
+		printf("\nCaracter no valido en la expresion\nIntente ingresando nuevamente la cadena");
+		getch();
+		menuTeclas();
+	}*/
+		
 
 	for (int j = 0; j < num; j++) {
 		//separo la expresion
@@ -660,10 +730,17 @@ string Prefija(string expresion,int num) {
 	int cont = 0, n = -1, i = 0,h;
 	bool desapila;
 	char nombreArchivo[13] = "respaldo.txt";
-
+	system("color 0A");
 	//Valido que la expresion sea valida
-	if (!valido(expresion))
-		printf("Caracter no valido en la expresion");
+	/*if (!valido(expresion))
+	{
+		system("cls");
+		printf("\nCaracter no valido en la expresion\n");
+		//system("pause");
+		getch();		
+		menuTeclasPre();
+	}*/
+		
 
 	for (int j = 0; j < num; j++) {
 		//separo la expresion
@@ -886,9 +963,7 @@ bool valido(string expr) {
 	for (int i = 0; (i<expr.size() && sw); i++) {
 		string c;
 		c = expr[i];
-		sw = sw && (
-			(c >= "A" && c <= "Z") ||
-			(c >= "a" && c <= "z") ||
+		sw = sw && (			
 			(c >= "0" && c <= "9") ||
 			(c == "^") || (c == "/") || (c == "*") ||
 			(c == "+") || (c == "-") || (c == "\n") ||
@@ -1052,7 +1127,7 @@ void crear_carpeta()
 		printf("\nerror al crear carpeta\n");
 	}
 	//creacion de archivo en la carpeta creada
-	string nombre_archivo = "rsp", ruta_absoluta_archivo, o;
+	string nombre_archivo = "rsp", ruta_absoluta_archivo, o,cad;
 	//printf("Ingrese Nombre para el archivo de respaldo\n");
 	fflush(stdin);
 	// getline(cin,nombre_archivo);
@@ -1061,8 +1136,205 @@ void crear_carpeta()
 	if (arch = fopen(ruta_absoluta_archivo.c_str(), "a"))
 	{
 		printf("\nArchivo creado ");
+		cad = leertxt1();
+		fprintf(arch, " %s", cad.c_str());
 	}
 	else {
 		printf("error al crear archivo");
 	}
+}
+
+void inicio() {
+	/* LIBRERIA COLORES
+	Colores :
+	BLACK			0 Negro
+	BLUE			1 Azul
+	GREEN			2 Verde
+	CYAN			3 Cían
+	RED				4 Rojo
+	MAGENTA			5 Magenta
+	BROWN			6 Marrón
+	LIGHTGRAY		7 Gris Claro
+	DARKGRAY		8 Gris Oscuro
+	LIGHTBLUE		9 Azul Claro
+	LIGHTGREEN		A Verde Claro
+	LIGHTCYAN		B Cían Claro
+	LIGHTRED		C Rojo Claro
+	LIGHTMAGENTA	D Magenta Claro
+	YELLOW			E Amarillo
+	WHITE			F Blanco
+	*/
+	int tesp = 15, x = 6, y = 1;
+	char caracter[130];
+	color(fondo, texto);
+	FILE *INICIO;
+	INICIO = fopen("ARCHIVOS/INICIO.txt", "r");
+	//barra superior y barra izquierda
+	for (int i = 1; i<78; i++) //horizontal
+	{
+		gotoxy(i, 1); printf("%c", 223);
+	}
+	for (int i = 1; i<16; i++) //vertical
+	{
+		gotoxy(1, i); printf("%c", 219);
+	}
+	//barra inferior y barra derecha
+	for (int i = 1; i<15; i++) //vertical
+	{
+		gotoxy(78, i); printf("%c", 219);
+	}
+	for (int i = 1; i <= 78; i++) //barra inferior horizonatal
+	{
+		gotoxy(i, 15); printf("%c", 223);
+	}
+	// printf ("\n");
+	while (!feof(INICIO))
+	{
+		fgets(caracter, 130, INICIO);
+		gotoxy(x, y); cout << caracter;
+		Sleep(125);
+		y++;
+	}
+	printf("\n\n\n");
+	//system("pause");
+	Sleep(3000);
+	Beep(330, 200);
+	system("cls");
+	system("color 0A");
+	//letras espe
+	//E
+
+	gotoxy(43, 10); printf("%c", 219); Sleep(tesp);
+	gotoxy(43, 11); printf("%c", 219); Sleep(tesp);
+	gotoxy(43, 12); printf("%c", 219); Sleep(tesp);
+	gotoxy(43, 13); printf("%c", 219); Sleep(tesp);
+	gotoxy(43, 14); printf("%c", 219); Sleep(tesp);
+	gotoxy(43, 15); printf("%c", 219); Sleep(tesp);
+	//gotoxy(43,16);printf("%c",219);Sleep(tesp);
+
+	gotoxy(44, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(45, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(46, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(47, 10); printf("%c", 223); Sleep(tesp);
+
+
+	gotoxy(44, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(45, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(46, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(47, 13); printf("%c", 223); Sleep(tesp);
+
+
+	gotoxy(43, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(44, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(45, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(46, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(47, 16); printf("%c", 223); Sleep(tesp);
+	Beep(800, 300);
+	//S
+	gotoxy(50, 10); printf("%c", 219); Sleep(tesp);
+	gotoxy(50, 11); printf("%c", 219); Sleep(tesp);
+	gotoxy(50, 12); printf("%c", 219); Sleep(tesp);
+	//gotoxy(50,13);printf("%c",219);Sleep(tesp);
+	gotoxy(54, 13); printf("%c", 219); Sleep(tesp);
+	gotoxy(54, 14); printf("%c", 219); Sleep(tesp);
+	gotoxy(54, 15); printf("%c", 219); Sleep(tesp);
+
+	gotoxy(51, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(52, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(53, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(54, 10); printf("%c", 223); Sleep(tesp);
+
+	gotoxy(50, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(51, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(52, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(52, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(53, 13); printf("%c", 223); Sleep(tesp);
+
+	gotoxy(50, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(51, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(52, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(53, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(54, 16); printf("%c", 223); Sleep(tesp);
+	Beep(800, 300);
+
+	//P
+	gotoxy(57, 10); printf("%c", 219); Sleep(tesp);
+	gotoxy(57, 11); printf("%c", 219); Sleep(tesp);
+	gotoxy(57, 12); printf("%c", 219); Sleep(tesp);
+	gotoxy(57, 13); printf("%c", 219); Sleep(tesp);
+	gotoxy(57, 14); printf("%c", 219); Sleep(tesp);
+	gotoxy(57, 15); printf("%c", 219); Sleep(tesp);
+	gotoxy(57, 16); printf("%c", 219); Sleep(tesp);
+
+	gotoxy(58, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(59, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(60, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(61, 10); printf("%c", 223); Sleep(tesp);
+
+
+	gotoxy(61, 10); printf("%c", 219); Sleep(tesp);
+	gotoxy(61, 11); printf("%c", 219); Sleep(tesp);
+	gotoxy(61, 12); printf("%c", 219); Sleep(tesp);
+	//gotoxy(61,13);printf("%c",219);Sleep(tesp);
+
+
+	gotoxy(61, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(60, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(59, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(58, 13); printf("%c", 223); Sleep(tesp);
+	Beep(800, 300);
+
+	//E
+	gotoxy(64, 10); printf("%c", 219); Sleep(tesp);
+	gotoxy(64, 11); printf("%c", 219); Sleep(tesp);
+	gotoxy(64, 12); printf("%c", 219); Sleep(tesp);
+	gotoxy(64, 13); printf("%c", 219); Sleep(tesp);
+	gotoxy(64, 14); printf("%c", 219); Sleep(tesp);
+	gotoxy(64, 15); printf("%c", 219); Sleep(tesp);
+	//gotoxy(64,16);printf("%c",219);Sleep(tesp);
+
+	gotoxy(65, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(66, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(67, 10); printf("%c", 223); Sleep(tesp);
+	gotoxy(68, 10); printf("%c", 223); Sleep(tesp);
+
+
+	gotoxy(65, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(66, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(67, 13); printf("%c", 223); Sleep(tesp);
+	gotoxy(68, 13); printf("%c", 223); Sleep(tesp);
+
+
+	gotoxy(64, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(65, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(66, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(67, 16); printf("%c", 223); Sleep(tesp);
+	gotoxy(68, 16); printf("%c", 223); Sleep(tesp);
+	Beep(800, 300);
+	gotoxy(46, 25); printf("CALCULADORA POLACA\n");
+	//barra cargando
+
+	gotoxy(40, 29);//1er numero mueve hacia izq o der 2do arriba abajo
+
+	printf("\tCARGANDO...\n");
+	for (int i = 30; i<80; i++)//80 marca el tamanio
+	{
+		gotoxy(i, 30);//1er numero mueve hacia izq o der 2do arriba abajo
+		printf("%c", 219);//valor de caracter a imprimir para la barra mediante asccii
+		for (int x = 50; x<90; x++)
+		{//los espacios que va a recorre la barra en la pantalla
+			for (int y = 1; y<30; y++)
+			{//determina el tiempo de movimiento de la barra
+				gotoxy(y + 180, 34);
+			}
+		}
+	}
+	Beep(262, 150);
+	Beep(262, 150);
+	Beep(262, 150);
+	printf("\n\n");
+	Sleep(1000);
+	//system("pause");
+	system("cls");
+	Beep(330, 200);
 }
