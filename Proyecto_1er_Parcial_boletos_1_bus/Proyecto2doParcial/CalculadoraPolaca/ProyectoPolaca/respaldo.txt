@@ -1,1 +1,3 @@
-+++123cos50 
++54 
+ EXPRESION POSTFIJA =
+ 5+5

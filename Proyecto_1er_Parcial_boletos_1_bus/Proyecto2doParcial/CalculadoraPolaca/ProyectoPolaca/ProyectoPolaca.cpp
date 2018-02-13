@@ -1,3 +1,21 @@
+/******************************************************
+*       UNIVERSIDAD DE LAS FUERZAS ARMADAS           **
+*                    ESPE                            **
+*                                                    **
+*   Proyecto Segundo Parcial Estructura de Datos      **
+*                   pilas			                 **
+*Tema:                                               **
+*       calculadora polaca                           **
+*Autores:                                            **
+*       Benitez Rodriguez Luis Guillermo             **
+*       Vaca Perez Vicente Xavier                    **
+*Fecha de Entrega: 2018-01-22                        **
+*Carrera: Ingenieria en Sistemas e Informatica       **
+*Profesor: Ing Fernando Solis                        **
+*******************************************************/
+
+
+
 // ProyectoPolaca.cpp: define el punto de entrada de la aplicación de consola.
 //
 #include "stdafx.h"
@@ -80,7 +98,7 @@ void agente()
 }
 int main() {
 	system("color 0A");
-	//inicio();
+	inicio();
 	menuMouse();
 	system("color 0A");
 	return 0;
@@ -390,6 +408,7 @@ void menuTeclasPre() {
 					num = cadena.size();
 					cverdad = Prefija(cadena, num);
 					guardar(cadena, nombreArchivo);
+
 					getch();
 					menuTeclas();
 					//
@@ -572,6 +591,23 @@ bool valido(char expr[20]) {
 			);
 	}
 	return sw;
+	/*bool sw = true;
+	for (int i = 0; (i<strlen(expr) && sw); i++) {
+
+
+		
+		char c;
+		c = expr[i];
+		sw = sw && (
+			//(c >= 'A' && c <= 'Z') ||
+			//(c >= 'a' && c <= 'z') ||
+			(c >= '0' && c <= '9') ||
+			(c == '^') || (c == '/') || (c == '*') ||
+			(c == '+') || (c == '-') || (c == '\n') ||
+			(c == '(') || (c == ')')
+			);
+	}
+	return sw;*/
 }
 
 bool operando(char c) { //determina si el caracter es un operando
@@ -732,14 +768,14 @@ string Prefija(string expresion,int num) {
 	char nombreArchivo[13] = "respaldo.txt";
 	system("color 0A");
 	//Valido que la expresion sea valida
-	/*if (!valido(expresion))
+	if (!valido(expresion))
 	{
 		system("cls");
 		printf("\nCaracter no valido en la expresion\n");
 		//system("pause");
 		getch();		
 		menuTeclasPre();
-	}*/
+	}
 		
 
 	for (int j = 0; j < num; j++) {
@@ -829,6 +865,7 @@ string Prefija(string expresion,int num) {
 }
 
 double Evalua(Expresion postfija, double v[]) {
+	/*
 	PilaGenericaD pilaGen;
 	double valor, a, b;
 	int cont = 0;
@@ -836,13 +873,13 @@ double Evalua(Expresion postfija, double v[]) {
 		string op;
 		if (postfija.expr[i].operador) {
 			op = postfija.expr[i].ope;
-			/*printf("operador: %s\n", op.c_str());*/
+			///printf("operador: %s\n", op.c_str());
 			if (!op.compare("sen") || !op.compare("cos") || !op.compare("tan")) {
 				if (cont != 1) {
 					b = pilaGen.pop();
 					a = pilaGen.pop();
-					/*printf(" \na: %f\n", a);
-					printf(" \nb:%f\n", b);*/
+					//printf(" \na: %f\n", a);
+					//printf(" \nb:%f\n", b);
 					if (!op.compare("sen")) {
 						valor = sin(b);
 					}
@@ -874,9 +911,9 @@ double Evalua(Expresion postfija, double v[]) {
 			else if(!op.compare("+") || !op.compare("-") || !op.compare("*") || !op.compare("/") || !op.compare("^")) {
 				b = pilaGen.pop();
 				a = pilaGen.pop();
-				/*printf(" \nImprimen en else a: %f\n", a);
-				printf(" \nImprime en else b:%f\n", b);
-				printf("operador: %s\n", op.c_str());*/
+				///printf(" \nImprimen en else a: %f\n", a);
+				//printf(" \nImprime en else b:%f\n", b);
+				//printf("operador: %s\n", op.c_str());
 				if (!op.compare("^")) {
 					valor = pow(a, b);
 				}
@@ -914,11 +951,122 @@ double Evalua(Expresion postfija, double v[]) {
 		}
 	}
 
+	return pilaGen.pop();*/
+
+
+	PilaGenericaD pilaGen;
+	double valor, a, b;
+	int cont = 0;
+	/*string ep = postfija.expr[0].ope;
+	if (!ep.compare("+") || !ep.compare("-") || !ep.compare("*") || !ep.compare("/") || !ep.compare("^")) {
+	printf("\t\nNo se puede evaluar un solo signo\n\tIntente ingresando nuevamente\n");
+	getch();
+	menuPrefija();
+	}*/
+	/*else {
+	string aux1;
+	string aux = postfija.expr[1].ope;
+	if (!aux.compare("+") || !ep.compare("-")) {
+	aux1.append(aux);
+	aux1.append(ep);
+	return atof(aux1.c_str());
+	}
+	else
+	return atof(ep.c_str());
+	}*/
+	//else {
+	for (int i = 0; i <= postfija.n; i++) {
+		string op;
+		if (postfija.expr[i].operador) {
+			op = postfija.expr[i].ope;
+			/*printf("operador: %s\n", op.c_str());*/
+			if (!op.compare("sen") || !op.compare("cos") || !op.compare("tan") || !op.compare("sqrt")) {
+				if (cont != 1) {
+					b = pilaGen.pop();
+					a = pilaGen.pop();
+					/*printf(" \na: %f\n", a);
+					printf(" \nb:%f\n", b);*/
+					if (!op.compare("sen")) {
+						valor = sin(b);
+					}
+					else if (!op.compare("cos")) {
+						valor = cos(b);
+					}
+					else if (!op.compare("tan")) {
+						valor = tan(b);
+					}
+					else if (!op.compare("sqrt")) {
+						valor = sqrt(b);
+					}
+					pilaGen.push(a);
+					pilaGen.push(valor);
+				}
+				else {
+					a = pilaGen.pop();
+					if (!op.compare("sen")) {
+						valor = sin(a);
+					}
+					else if (!op.compare("cos")) {
+						valor = cos(a);
+					}
+					else if (!op.compare("tan")) {
+						valor = tan(a);
+					}
+					else if (!op.compare("sqrt")) {
+						valor = sqrt(a);
+					}
+					pilaGen.push(valor);
+				}
+
+
+			}
+			else if (!op.compare("+") || !op.compare("-") || !op.compare("*") || !op.compare("/") || !op.compare("^")) {
+				b = pilaGen.pop();
+				a = pilaGen.pop();
+				/*printf(" \nImprimen en else a: %f\n", a);
+				printf(" \nImprime en else b:%f\n", b);
+				printf("operador: %s\n", op.c_str());*/
+				if (!op.compare("^")) {
+					valor = pow(a, b);
+				}
+				else if (!op.compare("*")) {
+					valor = a*b;
+				}
+				else if (!op.compare("/")) {
+					if (b != 0.0)
+						valor = a / b;
+					else {
+						printf("\nNo se puede realizar division para cero\nIntente ingresando otra expresion!");
+						getch();
+						menuTeclasPre();
+						break;
+					}
+
+				}
+				else if (!op.compare("+")) {
+					valor = a + b;
+				}
+				else if (!op.compare("-")) {
+					valor = a - b;
+				}
+				pilaGen.push(valor);
+			}
+
+		}
+		else {
+			int indice;
+			double aa;
+			op = postfija.expr[i].ope;
+			aa = atof(op.c_str());
+			pilaGen.push(aa);
+			cont++;
+		}
+	}
 	return pilaGen.pop();
 }
 
 string separarDato(string expresion, char *dato, int &pos)
-{
+{/*
 	string aux;
 	char p, p1[2];
 	p = expresion[pos];
@@ -955,10 +1103,67 @@ string separarDato(string expresion, char *dato, int &pos)
 
 	//cout << "\ndato: " << dato;
 	aux = dato;
+	return aux;*/
+
+	//
+	string aux;
+	char p, p1[2];
+	p = expresion[pos];
+	//printf("\np : %c\n", p);
+	if (p == '+' || p == '-' || p == '*' || p == '/' || p == '^' || p == '(' || p == ')')
+	{
+		p1[0] = p;
+		p1[1] = '\0';
+		strcpy(dato, p1);
+		//pos++;
+		aux = dato;
+		//cout << "\nen if dato: " << dato<<"posicion ="<<pos;
+		return aux;
+	}
+	else
+	{
+		p1[0] = '\0';
+		strcpy(dato, p1);
+		do
+		{
+			p = expresion[pos];
+			if (p == '\0' || p == '+' || p == '-' || p == '*' || p == '/' || p == '^' || p == '(' || p == ')')break;
+			p1[0] = p;
+			p1[1] = '\0';
+			strcat(dato, p1);
+			//printf(" \np es: %c \n", p);
+			pos++;
+		} while (true);
+		pos--;
+		//if (strcmp(dato, "sen") == 0) strcpy(dato, "sen");
+		//if (strcmp(dato, "cos") == 0) strcpy(dato, "cos");
+		//if (strcmp(dato, "tan") == 0) strcpy(dato, "tan");
+	}
+
+	//cout << "\ndato: " << dato<< "posicion"<< pos;
+	aux = dato;
 	return aux;
+
+	//
 }
 
 bool valido(string expr) {
+	bool sw = true;
+	printf("expresion %s:", expr.c_str());
+	system("pause");
+	for (int i = 0; (i<expr.size() && sw); i++) {
+		string c;
+		c = expr[i];
+		sw = sw && (
+			(c >= "a" || c <= "z") ||
+			(c >= "0" && c <= "9") ||
+			(c == "^") || (c == "/") || (c == "*") ||
+			(c == "+") || (c == "-") || (c == "\n") ||
+			(c == "(") || (c == ")")
+			);
+	}
+	return sw;
+	/*
 	bool sw = true;
 	for (int i = 0; (i<expr.size() && sw); i++) {
 		string c;
@@ -967,12 +1172,36 @@ bool valido(string expr) {
 			(c >= "0" && c <= "9") ||
 			(c == "^") || (c == "/") || (c == "*") ||
 			(c == "+") || (c == "-") || (c == "\n") ||
-			(c == "(") || (c == ")")
+			(c == "(") || (c == ")") || (c == "s") || (c == "e") || (c == "n")
+			|| (c == "c") || (c == "o")|| (c == "t") || (c == "a")
 			);
 	}
-	return sw;
+	return sw;*/
 }
 
+
+bool valido2(string expresion[25]) {
+	bool sw = true;
+	for (int i = 0; i<25; i++) {
+		if (!expresion[i].compare("sen") || !expresion[i].compare("0") || !expresion[i].compare("1") || !expresion[i].compare("2") || !expresion[i].compare("3") ||
+			!expresion[i].compare("4") || !expresion[i].compare("5") || !expresion[i].compare("6") || !expresion[i].compare("7") || !expresion[i].compare("8") ||
+			!expresion[i].compare("(") || !expresion[i].compare(")") || !expresion[i].compare("+") || !expresion[i].compare("-") || !expresion[i].compare("*") ||
+			!expresion[i].compare("/") || !expresion[i].compare("cos") || !expresion[i].compare("tan") || !expresion[i].compare("\0") || !expresion[i].compare("^") || !expresion[i].compare("sqrt"))
+		{
+			sw = sw && true;
+			//printf("validar en funcion = %d", sw);
+		}
+		else if (operando(expresion[i])) {
+			sw = sw && true;
+		}
+		else {
+			sw = sw && false;
+			printf("validar en funcion = %d", sw);
+		}
+	}
+
+	return sw;
+}
 bool operando(string c) { //determina si el caracter es un operando
 	
 	return(c >= "0" && c <= "999");
