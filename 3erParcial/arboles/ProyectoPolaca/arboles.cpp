@@ -26,15 +26,18 @@
 #include <ctime>
 #include "qrcodegen.h"
 #define fondo 0
-#define texto 3
-
-
+#define texto 10
+#define TECLA_ARRIBA 72
+#define TECLA_ABAJO 80
+#define ENTER 13
+//2-6-7-9
 using namespace std;
 
 //prototipo de funciones
 void inicio();
 void menuTeclas();
 void menuMouse();
+int menuGeneralArboles();
 void guardar(string , char *archivo);
 void  generarQr(char *);
 static void generarQrBasico(char dato1[]);
@@ -68,14 +71,16 @@ void agente(){
 	system("WinAppManejoMSAgente.exe");
 }
 int main(){
-	system("color 0A");
-	//inicio();
+	color(fondo, texto);
+	//system("color 0A");
+	inicio();
 	menuMouse();
-	system("color 0A");
+	//system("color 0A");
 	return 0;
 }
 void guardarAg(string expresion, char *archivo) {
-	system("color 0A");
+	color(fondo, texto);
+	//system("color 0A");
 	FILE *ptr;
 	string nombre;
 
@@ -92,113 +97,7 @@ void guardarAg(string expresion, char *archivo) {
 		fclose(ptr);
 	}
 }
-void menuMouse() {
-	string palabra1;
-	system("cls");
-	system("color 0A");
-	cout << "\t\t\t ";
-	cout << "ARBOLES" << endl;
-	printf(" 1. ARBOL BINARIO\n");
-	printf(" 2. ARBOL B\n");
-	printf(" 3. ARBOL B+\n");
-	printf(" 4. ARBOL AVL\n");
-	printf(" 5. VER DATOS INGRESADOS\n");
-	printf(" 6. AYUDA\n");
-	printf(" 7. ABOUT\n");
-	printf(" 8. AGENTE\n");
-	printf(" 9. SALIR - GENERAR PDF\n");
-	HANDLE paraEntrada = GetStdHandle(STD_INPUT_HANDLE);
-	INPUT_RECORD regEntrada;
-	DWORD evento;
-	COORD coordenadas;
-	SetConsoleMode(paraEntrada, ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
-	while (1) {
-		ReadConsoleInput(paraEntrada, &regEntrada, 1, &evento);
-		if (regEntrada.EventType == MOUSE_EVENT)
-		{
-			if (regEntrada.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
-			{
-				coordenadas.X = regEntrada.Event.MouseEvent.dwMousePosition.X;
-				coordenadas.Y = regEntrada.Event.MouseEvent.dwMousePosition.Y;
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 1)
-				{
-					system("cls");
-					printf("\n=================== ARBOL BINARIO ===================\n");
-					menuTeclas();
-					menuMouse();
-				}
 
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 2)
-				{
-					system("cls");
-					printf("\n=================== ARBOL B ===================\n");
-					menuTeclas();
-					menuMouse();
-
-				}
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 3)
-				{
-					system("cls");
-					printf("\n=================== ARBOL B+ ===================\n");
-					menuTeclas();
-					menuMouse();
-
-				}
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 4)
-				{
-					system("cls");
-					printf("\n===================ARBOL AVL===================\n");
-					menuTeclas();
-					menuMouse();
-
-				}
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 5)
-				{
-					system("cls");			
-					leertxt();
-					system("cls");
-					menuMouse();
-				}
-
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 6)
-				{
-					system("cls");
-					ayuda();
-					system("pause");
-					system("cls");
-					menuMouse();
-				}
-
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 7)
-				{
-					system("color 0A");
-					system("cls");
-					about();
-					system("pause");
-					system("cls");
-					menuMouse();
-				}
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 8)
-				{
-					system("color 0A");
-					system("cls");
-					agente();
-					system("cls");
-					system("pause");
-					menuMouse();				
-				}
-				if (coordenadas.X >0 && coordenadas.X <= 50 && coordenadas.Y == 9)
-				{					
-					system("color 0A");
-					system("cls");
-					//system("pause");
-					system("respaldo.txt");
-					exit(0);
-				}
-			}
-		}
-	}
-}
 void leertxt(){
 	char cadena[20];
 	FILE *fichero;
@@ -328,6 +227,169 @@ void crear_carpeta(){
 	else {
 		printf("error al crear archivo");
 	}
+}
+
+void menuMouse() {
+	string palabra1;
+	system("cls");
+	color(fondo, texto);
+	//color(3, 15);
+	cout << "\n\n\n\n\n\n\n\t\t\t ";
+	cout << "_______________________ARBOLES_______________________" << endl;
+	gotoxy(22,10); printf("\t\t\t 1. ARBOL BINARIO\n");
+	gotoxy(22, 11); printf("\t\t\t 2. ARBOL B\n");
+	gotoxy(22, 12); printf("\t\t\t 3. ARBOL B+\n");
+	gotoxy(22, 13); printf("\t\t\t 4. ARBOL AVL\n");
+	gotoxy(22, 14); printf("\t\t\t 5. VER DATOS INGRESADOS\n");
+	gotoxy(22, 15); printf("\t\t\t 6. AYUDA\n");
+	gotoxy(22, 16); printf("\t\t\t 7. ABOUT\n");
+	gotoxy(22, 17); printf("\t\t\t 8. AGENTE\n");
+	gotoxy(22, 18); printf("\t\t\t 9. SALIR - GENERAR PDF\n");
+	HANDLE paraEntrada = GetStdHandle(STD_INPUT_HANDLE);
+	INPUT_RECORD regEntrada;
+	DWORD evento;
+	COORD coordenadas;
+	SetConsoleMode(paraEntrada, ENABLE_PROCESSED_INPUT | ENABLE_MOUSE_INPUT);
+	while (1) {
+		ReadConsoleInput(paraEntrada, &regEntrada, 1, &evento);
+		if (regEntrada.EventType == MOUSE_EVENT)
+		{
+			if (regEntrada.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+			{
+				coordenadas.X = regEntrada.Event.MouseEvent.dwMousePosition.X;
+				coordenadas.Y = regEntrada.Event.MouseEvent.dwMousePosition.Y;
+				if (coordenadas.X >=40 && coordenadas.X <= 62 && coordenadas.Y == 10)//1
+				{
+					system("cls");
+					printf("\n\t\t  ===================ARBOL BINARIO ===================\n");
+					menuGeneralArboles();
+					menuMouse();
+				}
+
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 11)//2
+				{
+					system("cls");
+					printf("\n\t\t  =================== ARBOL B ===================\n");
+					menuGeneralArboles();
+					menuMouse();
+
+				}
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 12)//3
+				{
+					system("cls");
+					printf("\n\t\t  =================== ARBOL B+ ===================\n");
+					menuGeneralArboles();
+					menuMouse();
+
+				}
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 13)//4
+				{
+					system("cls");
+					printf("\n\t\t  ===================ARBOL AVL===================\n");
+					menuGeneralArboles();
+					menuMouse();
+
+				}
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 14)//5
+				{
+					system("cls");
+					leertxt();
+					system("cls");
+					menuMouse();
+				}
+
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 15)//6
+				{
+					system("cls");
+					ayuda();
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 16)//7
+				{
+					//system("color 0A");
+					system("cls");
+					about();
+					system("pause");
+					system("cls");
+					menuMouse();
+				}
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 17)//8
+				{
+					//system("color 0A");
+					system("cls");
+					agente();
+					system("cls");
+					system("pause");
+					menuMouse();
+				}
+				if (coordenadas.X >= 40 && coordenadas.X <= 62 && coordenadas.Y == 18)//9
+				{
+					//system("color 0A");
+					system("cls");
+					//system("pause");
+					system("respaldo.txt");
+					exit(0);
+				}
+			}
+		}
+	}
+}
+int menuGeneralArboles() {
+
+	const char *titulo = "__________________________________________________________";
+	const char *opciones[] = { "INSERTAR CLAVE","ELIMINAR CLAVE","BUSCAR CLAVE","MOSTRAR ARBOL ","GRAFICAR ARBOL", "REGRESAR"};
+	int opcionSeleccionada = 1, numerodeopciones = 6;
+	int tecla;
+	bool repite = true;
+	int i = 0;
+	do {
+		//system("cls");
+		gotoxy(7, 3 + opcionSeleccionada);
+		color(fondo, texto);
+		gotoxy(15, 2);
+		printf("%s", titulo);
+		gotoxy(5, 3 + opcionSeleccionada);
+		for (int i = 0; i < numerodeopciones; ++i) {
+			gotoxy(15, 4 + i);
+			color(fondo, texto);
+			printf("%s  ", opciones[i]);
+		}//2-6-7-9-12rojo-14-15
+		gotoxy(15, 3 + opcionSeleccionada);
+		color(9, 15);
+		//color(12, 15);
+		printf("%s", opciones[i]);
+		color(fondo, texto);
+		do {
+			tecla = getch();
+		} while ((tecla != TECLA_ARRIBA) && (tecla != TECLA_ABAJO) && (tecla != ENTER));
+
+		switch (tecla) {
+		case TECLA_ARRIBA:
+			opcionSeleccionada--;
+			i--;
+			if (opcionSeleccionada<1) {
+				opcionSeleccionada = numerodeopciones;
+				i = numerodeopciones - 1;
+
+			}
+			break;
+		case TECLA_ABAJO:
+			opcionSeleccionada++;
+			i++;
+			if (opcionSeleccionada>numerodeopciones) {
+				opcionSeleccionada = 1;
+				i = 0;
+			}
+			break;
+		case ENTER:
+			repite = false;
+			break;
+		}
+	} while (repite);
+	return opcionSeleccionada;
 }
 void inicio() {
 	/* LIBRERIA COLORES
@@ -496,7 +558,7 @@ void inicio() {
 	gotoxy(67, 16); printf("%c", 223); Sleep(tesp);
 	gotoxy(68, 16); printf("%c", 223); Sleep(tesp);
 	Beep(800, 300);
-	gotoxy(46, 25); printf("CALCULADORA POLACA\n");
+	gotoxy(40, 25); printf("ARBOLES-> BINARIO - B - B+ - AVL\n");
 	//barra cargando
 
 	gotoxy(40, 29);//1er numero mueve hacia izq o der 2do arriba abajo

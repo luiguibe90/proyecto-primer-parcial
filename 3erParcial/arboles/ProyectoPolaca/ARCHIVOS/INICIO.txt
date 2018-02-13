@@ -1,11 +1,11 @@
 
 
 ===================================================================
-==  INTEGRANTES:		ASIGNATURA:      		===
+==  INTEGRANTES:		ASIGNATURA:      	        	===
 ==  		Benitez Luis		  ESTRUCTURAS DE DATOS. ===
 ==  		Vaca Xavier					===
 ==  		  						===
 ==  								===
 ==  DOCENTE:				FECHA:			===
-==  		ING. Fernado Solis.  		29/11/2017	===
+==  		ING. Fernado Solis.  		16/02/2018	===
 ===================================================================
