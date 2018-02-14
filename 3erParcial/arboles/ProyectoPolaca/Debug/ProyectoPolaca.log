@@ -1,23 +1,23 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (ProyectoPolaca.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
   arboles.cpp
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(87): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(102): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(104): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(115): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(119): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
 g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(130): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(180): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(189): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(207): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\direct.h(110): note: vea la declaración de 'mkdir'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(221): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(145): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(366): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(195): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(204): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\time.h(505): note: vea la declaración de 'localtime'
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(222): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _mkdir. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\direct.h(110): note: vea la declaración de 'mkdir'
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(236): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(381): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\conio.h(452): note: vea la declaración de 'getch'
-g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(418): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+g:\documentos\github\proyecto-primer-parcial\3erparcial\arboles\proyectopolaca\arboles.cpp(433): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
   ProyectoPolaca.vcxproj -> G:\Documentos\GitHub\proyecto-primer-parcial\3erParcial\arboles\Debug\arboles.exe
